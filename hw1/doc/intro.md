@@ -14,8 +14,9 @@ Part 1:
 -------
 
 In the absense of any active calls the elevator will wait in its current location.
-If not in-motion elevator will move in the direction where the farthest call is closer.
+If elevator not in-motion it will move in the direction where the farthest call is closer.
 If in-motion elevator will continue in its current direction so long as there are calls in that direction.
+
 
 Part 2:
 -------
@@ -31,4 +32,16 @@ ExtUp : u x 5
 ExtDown : d x 5
 IntGoal : i x 6
 
+f* : no active calls => heading rest
+f* : active calls on current floor => clear calls on current floor
+
+f0 : active calls => f1 : clear any f1 calls : heading up
+f5 : active calls => f4 : clear any f4 calls : heading down
+
+for i in {1,2,3,4}
+fi : heading up : active calls above => f(i+1) : clear f(i+1) calls
+fi : no active calls above => f(i+1) : clear f(i+1) calls
+fi : heading rest : active calls above => f(i+1) : clear f(i+1) calls : heading up
+fi : heading rest : active calls below => f(i-1) : clear f(i-1) calls : heading down
+fi : heading down : active calls => f(i-1) : clear f(i-1) calls
 
