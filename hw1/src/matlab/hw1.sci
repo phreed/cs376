@@ -18,26 +18,44 @@ function [f1,h1, u1,d1,i1] = service_calls(f0,h0,u0,d0,i0)
     d1 = d0
     i1 = i0
 
-    // service calls
+    top = size(i0,'c') - 1
+    
     // Are there any calls?
-    //if (or(uc,dc,ic)) then
-    //end
+    calls = u0 | d0 | i0
+    if ~or(calls) then
+        h1 = 0
+        return
+    end
+    
     // Adjust heading, 
-    // prefer the current heading
-    // bounce at the top or bottom.
-    // If waiting head toward the farthest call.
-    // Update the current floor.
-    // Service that floor by clearing the calls for that floor.
-
-    // display the post-service matrix
-    // give the operator some time to look at the step
-    if or(u0) then
-        // disp("", u0)
-    end
-
     if f0 < 1 then
-        //disp("on ground floor")
+        // bounce at the bottom.
+        h1 = +1
+    elseif top <= f0
+        // bounce at the top
+        h1 = -1
+    elseif ~(h0 == 0)       
+        // prefer the current heading
+        h1 = h0
+    else  
+        // If waiting head toward the farthest call.
+        truthy_ix = find(calls) - 1
+        if (f0 - min(truthy_ix)) > (max(truthy_ix) - f0) then
+            h1 = -1
+        else
+            h1 = +1
+        end 
     end
+   
+    // Update the current floor. 
+    f1 = f0 + h1
+    fix = f1+1
+    
+    // Service the floor by clearing its calls.
+    u1(fix) = 0
+    d1(fix) = 0
+    i1(fix) = 0
+  
 endfunction
 
 function s = format_vector(vec)
@@ -48,6 +66,7 @@ function s = format_vector(vec)
         else
             s = s + "_"
         end
+        s = s + " "
     end
 endfunction
 
@@ -59,16 +78,17 @@ function s = format_floor(value, upper)
         else
             s = s + "_"
         end
+        s = s + " "
     end
 endfunction
 
 function s = format_heading(value)
     if value < 0 then
-        s = "<="
+        s = "<<<<<"
     elseif 0 < value then
-        s = "=>"
+        s = ">>>>>"
     else
-        s = "=="
+        s = "====="
     end
 endfunction
 
