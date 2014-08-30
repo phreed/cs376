@@ -1,7 +1,5 @@
 # Introduction to hw1
 
-[great documentation](http://jacobian.org/writing/great-documentation/what-to-write/)
-
 The project can be simulated using one of the clojure libraries.
 [from scratch](http://www.learningclojure.com/2014/01/finite-automata.html)
 
@@ -12,6 +10,13 @@ I don't know if this is the best way.
 
 Part 1:
 -------
+
+The following describes my approach and control logic.
+This being a model of an elevator certain familiar elevator behavior will be ignored.
+For the purpose of this simulation the instantaneous transition from one state to another
+can be decomposed into two actions, servicing and moving.
+Many familiar activities such as door opening, door closing, holding, boarding or exiting can all be lumpted into the servicing action.
+The service action a side effect that includes the clearing of any calls for the prior floor.
 
 In the absense of any active calls the elevator will wait in its current location.
 If elevator not in-motion it will move in the direction where the farthest call is closer.
