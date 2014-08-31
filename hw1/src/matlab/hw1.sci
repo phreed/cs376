@@ -5,11 +5,6 @@ function [c1] = gen_calls(c0, insensitivity)
     c1 = c0 | (grand(m,n,"uin", 0, 100) < insensitivity)
 endfunction
 
-function [u1,d1,i1] = make_calls(u0,d0,i0) 
-    u1 = gen_calls(u0,10)
-    d1 = gen_calls(d0,10);
-    i1 = gen_calls(i0,10);
-endfunction
 
 function [f1,h1, u1,d1,i1] = service_calls(f0,h0,u0,d0,i0)
     f1 = f0
@@ -19,50 +14,85 @@ function [f1,h1, u1,d1,i1] = service_calls(f0,h0,u0,d0,i0)
     i1 = i0
 
     top = size(i0,'c') - 1
-    
+
     // Are there any calls?
     calls = u0 | d0 | i0
     if ~or(calls) then
         h1 = 0
         return
     end
-    
+
     // Adjust heading, 
-    if f0 < 1 then
-        // bounce at the bottom.
-        h1 = +1
-    elseif top <= f0
-        // bounce at the top
-        h1 = -1
-    elseif ~(h0 == 0)       
-        // prefer the current heading
-        h1 = h0
-    else  
-        // If waiting head toward the farthest call.
-        truthy_ix = find(calls) - 1
-        if (f0 - min(truthy_ix)) > (max(truthy_ix) - f0) then
-            h1 = -1
+    calls_f = find(calls) - 1
+    f_max = max(calls_f)
+    f_min = min(calls_f)
+    if f0 <= f_min then
+        mprintf("x1")
+        if f0 == f_min then
+            h1 = 0
         else
+           // no calls below, head up (includes bottom)
             h1 = +1
-        end 
+        end
+    elseif f_max <= f0 then
+        mprintf("y1")
+        if f0 == f_max then
+            h1 = 0
+        else
+            // no calls above, head down (includes top)
+            h1 = -1
+        end
+    elseif (h0 == 0) then
+        // head toward the closest call 
+        if abs(f0 - f_min) < abs(f_max - f0) then
+            if  f0 < f_min then
+                mprintf("a1")
+                h1 = +1
+            elseif f_min < f0 then
+                mprintf("a2")
+                h1 = 0
+            else
+                mprintf("a3")
+                h1 = -1
+            end
+        else
+            if f0 < f_max then
+                mprintf("b1")
+                h1 = +1
+            elseif f_max < f0 then
+                mprintf("b2")
+                h1 = 0
+            else
+                mprintf("b3")
+                h1 = -1
+            end
+        end
+    else
+        // prefer to continue on current heading
+        mprintf("c1")
+        h1 = h0
     end
-   
+
     // Update the current floor. 
     f1 = f0 + h1
-    fix = f1+1
-    
+
     // Service the floor by clearing its calls.
+    fix = f1 + 1
+    mprintf("fix %d %d %d %d %d\n", f0, fix, f_min, f_max, h1)
     u1(fix) = 0
     d1(fix) = 0
     i1(fix) = 0
-  
+
 endfunction
 
-function s = format_vector(vec)
+function s = format_vector(v0,v1)
     s = ""
-    for ix = 1 : size(vec,'c')
-        if vec(ix) then
+    v2 = v0 & v1
+    for ix = 1 : size(v1,'c')
+        if v1(ix) then
             s = s + "X"
+        elseif v0(ix) & ~v1(ix) then
+            s = s + "O"
         else
             s = s + "_"
         end
@@ -92,12 +122,20 @@ function s = format_heading(value)
     end
 endfunction
 
-function [] = display_state(action, t, f,h,u,d,i) 
+function [] = display_state(action, t, f,h,u0,u1,d0,d1,i0,i1) 
     mprintf("%s : %d\n", action, t)
-    
+
     mprintf("%s : %s \n", "Heading", format_heading(h))
     mprintf("%s : %s \n", "Floor  ", format_floor(f, size(u,'c')))
-    mprintf("%s : %s \n", "UP     ", format_vector(u))
-    mprintf("%s : %s \n", "DOWN   ", format_vector(d))
-    mprintf("%s : %s \n", "INSIDE ", format_vector(i))
+    mprintf("%s : %s \n", "UP     ", format_vector(u0,u1))
+    mprintf("%s : %s \n", "DOWN   ", format_vector(d0,d1))
+    mprintf("%s : %s \n", "INSIDE ", format_vector(i0,i1))
+endfunction
+
+function [] = display_state_vars(action,u,d,i) 
+    mprintf("%s\n", action)
+
+    mprintf("%s : %s \n", "UP     ", format_vector(u,u))
+    mprintf("%s : %s \n", "DOWN   ", format_vector(d,d))
+    mprintf("%s : %s \n", "INSIDE ", format_vector(i,i))
 endfunction
