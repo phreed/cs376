@@ -27,7 +27,6 @@ function [f1,h1, u1,d1,i1] = service_calls(f0,h0,u0,d0,i0)
     f_max = max(calls_f)
     f_min = min(calls_f)
     if f0 <= f_min then
-        mprintf("x1")
         if f0 == f_min then
             h1 = 0
         else
@@ -35,7 +34,6 @@ function [f1,h1, u1,d1,i1] = service_calls(f0,h0,u0,d0,i0)
             h1 = +1
         end
     elseif f_max <= f0 then
-        mprintf("y1")
         if f0 == f_max then
             h1 = 0
         else
@@ -46,30 +44,23 @@ function [f1,h1, u1,d1,i1] = service_calls(f0,h0,u0,d0,i0)
         // head toward the closest call 
         if abs(f0 - f_min) < abs(f_max - f0) then
             if  f0 < f_min then
-                mprintf("a1")
                 h1 = +1
             elseif f_min < f0 then
-                mprintf("a2")
                 h1 = 0
             else
-                mprintf("a3")
                 h1 = -1
             end
         else
             if f0 < f_max then
-                mprintf("b1")
                 h1 = +1
             elseif f_max < f0 then
-                mprintf("b2")
                 h1 = 0
             else
-                mprintf("b3")
                 h1 = -1
             end
         end
     else
         // prefer to continue on current heading
-        mprintf("c1")
         h1 = h0
     end
 
@@ -78,7 +69,7 @@ function [f1,h1, u1,d1,i1] = service_calls(f0,h0,u0,d0,i0)
 
     // Service the floor by clearing its calls.
     fix = f1 + 1
-    mprintf("fix %d %d %d %d %d\n", f0, fix, f_min, f_max, h1)
+    // mprintf("fix %d %d %d %d %d\n", f0, fix, f_min, f_max, h1)
     u1(fix) = 0
     d1(fix) = 0
     i1(fix) = 0
@@ -123,7 +114,7 @@ function s = format_heading(value)
 endfunction
 
 function [] = display_state(action, t, f,h,u0,u1,d0,d1,i0,i1) 
-    mprintf("%s : %d\n", action, t)
+    mprintf("%s : id(%d)\n", action, t)
 
     mprintf("%s : %s \n", "Heading", format_heading(h))
     mprintf("%s : %s \n", "Floor  ", format_floor(f, size(u,'c')))

@@ -18,10 +18,6 @@ for ix = 1 : 20
     u = gen_calls(u2,10)
     d = gen_calls(d2,10);
     i = gen_calls(i2,10);
-    
-    // display_state_vars("PENDING-CALLS",u,d,i)
-    mprintf("\n")
-
 end
 
 for ix = 1 : 20
@@ -35,8 +31,23 @@ for ix = 1 : 20
     u = gen_calls(u2,2)
     d = gen_calls(d2,2);
     i = gen_calls(i2,2);
-    
-    // display_state_vars("PENDING-CALLS",u,d,i)
-    mprintf("\n")
-
 end
+
+u = [%F %F %F %F %F %F]
+d = [%F %F %F %F %F %F]
+
+f = 5
+h = +1
+i = [%F %F %F %F %F %T]
+
+[f,h,u2,d2,i2] = service_calls(f,h,u,d,i)
+display_state("SERVICED-CALLS",1, f,h,u,u2,d,d2,i,i2)
+mprintf("\n")
+
+f = 5
+h = -1
+i = [%T %F %F %F %F %T]
+
+[f,h,u2,d2,i2] = service_calls(f,h,u,d,i)
+display_state("SERVICED-CALLS",1, f,h,u,u2,d,d2,i,i2)
+mprintf("\n")
