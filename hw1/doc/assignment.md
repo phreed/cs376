@@ -28,18 +28,25 @@ Develop an automaton model of the system in Part 1, including a complete specifi
 Q = F x H x (U0 x ... x U4) x (D1 x ... x D5) x (I0 x ... x I5)
 
 Where
+```
   F = {0,1,2,3,4,5} is the floor set,
   H = {up, rest, down} is the cage heading set, and
-  Ui, Di, Ii represent 2-state switches ('buttons') with state sets {set,reset} for external-up-calls, external-down-calls and inside-cage-calls.  Thus ui = set in Ui indicates the presence of an external-up-call at floor i; ui will be switched back to reset when the call is serviced.  The state size is |Q| = 6 x 3 x 2^5 x 2^5 x 2^6 = 1179648.  Write f in F for the current floor, h in H for the current heading, u, d, i for the button vectors (thus u = (u0,u1,u2,u3,u4) in U0xU1xU2xU3xU4), and calls = (u,d,i).  Then
+  Ui, Di, Ii represent 2-state switches ('buttons') with state sets {set,reset}
+```
+Buttons are used for external-up-calls, external-down-calls and inside-cage-calls.  Thus ui = set in Ui indicates the presence of an external-up-call at floor i; ui will be switched back to reset when the call is serviced.  The state size is |Q| = 6 x 3 x 2^5 x 2^5 x 2^6 = 1179648.  Write f in F for the current floor, h in H for the current heading, u, d, i for the button vectors (thus u = (u0,u1,u2,u3,u4) in U0xU1xU2xU3xU4), and calls = (u,d,i).  Then
 
+```
   h_next = delta_H((calls)_next, f, h)
   f_next = delta_F(h_next, f)
+```
 
 for suitable functions delta_H, delta_F.  Define calls_next as a suitable (in part, random) function of the current values (calls, f, h) so the computation sequence is
 
+```
   (calls, f, h) => calls_next
   (calls_next, f, h) => h_next
   (h_next, f) => f_next
+```
 
 
 Part 3:
@@ -50,7 +57,7 @@ Part 4:
 =======
 Discuss possible performance specifications for your elevator.  Sketch a proof that your automaton model satisfies them.
 
-Every call is eventually serviced.
-Every call is serviced in less than 2*|F| transitions.
+* Every call is eventually serviced.
+* Every call is serviced in less than 2*|F| transitions.
 
 
