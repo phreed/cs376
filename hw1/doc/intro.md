@@ -26,16 +26,21 @@ If in-motion elevator will continue in its current direction so long as there ar
 Part 2:
 -------
 
-The FSM has the following nodes representing the cage heading:
+The cage heading FSM states:
 Moving-Up
 Moving-Down
 Stationary
 
-The FSM has the following state variables:
-Floor : f
-ExtUp : u x 5
-ExtDown : d x 5
-IntGoal : i x 6
+The floor FSM has six states, one for each floor
+
+Each button FSM (interior or exterior):
+Active 
+Inactive
+
+This gives 18 FSM's which compose to form the elevator FSM.
+The rule for each FSM are as follows:
+
+
 
 f* : no active calls => heading rest
 f* : active calls on current floor => clear calls on current floor
