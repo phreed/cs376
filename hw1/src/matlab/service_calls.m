@@ -7,7 +7,7 @@ h1 = h0;
 u1 = u0;
 d1 = d0;
 i1 = i0;
-top = size(i0,1) - 1;
+top = size(i0,2) - 1;
 % Are there any calls?
 calls = u0 | d0 | i0;
 if not(any(calls))
