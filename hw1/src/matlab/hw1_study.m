@@ -7,7 +7,7 @@ f = 5;
 h = +1;
 i = [0 0 0 0 0 1];
 [h,f,u2,d2,i2] = handle_event(h,f,u,d,i);
-display_state('Trial C',1,h,f,u,u2,d,d2,i,i2);
+display_state('Trial A',1,h,f,u,u2,d,d2,i,i2);
 fprintf('\n')
  
 % A test consisting of two inside calls where the 
@@ -17,12 +17,12 @@ f = 5;
 h = -1;
 i = [1 0 0 0 0 1];
 for ix = 1 : 8
-[h,f,u2,d2,i2] = handle_event(h,f,u,d,i);
-display_state('Trial D',ix,h,f,u,u2,d,d2,i,i2);
-u = u2;
-d = d2;
-i = i2;
-fprintf('\n')
+   [h,f,u2,d2,i2] = handle_event(h,f,u,d,i);
+   display_state('Trial B',ix,h,f,u,u2,d,d2,i,i2);
+   u = u2;
+    d = d2;
+    i = i2;
+    fprintf('\n')
 end
 
 % A test making sure that once a heading is
@@ -33,12 +33,12 @@ h = +1;
 i = [0 0 0 0 0 0];
 d = [0 1 0 0 0 1];
 for ix = 1 : 8
-[h,f,u2,d2,i2] = handle_event(h,f,u,d,i);
-display_state('Trial E',ix,h,f,u,u2,d,d2,i,i2);
-u = u2;
-d = d2;
-i = i2;
-fprintf('\n')
+    [h,f,u2,d2,i2] = handle_event(h,f,u,d,i);
+    display_state('Trial C',ix,h,f,u,u2,d,d2,i,i2);
+    u = u2;
+    d = d2;
+    i = i2;
+    fprintf('\n')
 end
 
 
@@ -52,7 +52,7 @@ for ix = 1 : 20
     fprintf('\n')
     [h,f,u2,d2,i2] = handle_event(h,f,u,d,i);
     % display the post-service matrix
-    display_state('Trial A',ix,h,f,u,u2,d,d2,i,i2)
+    display_state('Trial D',ix,h,f,u,u2,d,d2,i,i2)
     fprintf('\n')
     % make calls (randomly)
     u = gen_calls(u2,10);
@@ -66,7 +66,7 @@ for ix = 1 : 20
     fprintf('\n')
     [h,f,u2,d2,i2] = handle_event(h,f,u,d,i);
     % display the post-service matrix
-    display_state('Trial A+',ix,h,f,u,u2,d,d2,i,i2)
+    display_state('Trial D+',ix,h,f,u,u2,d,d2,i,i2)
     fprintf('\n')
     % make calls (randomly)
     u = gen_calls(u2,2);
