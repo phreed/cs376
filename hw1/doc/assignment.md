@@ -59,5 +59,5 @@ Discuss possible performance specifications for your elevator.  Sketch a proof t
 
 * Every call is eventually serviced.
 * Every call is serviced in less than 2*|F| transitions.
-
+* Every internal call will be serviced in less than 2* | |F_cur| - |F_targ| | steps
 
