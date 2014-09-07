@@ -1,0 +1,382 @@
+>> service_calls
+Error using service_calls (line 5)
+Not enough input arguments.
+ 
+>> hw1_study
+
+Trial A : id(1)
+Heading      : = = = = = = 
+Floor        : 0 1 2 3 4 5 
+Cage Loc     : X._._._._._. 
+InCall       : _._._._._._. 
+ExCall UP    : _._._._._._. 
+ExCall DOWN  : _._._._._._. 
+
+
+Trial A : id(2)
+Heading      : > > > > > > 
+Floor        : 0 1 2 3 4 5 
+Cage Loc     : _.X._._._._. 
+InCall       : _._._._._._. 
+ExCall UP    : _._._._._._. 
+ExCall DOWN  : _._._._._.X. 
+
+
+Trial A : id(3)
+Heading      : > > > > > > 
+Floor        : 0 1 2 3 4 5 
+Cage Loc     : _._.X._._._. 
+InCall       : _._.O._._._. 
+ExCall UP    : _._._._._._. 
+ExCall DOWN  : X._._._.X.X. 
+
+
+Trial A : id(4)
+Heading      : > > > > > > 
+Floor        : 0 1 2 3 4 5 
+Cage Loc     : _._._.X._._. 
+InCall       : _._._._.X.X. 
+ExCall UP    : _._.X._._._. 
+ExCall DOWN  : X._._._.X.X. 
+
+
+Trial A : id(5)
+Heading      : > > > > > > 
+Floor        : 0 1 2 3 4 5 
+Cage Loc     : _._._._.X._. 
+InCall       : _._._._.O.X. 
+ExCall UP    : _._.X._._._. 
+ExCall DOWN  : X._._._.X.X. 
+
+
+Trial A : id(6)
+Heading      : > > > > > > 
+Floor        : 0 1 2 3 4 5 
+Cage Loc     : _._._._._.X. 
+InCall       : _._._._._.O. 
+ExCall UP    : _._.X._.X._. 
+ExCall DOWN  : X._._._.X.X. 
+
+
+Trial A : id(7)
+Heading      : = = = = = = 
+Floor        : 0 1 2 3 4 5 
+Cage Loc     : _._._._._.X. 
+InCall       : _._._._._._. 
+ExCall UP    : _._.X._.X._. 
+ExCall DOWN  : X._._._.X.X. 
+
+
+Trial A : id(8)
+Heading      : = = = = = = 
+Floor        : 0 1 2 3 4 5 
+Cage Loc     : _._._._._.X. 
+InCall       : _._._._._._. 
+ExCall UP    : _._.X._.X._. 
+ExCall DOWN  : X._._._.X.X. 
+
+
+Trial A : id(9)
+Heading      : = = = = = = 
+Floor        : 0 1 2 3 4 5 
+Cage Loc     : _._._._._.X. 
+InCall       : _._._._._.O. 
+ExCall UP    : _._.X._.X._. 
+ExCall DOWN  : X.X._._.X.X. 
+
+
+Trial A : id(10)
+Heading      : = = = = = = 
+Floor        : 0 1 2 3 4 5 
+Cage Loc     : _._._._._.X. 
+InCall       : _.X._._._._. 
+ExCall UP    : _._.X._.X._. 
+ExCall DOWN  : X.X._._.X.X. 
+
+
+Trial A : id(11)
+Heading      : = = = = = = 
+Floor        : 0 1 2 3 4 5 
+Cage Loc     : _._._._._.X. 
+InCall       : _.X._._._.O. 
+ExCall UP    : X.X.X.X.X._. 
+ExCall DOWN  : X.X._._.X.X. 
+
+
+Trial A : id(12)
+Heading      : = = = = = = 
+Floor        : 0 1 2 3 4 5 
+Cage Loc     : _._._._._.X. 
+InCall       : _.X._._._._. 
+ExCall UP    : X.X.X.X.X._. 
+ExCall DOWN  : X.X._._.X.X. 
+
+
+Trial A : id(13)
+Heading      : = = = = = = 
+Floor        : 0 1 2 3 4 5 
+Cage Loc     : _._._._._.X. 
+InCall       : _.X.X._._._. 
+ExCall UP    : X.X.X.X.X._. 
+ExCall DOWN  : X.X._._.X.X. 
+
+
+Trial A : id(14)
+Heading      : = = = = = = 
+Floor        : 0 1 2 3 4 5 
+Cage Loc     : _._._._._.X. 
+InCall       : _.X.X._._._. 
+ExCall UP    : X.X.X.X.X._. 
+ExCall DOWN  : X.X._._.X.X. 
+
+
+Trial A : id(15)
+Heading      : = = = = = = 
+Floor        : 0 1 2 3 4 5 
+Cage Loc     : _._._._._.X. 
+InCall       : X.X.X._._._. 
+ExCall UP    : X.X.X.X.X._. 
+ExCall DOWN  : X.X._.X.X.X. 
+
+
+Trial A : id(16)
+Heading      : = = = = = = 
+Floor        : 0 1 2 3 4 5 
+Cage Loc     : _._._._._.X. 
+InCall       : X.X.X._._._. 
+ExCall UP    : X.X.X.X.X._. 
+ExCall DOWN  : X.X._.X.X.X. 
+
+
+Trial A : id(17)
+Heading      : = = = = = = 
+Floor        : 0 1 2 3 4 5 
+Cage Loc     : _._._._._.X. 
+InCall       : X.X.X._._._. 
+ExCall UP    : X.X.X.X.X._. 
+ExCall DOWN  : X.X._.X.X.X. 
+
+
+Trial A : id(18)
+Heading      : = = = = = = 
+Floor        : 0 1 2 3 4 5 
+Cage Loc     : _._._._._.X. 
+InCall       : X.X.X._._._. 
+ExCall UP    : X.X.X.X.X._. 
+ExCall DOWN  : X.X._.X.X.X. 
+
+
+Trial A : id(19)
+Heading      : = = = = = = 
+Floor        : 0 1 2 3 4 5 
+Cage Loc     : _._._._._.X. 
+InCall       : X.X.X._._._. 
+ExCall UP    : X.X.X.X.X._. 
+ExCall DOWN  : X.X.X.X.X.X. 
+
+
+Trial A : id(20)
+Heading      : = = = = = = 
+Floor        : 0 1 2 3 4 5 
+Cage Loc     : _._._._._.X. 
+InCall       : X.X.X._._._. 
+ExCall UP    : X.X.X.X.X._. 
+ExCall DOWN  : X.X.X.X.X.X. 
+
+
+Trial A+ : id(1)
+Heading      : = = = = = = 
+Floor        : 0 1 2 3 4 5 
+Cage Loc     : _._._._._.X. 
+InCall       : X.X.X._._._. 
+ExCall UP    : X.X.X.X.X._. 
+ExCall DOWN  : X.X.X.X.X.X. 
+
+
+Trial A+ : id(2)
+Heading      : = = = = = = 
+Floor        : 0 1 2 3 4 5 
+Cage Loc     : _._._._._.X. 
+InCall       : X.X.X._._._. 
+ExCall UP    : X.X.X.X.X._. 
+ExCall DOWN  : X.X.X.X.X.X. 
+
+
+Trial A+ : id(3)
+Heading      : = = = = = = 
+Floor        : 0 1 2 3 4 5 
+Cage Loc     : _._._._._.X. 
+InCall       : X.X.X._._._. 
+ExCall UP    : X.X.X.X.X._. 
+ExCall DOWN  : X.X.X.X.X.X. 
+
+
+Trial A+ : id(4)
+Heading      : = = = = = = 
+Floor        : 0 1 2 3 4 5 
+Cage Loc     : _._._._._.X. 
+InCall       : X.X.X._._._. 
+ExCall UP    : X.X.X.X.X._. 
+ExCall DOWN  : X.X.X.X.X.X. 
+
+
+Trial A+ : id(5)
+Heading      : = = = = = = 
+Floor        : 0 1 2 3 4 5 
+Cage Loc     : _._._._._.X. 
+InCall       : X.X.X._._._. 
+ExCall UP    : X.X.X.X.X._. 
+ExCall DOWN  : X.X.X.X.X.X. 
+
+
+Trial A+ : id(6)
+Heading      : = = = = = = 
+Floor        : 0 1 2 3 4 5 
+Cage Loc     : _._._._._.X. 
+InCall       : X.X.X._._._. 
+ExCall UP    : X.X.X.X.X._. 
+ExCall DOWN  : X.X.X.X.X.X. 
+
+
+Trial A+ : id(7)
+Heading      : = = = = = = 
+Floor        : 0 1 2 3 4 5 
+Cage Loc     : _._._._._.X. 
+InCall       : X.X.X._._._. 
+ExCall UP    : X.X.X.X.X._. 
+ExCall DOWN  : X.X.X.X.X.X. 
+
+
+Trial A+ : id(8)
+Heading      : = = = = = = 
+Floor        : 0 1 2 3 4 5 
+Cage Loc     : _._._._._.X. 
+InCall       : X.X.X._._._. 
+ExCall UP    : X.X.X.X.X._. 
+ExCall DOWN  : X.X.X.X.X.X. 
+
+
+Trial A+ : id(9)
+Heading      : = = = = = = 
+Floor        : 0 1 2 3 4 5 
+Cage Loc     : _._._._._.X. 
+InCall       : X.X.X._._._. 
+ExCall UP    : X.X.X.X.X._. 
+ExCall DOWN  : X.X.X.X.X.X. 
+
+
+Trial A+ : id(10)
+Heading      : = = = = = = 
+Floor        : 0 1 2 3 4 5 
+Cage Loc     : _._._._._.X. 
+InCall       : X.X.X._._._. 
+ExCall UP    : X.X.X.X.X._. 
+ExCall DOWN  : X.X.X.X.X.X. 
+
+
+Trial A+ : id(11)
+Heading      : = = = = = = 
+Floor        : 0 1 2 3 4 5 
+Cage Loc     : _._._._._.X. 
+InCall       : X.X.X._._._. 
+ExCall UP    : X.X.X.X.X._. 
+ExCall DOWN  : X.X.X.X.X.X. 
+
+
+Trial A+ : id(12)
+Heading      : = = = = = = 
+Floor        : 0 1 2 3 4 5 
+Cage Loc     : _._._._._.X. 
+InCall       : X.X.X._._._. 
+ExCall UP    : X.X.X.X.X._. 
+ExCall DOWN  : X.X.X.X.X.X. 
+
+
+Trial A+ : id(13)
+Heading      : = = = = = = 
+Floor        : 0 1 2 3 4 5 
+Cage Loc     : _._._._._.X. 
+InCall       : X.X.X._._._. 
+ExCall UP    : X.X.X.X.X._. 
+ExCall DOWN  : X.X.X.X.X.X. 
+
+
+Trial A+ : id(14)
+Heading      : = = = = = = 
+Floor        : 0 1 2 3 4 5 
+Cage Loc     : _._._._._.X. 
+InCall       : X.X.X._._._. 
+ExCall UP    : X.X.X.X.X._. 
+ExCall DOWN  : X.X.X.X.X.X. 
+
+
+Trial A+ : id(15)
+Heading      : = = = = = = 
+Floor        : 0 1 2 3 4 5 
+Cage Loc     : _._._._._.X. 
+InCall       : X.X.X._._._. 
+ExCall UP    : X.X.X.X.X._. 
+ExCall DOWN  : X.X.X.X.X.X. 
+
+
+Trial A+ : id(16)
+Heading      : = = = = = = 
+Floor        : 0 1 2 3 4 5 
+Cage Loc     : _._._._._.X. 
+InCall       : X.X.X._._._. 
+ExCall UP    : X.X.X.X.X._. 
+ExCall DOWN  : X.X.X.X.X.X. 
+
+
+Trial A+ : id(17)
+Heading      : = = = = = = 
+Floor        : 0 1 2 3 4 5 
+Cage Loc     : _._._._._.X. 
+InCall       : X.X.X._._._. 
+ExCall UP    : X.X.X.X.X._. 
+ExCall DOWN  : X.X.X.X.X.X. 
+
+
+Trial A+ : id(18)
+Heading      : = = = = = = 
+Floor        : 0 1 2 3 4 5 
+Cage Loc     : _._._._._.X. 
+InCall       : X.X.X._._._. 
+ExCall UP    : X.X.X.X.X._. 
+ExCall DOWN  : X.X.X.X.X.X. 
+
+
+Trial A+ : id(19)
+Heading      : = = = = = = 
+Floor        : 0 1 2 3 4 5 
+Cage Loc     : _._._._._.X. 
+InCall       : X.X.X._._._. 
+ExCall UP    : X.X.X.X.X._. 
+ExCall DOWN  : X.X.X.X.X.X. 
+
+
+Trial A+ : id(20)
+Heading      : = = = = = = 
+Floor        : 0 1 2 3 4 5 
+Cage Loc     : _._._._._.X. 
+InCall       : X.X.X._._._. 
+ExCall UP    : X.X.X.X.X._. 
+ExCall DOWN  : X.X.X.X.X.X. 
+
+Trial C : id(1)
+Heading      : = = = = = = 
+Floor        : 0 1 2 3 4 5 
+Cage Loc     : _._._._._.X. 
+InCall       : _._._._._.O. 
+ExCall UP    : _._._._._._. 
+ExCall DOWN  : _._._._._._. 
+
+Trial D : id(1)
+Heading      : = = = = = = 
+Floor        : 0 1 2 3 4 5 
+Cage Loc     : _._._._._.X. 
+InCall       : X._._._._.O. 
+ExCall UP    : _._._._._._. 
+ExCall DOWN  : _._._._._._. 
+
+>> 
