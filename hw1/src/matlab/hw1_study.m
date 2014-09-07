@@ -6,7 +6,7 @@ d = [0 0 0 0 0 0];
 f = 5;
 h = +1;
 i = [0 0 0 0 0 1];
-[h,f,u2,d2,i2] = service_calls(h,f,u,d,i);
+[h,f,u2,d2,i2] = handle_event(h,f,u,d,i);
 display_state('Trial C',1,h,f,u,u2,d,d2,i,i2);
 fprintf('\n')
  
@@ -17,7 +17,7 @@ f = 5;
 h = -1;
 i = [1 0 0 0 0 1];
 for ix = 1 : 8
-[h,f,u2,d2,i2] = service_calls(h,f,u,d,i);
+[h,f,u2,d2,i2] = handle_event(h,f,u,d,i);
 display_state('Trial D',ix,h,f,u,u2,d,d2,i,i2);
 u = u2;
 d = d2;
@@ -25,8 +25,24 @@ i = i2;
 fprintf('\n')
 end
 
+% A test making sure that once a heading is
+% set it does not change until all calls
+% on that heading have been serviced.
+f = 1;
+h = +1;
+i = [0 0 0 0 0 0];
+d = [0 1 0 0 0 1];
+for ix = 1 : 8
+[h,f,u2,d2,i2] = handle_event(h,f,u,d,i);
+display_state('Trial E',ix,h,f,u,u2,d,d2,i,i2);
+u = u2;
+d = d2;
+i = i2;
+fprintf('\n')
+end
 
-% This trial makes calls a a fairly high rate.
+
+% This trial makes calls at a fairly high rate.
 u = [0 0 0 0 0 0];
 d = [0 0 0 0 0 0];
 i = [0 0 0 0 0 0];
@@ -34,7 +50,7 @@ f = 0;
 h = 0; % down : negative, wait : 0; up : positive
 for ix = 1 : 20
     fprintf('\n')
-    [h,f,u2,d2,i2] = service_calls(h,f,u,d,i);
+    [h,f,u2,d2,i2] = handle_event(h,f,u,d,i);
     % display the post-service matrix
     display_state('Trial A',ix,h,f,u,u2,d,d2,i,i2)
     fprintf('\n')
@@ -48,7 +64,7 @@ end
 % This is a continuation of the previous trial.
 for ix = 1 : 20
     fprintf('\n')
-    [h,f,u2,d2,i2] = service_calls(h,f,u,d,i);
+    [h,f,u2,d2,i2] = handle_event(h,f,u,d,i);
     % display the post-service matrix
     display_state('Trial A+',ix,h,f,u,u2,d,d2,i,i2)
     fprintf('\n')
