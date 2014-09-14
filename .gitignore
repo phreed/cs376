@@ -17,3 +17,22 @@ hw1/*.slx
 
 hw1/src/matlab/hw_elevator.slx
 *.swp
+hw2/slprj/_sfprj/air_conditioner/_self/sfun/info/binfo.mat
+*.bat
+hw2/slprj/_sfprj/air_conditioner/_self/sfun/src/air_conditioner_sfun.c
+hw2/slprj/_sfprj/air_conditioner/_self/sfun/src/air_conditioner_sfun.exp
+hw2/slprj/_sfprj/air_conditioner/_self/sfun/src/air_conditioner_sfun.h
+*.mexw64
+*.lib
+hw2/slprj/_sfprj/air_conditioner/_self/sfun/src/air_conditioner_sfun.mak
+*.map
+*.manifest
+*.mol
+*.obj
+hw2/slprj/_sfprj/air_conditioner/_self/sfun/src/air_conditioner_sfun_debug_macros.h
+hw2/slprj/_sfprj/air_conditioner/_self/sfun/src/air_conditioner_sfun_registry.c
+hw2/slprj/_sfprj/air_conditioner/_self/sfun/src/c3_air_conditioner.c
+hw2/slprj/_sfprj/air_conditioner/_self/sfun/src/c3_air_conditioner.h
+hw2/slprj/_sfprj/air_conditioner/_self/sfun/src/multiword_types.h
+hw2/slprj/_sfprj/air_conditioner/_self/sfun/src/rtwtypes.h
+hw2/slprj/_sfprj/air_conditioner/_self/sfun/src/rtwtypeschksum.mat
