@@ -11,6 +11,9 @@ pom.xml.asc
 .lein-failures
 
 *.asv
-*.slx
+hw1/*.slx
 *.odt#
 *.autosave
+
+hw1/src/matlab/hw_elevator.slx
+*.swp
