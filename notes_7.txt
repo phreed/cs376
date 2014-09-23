@@ -1,0 +1,53 @@
+http://www.state-machine.com/downloads/index.php#QP
+
+Discrete Event Systems
+asynchronous model of time
+event driven systems
+SimEvents
+example ns-2 and ns-3
+
+conflict
+indeterminate
+enabled
+maximal-non-conflicting sets
+
+
+autonomously = insteran
+external events
+
+
+Include a description of the event generator mechanism.
+
+
+----------
+Internal transition function
+
+if no external event occurs, the systems will state in state s for ta(s)
+
+ta(s) is a real number in [0 inf]
+
+when e = ta(s) expires
+the systems outpus lambda(s)
+the syatem transitions to s' = delta_int(s)
+
+
+if ta(s) = 0 then
+no external event may intervene
+s is a transitory state
+
+if ta(s) = inf
+the system will stay in s forever (no lambda(s) can occur)
+s is a passive state
+
+-------------
+External transition function
+
+If an external event occurs while the system is in s but before the expiration time
+(id while the system is in (s,e) whith 0 <= e <= ta(s)) the systems changes to s' = delta_ext(s,e,x)
+
+(s,e) is called the total state because time modifies the state .
+
+
+
+------------
+sedemo_server_service_time
