@@ -18,3 +18,6 @@ hw1/*.slx
 hw1/src/matlab/hw_elevator.slx
 *.swp
 *.mexw64
+hw2/hw2_hvac_SettingControlChart.png
+hw2/hw2_hvac_SettingControlChart.eps
+hw2/hw2_hvac_SettingControlChart.psc

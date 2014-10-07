@@ -1,0 +1,19 @@
+intent-soft
+
+In the DEVS model the delta functions must be defined for any possible input in any possible state.
+
+In the storage model
+  delta_ext(["passive",sigma,store], e, x) => ("passive", sigma-e, x) can be ("passive", inf, x)
+In the generator the phase is uniary and therefore unnecessary
+
+
+Some errors in the processor model
+delta_ext( [phase sigma job] e x) =>
+    ["busy" processing-time x] {if phase is "idle" }
+    [phase sigma-e job]
+
+delta_int( [phase sigma job] ) => ["idle" inf empty]
+
+lambda ("busy" sigma job) => job
+ta([phase sigma job] ) = sigma
+
