@@ -14,156 +14,58 @@
 
 \maketitle
 
+This problem set is taken from \citep{IntroEmbedSys} chapter 2 : Problem 6.
+
 \section{Problem a}
-Using your favorite continuous-time modeling software 
-(such as Simulink, LabVIEW, or Ptolemy II), 
-construct a model of the helicopter control 
-system shown in Figure 2.4. 
-Choose some reasonable parameters and plot the 
-actual angular velocity as a function of time, 
-assuming that the desired angular velocity
-is zero, y(t) = 0, and that the
-top-rotor torque is non-zero, 
-T_t(t) = bu(t). 
-Give your plot for several values of K and
-discuss how the behavior varies with K.
-
-%% http://www.texample.net/tikz/examples/control-system-principles/
-%% http://tex.stackexchange.com/questions/166781/control-system-diagram
-%% http://tex.stackexchange.com/questions/127663/drawing-control-diagram-in-latex
-%% http://www.texample.net/tikz/examples/BER-measurement/
-
-\tikzstyle{block} = [draw, fill=blue!20, rectangle, 
-    minimum height=3em, minimum width=6em]
-\tikzstyle{sum} = [draw, fill=blue!20, circle, node distance=1cm]
-\tikzstyle{input} = [coordinate]
-\tikzstyle{output} = [coordinate]
-\tikzstyle{pinstyle} = [pin edge={to-,thin,black}]
-
-% The block diagram code is probably more verbose than necessary
-\begin{tikzpicture}[auto, node distance=2cm,>=latex']
-    % We start by placing the blocks
-    \node [input, name=input] {};
-    \node [sum, right of=input] (sum) {};
-    \node [block, right of=sum] (controller) {Controller};
-    \node [block, right of=controller, pin={[pinstyle]above:Disturbances},
-            node distance=3cm] (system) {System};
-    % We draw an edge between the controller and system block to 
-    % calculate the coordinate u. We need it to place the measurement block. 
-    \draw [->] (controller) -- node[name=u] {$u$} (system);
-    \node [output, right of=system] (output) {};
-    \node [block, below of=u] (measurements) {Measurements};
-
-    % Once the nodes are placed, connecting them is easy. 
-    \draw [draw,->] (input) -- node {$r$} (sum);
-    \draw [->] (sum) -- node {$e$} (controller);
-    \draw [->] (system) -- node [name=y] {$y$}(output);
-    \draw [->] (y) |- (measurements);
-    \draw [->] (measurements) -| node[pos=0.99] {$-$} 
-        node [near end] {$y_m$} (sum);
-\end{tikzpicture}
-
-%% http://www.texample.net/tikz/examples/noise-shaper/
-% Definition of blocks:
-\tikzset{%
-  block/.style    = {draw, thick, rectangle, minimum height = 3em,
-    minimum width = 3em},
-  sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-  input/.style    = {coordinate}, % Input
-  output/.style   = {coordinate} % Output
-}
-% Defining string as labels of certain blocks.
-\newcommand{\suma}{\Large$+$}
-\newcommand{\inte}{$\displaystyle \int$}
-\newcommand{\derv}{\huge$\frac{d}{dt}$}
-
-\begin{tikzpicture}[auto, thick, node distance=2cm, >=triangle 45]
-\draw
-	% Drawing the blocks of first filter :
-	node at (0,0)[right=-3mm]{\Large \textopenbullet}
-	node [input, name=input1] {} 
-	node [sum, right of=input1] (suma1) {\suma}
-	node [block, right of=suma1] (inte1) {\inte}
-         node at (6.8,0)[block] (Q1) {\Large $Q_1$}
-         node [block, below of=inte1] (ret1) {\Large$T_1$};
-    % Joining blocks. 
-    % Commands \draw with options like [->] must be written individually
-	\draw[->](input1) -- node {$X(Z)$}(suma1);
- 	\draw[->](suma1) -- node {} (inte1);
-	\draw[->](inte1) -- node {} (Q1);
-	\draw[->](ret1) -| node[near end]{} (suma1);
-	% Adder
-\draw
-	node at (5.4,-4) [sum, name=suma2] {\suma}
-    	% Second stage of filter 
-	node at  (1,-6) [sum, name=suma3] {\suma}
-	node [block, right of=suma3] (inte2) {\inte}
-	node [sum, right of=inte2] (suma4) {\suma}
-	node [block, right of=suma4] (inte3) {\inte}
-	node [block, right of=inte3] (Q2) {\Large$Q_2$}
-	node at (9,-8) [block, name=ret2] {\Large$T_2$}
-;
-	% Joining the blocks of second filter
-	\draw[->] (suma3) -- node {} (inte2);
-	\draw[->] (inte2) -- node {} (suma4);
-	\draw[->] (suma4) -- node {} (inte3);
-	\draw[->] (inte3) -- node {} (Q2);
-	\draw[->] (ret2) -| (suma3);
-	\draw[->] (ret2) -| (suma4);
-         % Third stage of filter:
-	% Defining nodes:
-\draw
-	node at (11.5, 0) [sum, name=suma5]{\suma}
-	node [output, right of=suma5]{}
-	node [block, below of=suma5] (deriv1){\derv}
-	node [output, right of=suma5] (sal2){}
-;
-	% Joining the blocks:
-	\draw[->] (suma2) -| node {}(suma3);
-	\draw[->] (Q1) -- (8,0) |- node {}(ret1);
-	\draw[->] (8,0) |- (suma2);
-	\draw[->] (5.4,0) -- (suma2);
-	\draw[->] (Q1) -- node {}(suma5);
-	\draw[->] (deriv1) -- node {}(suma5);
-	\draw[->] (Q2) -| node {}(deriv1);
-    	\draw[<->] (ret2) -| node {}(deriv1);
-    	\draw[->] (suma5) -- node {$Y(Z)$}(sal2);
-    	% Drawing nodes with \textbullet
-\draw
-	node at (8,0) {\textbullet} 
-	node at (8,-2){\textbullet}
-	node at (5.4,0){\textbullet}
-    	node at (5,-8){\textbullet}
-    	node at (11.5,-6){\textbullet}
-    	;
-	% Boxing and labelling noise shapers
-	\draw [color=gray,thick](-0.5,-3) rectangle (9,1);
-	\node at (-0.5,1) [above=5mm, right=0mm] {\textsc{first-order noise shaper}};
-	\draw [color=gray,thick](-0.5,-9) rectangle (12.5,-5);
-	\node at (-0.5,-9) [below=5mm, right=0mm] {\textsc{second-order noise shaper}};
-\end{tikzpicture}
+Using Simulink and its continuous-time modeling component,
+see a model of the helicopter control
+system shown in \label{fig:control_system}.
+Given some reasonable parameters the
+actual angular velocity, $\dot{\theta}$, is shown
+as a function of time.
+The initial and operating conditions
+specify that the desired angular velocity
+is zero, $\phi (t) = 0$, and that the
+top-rotor torque is non-zero,
+$T_{top}(t) = b u(t)$ moving to that
+value as a step function.
+Given are plots for several values of $K_p$.
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=1.7]{universe.jpg}
-\caption{The Universe}
-\label{fig:univerise}
+\includegraphics[scale=0.8]{controller_model.png}
+\caption{the helicopter models (SimuLink)}
+\label{fig:control_system}
 \end{figure}
 
+Once the $T_{top}$ has changed a new stable but
+typically non-zero $\dot{\theta}$ is approached asymtotically.
+Larger values of $K_p$ cause the convergence
+to happen more quickly and decrease the value of
+the stable $\dot{\theta}$.
+
+
 \section{Problem b}
-Modify the model of part (a) to replace the 
-Controller of Figure 2.4 
-(the simple scale-by-K actor) 
-with the alternative controller shown in Figure 2.6. 
+Modify the model of part (a) to replace the
+\em{P Controller} in the upper portion
+of Figure
+with the alternative controller shown in the lower
+half of Figure.
 This alternative controller
-is called a proportional-integrator (PI) controller. 
-It has two parameter K_1 and K_2.
-Experiment with the values of these parameters, 
+is called a proportional-integrator (PI) controller.
+It has two parameter $K_p$ and $K_i$.
+Experiment with the values of these parameters,
 give some plots of the behavior with the
-same inputs as in part (a), and discuss the 
-behavior of this controller in contrast 
+same inputs as in part (a), and discuss the
+behavior of this controller in contrast
 to the one of part (a).
-``I always thought something was fundamentally wrong with the universe'' \citep{adams1995hitchhiker}
+
+Once the $T_{top}$ has changed a new (typically non-zero)
+$\dot{\theta}$ is approached controlled-variable, $\Psi = 0$,
+is approached asymtotically by $\dot{\theta}$
+after $T_{top}$ changes.
+Larger values of $K_p$ cause the convergence
+to happen more quickly.
 
 \bibliographystyle{plain}
 \bibliography{references}
