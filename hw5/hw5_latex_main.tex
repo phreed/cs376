@@ -1,0 +1,124 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{CS376 : HW 5}
+\author{Fred Eisele }
+\date{22 October 2014}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\usepackage{mathtools}
+
+\begin{document}
+
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\alph{subsection}}
+
+\maketitle
+
+\tikzstyle{block} = [draw, fill=blue!20, rectangle,
+    minimum height=3em, minimum width=6em]
+
+\setcounter{section}{5}
+
+\section{Synchronous Data Flow}
+
+% The block diagram code is probably more verbose than necessary
+\begin{tikzpicture}[auto, node distance=4cm,>=latex']
+    % We start by placing the blocks
+    \node [block] (actorA) {Actor A};
+    \node [block, right of=actorA] (actorB) {Actor B};
+    \node [block, right of=actorB] (actorC) {Actor C};
+
+    % Once the nodes are placed, connecting them is easy.
+    \draw [->] (actorA) -- node {$1  \qquad   3$} (actorB);
+    \draw [->] (actorB) -- node [name=y] {$2  \qquad    3$}(actorC);
+\end{tikzpicture}
+
+The numbers adjacent to the ports indicate the number of tokens
+produced or consumed by the adjacent actor when it fires.
+
+\subsection{Balance equations and solution}
+
+The balance equations are \ldots
+
+\begin{align}
+\frac{q_A}{1} & = \frac{q_B}{3} \\
+\frac{q_B}{2} & = \frac{q_B}{3}
+\end{align}
+
+A sufficient condition for a least positive integer solution
+is to find the least common divisor which is
+is to have one of the $q$ values be $1$ in this case there
+is no such set of values so $2$ by mathematical induction.
+The least positive integer solution set of q values
+which conforms to the balance equations is:
+
+\begin{align}
+q_A & = 9  \\
+q_B & = 3 \\
+q_C & = 2
+\end{align}
+
+\subsection{A schedule}
+
+The rows i are flows and the colunms are actors.
+\begin{equation}
+\Gamma =
+\begin{bmatrix}
+1 & -3 & 0 \\
+0 & 2 & -3
+\end{bmatrix}
+\end{equation}
+
+The schedule is
+\begin{equation}
+A \prec A \prec A \prec B \prec A \prec A \prec A \prec B \prec C \prec A \prec A \prec A \prec B \prec A \prec A \prec A \prec B \prec C
+\end{equation}
+
+The minimum buffer sizes are:
+\begin{align}
+b_{AB} & = 3  \\
+b_{BC} & = 4
+\end{align}
+
+
+\section{Determine unbounded execution with bounded buffers}
+
+\subsection{first}
+
+\begin{tikzpicture}[auto, node distance=4cm,>=latex']
+    % We start by placing the blocks
+    \node [block] (actorB)  {Actor B};
+    \node [block, below left of=actorB] (actorA) {Actor A};
+    \node [block, below right of=actorB] (actorC) {Actor C};
+
+    % Once the nodes are placed, connecting them is easy.
+    \draw [->] (actorA) -- node {$1 \qquad 3$} (actorB);
+    \draw [->] (actorB) -- node [name=y] {$2 \qquad 3$}(actorC);
+    \draw [->] (actorA) -- node [name=y] {$1 \qquad 6$}(actorC);
+\end{tikzpicture}
+
+\subsection{second}
+
+
+\begin{tikzpicture}[auto, node distance=4cm,>=latex']
+    % We start by placing the blocks
+    \node [block] (actorB)  {Actor B};
+    \node [block, below left of=actorB] (actorA) {Actor A};
+    \node [block, below right of=actorB] (actorC) {Actor C};
+
+    % Once the nodes are placed, connecting them is easy.
+    \draw [->] (actorA) -- node {$1 \qquad 3$} (actorB);
+    \draw [->] (actorB) -- node [name=y] {$2 \qquad 3$}(actorC);
+    \draw [->] (actorA) -- node [name=y] {$1 \qquad n$}(actorC);
+\end{tikzpicture}
+
+Where $n \in \mathbb{I}_+$.
+
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}
