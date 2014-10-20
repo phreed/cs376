@@ -1,7 +1,7 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 
-\title{CS376 : HW 5}
+\title{CS376 : HW 5 : Synchronous Data Flow}
 \author{Fred Eisele }
 \date{22 October 2014}
 
@@ -16,6 +16,10 @@
 \renewcommand{\thesection}{\arabic{section}}
 \renewcommand{\thesubsection}{\alph{subsection}}
 
+\newcommand*\cv[3][]{
+    \begin{pmatrix}\ifx\relax#1\relax\else#1\\\fi#2\\#3\end{pmatrix}
+}
+
 \maketitle
 
 \tikzstyle{block} = [draw, fill=blue!20, rectangle,
@@ -23,7 +27,7 @@
 
 \setcounter{section}{5}
 
-\section{Synchronous Data Flow}
+\section{A Simply Constrained SDF}
 
 % The block diagram code is probably more verbose than necessary
 \begin{tikzpicture}[auto, node distance=4cm,>=latex']
@@ -45,8 +49,8 @@ produced or consumed by the adjacent actor when it fires.
 The balance equations are \ldots
 
 \begin{align}
-\frac{q_A}{1} & = \frac{q_B}{3} \\
-\frac{q_B}{2} & = \frac{q_B}{3}
+q_A \times 1 & = q_B \times 3 &: A \prec B ; \\
+q_B \times 2 & = q_C \times 3 &: B \prec C ;
 \end{align}
 
 A sufficient condition for a least positive integer solution
@@ -64,7 +68,7 @@ q_C & = 2
 
 \subsection{A schedule}
 
-The rows i are flows and the colunms are actors.
+The rows are flows and the colunms are actors.
 \begin{equation}
 \Gamma =
 \begin{bmatrix}
@@ -74,15 +78,21 @@ The rows i are flows and the colunms are actors.
 \end{equation}
 
 The schedule is
-\begin{equation}
-A \prec A \prec A \prec B \prec A \prec A \prec A \prec B \prec C \prec A \prec A \prec A \prec B \prec A \prec A \prec A \prec B \prec C
-\end{equation}
+\begin{align*}
+A & \prec A & \prec A & \prec B & \prec
+A & \prec A & \prec A & \prec B & \prec C & \prec
+A & \prec A & \prec A & \prec B & \prec C \\
+\cv{1}{0} & \cv{2}{0} & \cv{3}{0} & \cv{0}{2} &
+\cv{1}{2} & \cv{2}{2} & \cv{3}{2} & \cv{0}{4} & \cv{0}{1} &
+\cv{1}{1} & \cv{2}{1} & \cv{3}{1} & \cv{0}{3} & \cv{0}{0}
+\end{align*}
 
 The minimum buffer sizes are:
 \begin{align}
 b_{AB} & = 3  \\
 b_{BC} & = 4
 \end{align}
+The largest total number of buffers in use at any one time is $5$.
 
 
 \section{Determine unbounded execution with bounded buffers}
@@ -101,6 +111,23 @@ b_{BC} & = 4
     \draw [->] (actorA) -- node [name=y] {$1 \qquad 6$}(actorC);
 \end{tikzpicture}
 
+Similar to the previous problem but with an additional flow.
+\begin{equation}
+\Gamma =
+\begin{bmatrix}
+1 & -3 & 0 \\
+0 & 2 & -3 \\
+1 & 0 & -6
+\end{bmatrix}
+\end{equation}
+
+In order for there to be the potential for a solution the
+matrix must have rank $s - 1 = 3 - 1 = 2$ which can
+be shown by a zero determinate. The determinate is $-3$
+so no bounded solution exists for unbounded input.
+
+
+
 \subsection{second}
 
 
@@ -116,9 +143,29 @@ b_{BC} & = 4
     \draw [->] (actorA) -- node [name=y] {$1 \qquad n$}(actorC);
 \end{tikzpicture}
 
-Where $n \in \mathbb{I}_+$.
+In order for there to be the potential for a solution the
+matrix must have rank $s - 1 = 3 - 1 = 2$ which can
+be shown by a zero determinate.
 
+\begin{equation}
+\Gamma =
+\begin{bmatrix}
+1 & -3 & 0 \\
+0 & 2 & -3 \\
+1 & 0 & -n
+\end{bmatrix}
+\end{equation}
 
-\bibliographystyle{plain}
-\bibliography{references}
+The determinate is
+\begin{equation}
+| \Gamma | = - 2 \times n + 3 \times 3 = 9 - 2 n
+\end{equation}
+Finding those cases when the determinate is zero.
+\begin{align}
+0 & = 9 - 2 n \\
+n & = 9 / 2
+\end{align}
+
+As only integer values of $n$ are allowed then there is no solution.
+
 \end{document}
