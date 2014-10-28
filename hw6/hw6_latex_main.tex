@@ -13,7 +13,7 @@ Modeling and Simulation of Petri Nets}
 
 \maketitle
 
-\section{Introduction}
+\section{Introduction} \label{sec:intro}
 A tourist agency is setting up boat sightseeing tour
 where the boats are autonomous vehicles.
 You have been employed by the agency to design a control
@@ -28,7 +28,27 @@ as described in the following map.
 \label{fig:boat-tour}
 \end{figure}
 
-\section{Single Boat Indeterminate Path}
+\paragraph
+The channel, Figure \ref{fig:boat-tour},
+has been divided up into regions.
+In the Petri-nets, Figures \ref{fig:pn1}
+\ref{fig:pn2} and \ref{fig:pn3}, the places
+with names following the pattern $P#$
+represent these regions.
+The exception to this rule is the $P3A$ and $P3B$
+places which represent region #3.
+In that case the place represents the path
+through the region with $P3A$ representing the
+lower path and $P3B$ representing the upper path.
+The transitions are named based on the
+boundaries between the regions $T##$ where
+the first digit is the start region and the
+second digit the destination.
+A token in any of these places represents a boat.
+Tokens in other places represent permision (not boats).
+
+
+\section{Single Boat Indeterminate Path} \label{sec:1-indet}
 
 Model the problem of a single boat with a Petri net
 and describe in detail what each place and transition represents
@@ -40,11 +60,16 @@ and describe in detail what each place and transition represents
 \label{fig:pn1}
 \end{figure}
 
-\section{Single Boat Determinate Path}
+\paragraph
+This produces an indeterminate path as when
+there is a token in $P4$ both $T45$ and $T46$ are enabled.
 
-Assume that the tourist agency wants that the
-boat passes alternatively through sector 5 and 6.
-Modify the Petri net in (a) so that this constraint is satisfied.
+\section{Single Boat Determinate Path} \label{sec:1-det}
+
+The tourist agency wants the
+boat to pass alternatively through region 5 and 6.
+The Petri net in Section \ref{sec:1-indet} is
+modified so that this constraint is satisfied.
 
 \begin{figure}[h!]
 \centering
@@ -53,12 +78,19 @@ Modify the Petri net in (a) so that this constraint is satisfied.
 \label{fig:pn2}
 \end{figure}
 
+This is done by introducing a pair of places,
+$P->5$, $P->6$ and a token.
+The token acts as a permit for the boat
+to enter either $P5$ or $P6$
+depending on whether it is in place $P->5$ or $P->6$.
 
-\section{Two Boats Place Exclusion}
 
-Assume there are two boats.
-Specify a Petri net such that only one boat
-can access sector 3 at a time.
+\section{Two Boats Place Exclusion} \label{sec:2-excl}
+
+There are two boats.
+This Petri-net models a system like that of
+Section \ref{sec:1-det} but it additionally
+only allows one boat to access region 3 at a time.
 
 \begin{figure}[h!]
 \centering
@@ -66,5 +98,13 @@ can access sector 3 at a time.
 \caption{Two Boat with Exclusion Zone and Determinate Path}
 \label{fig:pn3}
 \end{figure}
+
+\paragraph
+This is done by introducing a place,
+$PX3$ and a token.
+The token acts as a permit for the boat
+to enter $P3A$ or $P3B$.
+Recall that these two places represent one region.
+For this reason the two places compete for the net token.
 
 \end{document}
