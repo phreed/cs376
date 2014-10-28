@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?><pnml>
 <net id="Net-One" type="P/T net">
 <token id="Default" enabled="true" red="0" green="0" blue="0"/>
-<labels x="161" y="108" width="257" height="61" border="true">
+<labels x="162" y="109" width="258" height="62" border="true">
 <text>A new place and token are added which acts as a "pass" to region #3.
 Only the boat holding the is allowed admission.</text>
 </labels>
@@ -12,7 +12,7 @@ Only the boat holding the is allowed admission.</text>
 <name>
 <value>P-&gt;5</value>
 <graphics>
-<offset x="24.615384615384624" y="37.692307692307686"/>
+<offset x="25.615384615384624" y="46.692307692307686"/>
 </graphics>
 </name>
 <initialMarking>
@@ -32,7 +32,7 @@ Only the boat holding the is allowed admission.</text>
 <name>
 <value>P-&gt;6</value>
 <graphics>
-<offset x="13.846153846153847" y="35.38461538461539"/>
+<offset x="23.846153846153847" y="49.38461538461539"/>
 </graphics>
 </name>
 <initialMarking>
@@ -92,7 +92,7 @@ Only the boat holding the is allowed admission.</text>
 <name>
 <value>P3A</value>
 <graphics>
-<offset x="21.153846153846164" y="37.3076923076923"/>
+<offset x="25.153846153846164" y="48.3076923076923"/>
 </graphics>
 </name>
 <initialMarking>
@@ -112,7 +112,7 @@ Only the boat holding the is allowed admission.</text>
 <name>
 <value>P3B</value>
 <graphics>
-<offset x="24.230769230769234" y="36.53846153846155"/>
+<offset x="17.230769230769234" y="39.53846153846155"/>
 </graphics>
 </name>
 <initialMarking>
@@ -192,7 +192,7 @@ Only the boat holding the is allowed admission.</text>
 <name>
 <value>P7</value>
 <graphics>
-<offset x="-5.0" y="35.0"/>
+<offset x="18.0" y="42.0"/>
 </graphics>
 </name>
 <initialMarking>
@@ -212,7 +212,7 @@ Only the boat holding the is allowed admission.</text>
 <name>
 <value>PX3</value>
 <graphics>
-<offset x="3.846153846153846" y="30.00000000000001"/>
+<offset x="11.846153846153847" y="48.000000000000014"/>
 </graphics>
 </name>
 <initialMarking>
@@ -258,7 +258,7 @@ Only the boat holding the is allowed admission.</text>
 <name>
 <value>T13</value>
 <graphics>
-<offset x="15.000000000000007" y="35.76923076923077"/>
+<offset x="9.000000000000007" y="46.76923076923077"/>
 </graphics>
 </name>
 <orientation>
@@ -362,7 +362,7 @@ Only the boat holding the is allowed admission.</text>
 <name>
 <value>T46</value>
 <graphics>
-<offset x="-4.230769230769231" y="26.53846153846154"/>
+<offset x="56.769230769230774" y="26.53846153846154"/>
 </graphics>
 </name>
 <orientation>
@@ -388,7 +388,7 @@ Only the boat holding the is allowed admission.</text>
 <name>
 <value>T57</value>
 <graphics>
-<offset x="-2.6923076923076925" y="29.615384615384624"/>
+<offset x="-5.692307692307693" y="31.615384615384627"/>
 </graphics>
 </name>
 <orientation>
@@ -414,7 +414,7 @@ Only the boat holding the is allowed admission.</text>
 <name>
 <value>T67</value>
 <graphics>
-<offset x="-1.1538461538461542" y="28.076923076923087"/>
+<offset x="46.84615384615385" y="37.07692307692309"/>
 </graphics>
 </name>
 <orientation>
@@ -469,7 +469,7 @@ Only the boat holding the is allowed admission.</text>
 <value>false</value>
 </tagged>
 <arcpath id="000" x="522" y="281" curvePoint="false"/>
-<arcpath id="001" x="476" y="299" curvePoint="true"/>
+<arcpath id="001" x="477" y="300" curvePoint="true"/>
 <arcpath id="002" x="466" y="322" curvePoint="false"/>
 <type value="normal"/>
 </arc>
@@ -482,8 +482,8 @@ Only the boat holding the is allowed admission.</text>
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="551" y="358" curvePoint="false"/>
-<arcpath id="001" x="599" y="349" curvePoint="true"/>
+<arcpath id="000" x="551" y="359" curvePoint="false"/>
+<arcpath id="001" x="600" y="350" curvePoint="true"/>
 <arcpath id="002" x="621" y="331" curvePoint="false"/>
 <type value="normal"/>
 </arc>
@@ -548,8 +548,8 @@ Only the boat holding the is allowed admission.</text>
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="522" y="413" curvePoint="false"/>
-<arcpath id="001" x="465" y="375" curvePoint="true"/>
+<arcpath id="000" x="522" y="414" curvePoint="false"/>
+<arcpath id="001" x="466" y="376" curvePoint="true"/>
 <arcpath id="002" x="456" y="331" curvePoint="false"/>
 <type value="normal"/>
 </arc>
@@ -563,7 +563,7 @@ Only the boat holding the is allowed admission.</text>
 <value>false</value>
 </tagged>
 <arcpath id="000" x="551" y="415" curvePoint="false"/>
-<arcpath id="001" x="616" y="383" curvePoint="true"/>
+<arcpath id="001" x="617" y="384" curvePoint="true"/>
 <arcpath id="002" x="631" y="332" curvePoint="false"/>
 <type value="normal"/>
 </arc>
@@ -603,8 +603,8 @@ Only the boat holding the is allowed admission.</text>
 <value>false</value>
 </tagged>
 <arcpath id="000" x="522" y="148" curvePoint="false"/>
-<arcpath id="001" x="464" y="160" curvePoint="true"/>
-<arcpath id="002" x="417" y="183" curvePoint="true"/>
+<arcpath id="001" x="465" y="161" curvePoint="true"/>
+<arcpath id="002" x="418" y="184" curvePoint="true"/>
 <arcpath id="003" x="377" y="187" curvePoint="false"/>
 <type value="normal"/>
 </arc>
@@ -618,7 +618,7 @@ Only the boat holding the is allowed admission.</text>
 <value>false</value>
 </tagged>
 <arcpath id="000" x="282" y="282" curvePoint="false"/>
-<arcpath id="001" x="207" y="309" curvePoint="true"/>
+<arcpath id="001" x="208" y="310" curvePoint="true"/>
 <arcpath id="002" x="232" y="337" curvePoint="false"/>
 <type value="normal"/>
 </arc>
@@ -632,7 +632,7 @@ Only the boat holding the is allowed admission.</text>
 <value>false</value>
 </tagged>
 <arcpath id="000" x="311" y="278" curvePoint="false"/>
-<arcpath id="001" x="399" y="223" curvePoint="true"/>
+<arcpath id="001" x="400" y="224" curvePoint="true"/>
 <arcpath id="002" x="376" y="197" curvePoint="false"/>
 <type value="normal"/>
 </arc>
@@ -672,7 +672,7 @@ Only the boat holding the is allowed admission.</text>
 <value>false</value>
 </tagged>
 <arcpath id="000" x="232" y="217" curvePoint="false"/>
-<arcpath id="001" x="161" y="208" curvePoint="false"/>
+<arcpath id="001" x="161" y="209" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="T31 to PX3" source="T31" target="PX3">
@@ -685,7 +685,7 @@ Only the boat holding the is allowed admission.</text>
 <value>false</value>
 </tagged>
 <arcpath id="000" x="231" y="227" curvePoint="false"/>
-<arcpath id="001" x="197" y="262" curvePoint="true"/>
+<arcpath id="001" x="198" y="263" curvePoint="true"/>
 <arcpath id="002" x="282" y="279" curvePoint="false"/>
 <type value="normal"/>
 </arc>
@@ -699,7 +699,7 @@ Only the boat holding the is allowed admission.</text>
 <value>false</value>
 </tagged>
 <arcpath id="000" x="376" y="362" curvePoint="false"/>
-<arcpath id="001" x="434" y="415" curvePoint="true"/>
+<arcpath id="001" x="435" y="416" curvePoint="true"/>
 <arcpath id="002" x="522" y="416" curvePoint="false"/>
 <type value="normal"/>
 </arc>
@@ -713,7 +713,7 @@ Only the boat holding the is allowed admission.</text>
 <value>false</value>
 </tagged>
 <arcpath id="000" x="377" y="352" curvePoint="false"/>
-<arcpath id="001" x="411" y="316" curvePoint="true"/>
+<arcpath id="001" x="412" y="317" curvePoint="true"/>
 <arcpath id="002" x="311" y="286" curvePoint="false"/>
 <type value="normal"/>
 </arc>
@@ -727,7 +727,7 @@ Only the boat holding the is allowed admission.</text>
 <value>false</value>
 </tagged>
 <arcpath id="000" x="466" y="332" curvePoint="false"/>
-<arcpath id="001" x="483" y="348" curvePoint="true"/>
+<arcpath id="001" x="484" y="349" curvePoint="true"/>
 <arcpath id="002" x="522" y="354" curvePoint="false"/>
 <type value="normal"/>
 </arc>
@@ -754,7 +754,7 @@ Only the boat holding the is allowed admission.</text>
 <value>false</value>
 </tagged>
 <arcpath id="000" x="621" y="321" curvePoint="false"/>
-<arcpath id="001" x="588" y="293" curvePoint="true"/>
+<arcpath id="001" x="589" y="294" curvePoint="true"/>
 <arcpath id="002" x="551" y="285" curvePoint="false"/>
 <type value="normal"/>
 </arc>

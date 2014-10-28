@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?><pnml>
 <net id="Net-One" type="P/T net">
 <token id="Default" enabled="true" red="0" green="0" blue="0"/>
-<labels x="146" y="108" width="272" height="61" border="true">
+<labels x="147" y="109" width="273" height="62" border="true">
 <text>A new place and token have been added.
 These cause boats leaving region #4 to alternately take T45 and T46.</text>
 </labels>
@@ -12,7 +12,7 @@ These cause boats leaving region #4 to alternately take T45 and T46.</text>
 <name>
 <value>P-&gt;5</value>
 <graphics>
-<offset x="24.615384615384624" y="37.692307692307686"/>
+<offset x="30.615384615384624" y="44.692307692307686"/>
 </graphics>
 </name>
 <initialMarking>
@@ -32,7 +32,7 @@ These cause boats leaving region #4 to alternately take T45 and T46.</text>
 <name>
 <value>P-&gt;6</value>
 <graphics>
-<offset x="13.846153846153847" y="35.38461538461539"/>
+<offset x="31.846153846153847" y="46.38461538461539"/>
 </graphics>
 </name>
 <initialMarking>
@@ -72,7 +72,7 @@ These cause boats leaving region #4 to alternately take T45 and T46.</text>
 <name>
 <value>P2</value>
 <graphics>
-<offset x="-3.4615384615384617" y="25.769230769230766"/>
+<offset x="3.53846153846154" y="32.76923076923077"/>
 </graphics>
 </name>
 <initialMarking>
@@ -92,7 +92,7 @@ These cause boats leaving region #4 to alternately take T45 and T46.</text>
 <name>
 <value>P3A</value>
 <graphics>
-<offset x="21.153846153846164" y="37.3076923076923"/>
+<offset x="26.153846153846164" y="42.3076923076923"/>
 </graphics>
 </name>
 <initialMarking>
@@ -112,7 +112,7 @@ These cause boats leaving region #4 to alternately take T45 and T46.</text>
 <name>
 <value>P3B</value>
 <graphics>
-<offset x="24.230769230769234" y="36.53846153846155"/>
+<offset x="30.230769230769234" y="44.53846153846155"/>
 </graphics>
 </name>
 <initialMarking>
@@ -192,7 +192,7 @@ These cause boats leaving region #4 to alternately take T45 and T46.</text>
 <name>
 <value>P7</value>
 <graphics>
-<offset x="-5.0" y="35.0"/>
+<offset x="44.0" y="16.0"/>
 </graphics>
 </name>
 <initialMarking>
@@ -449,7 +449,7 @@ These cause boats leaving region #4 to alternately take T45 and T46.</text>
 <value>false</value>
 </tagged>
 <arcpath id="000" x="522" y="281" curvePoint="false"/>
-<arcpath id="001" x="476" y="299" curvePoint="true"/>
+<arcpath id="001" x="477" y="300" curvePoint="true"/>
 <arcpath id="002" x="466" y="322" curvePoint="false"/>
 <type value="normal"/>
 </arc>
@@ -462,8 +462,8 @@ These cause boats leaving region #4 to alternately take T45 and T46.</text>
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="551" y="358" curvePoint="false"/>
-<arcpath id="001" x="599" y="349" curvePoint="true"/>
+<arcpath id="000" x="551" y="359" curvePoint="false"/>
+<arcpath id="001" x="600" y="350" curvePoint="true"/>
 <arcpath id="002" x="621" y="331" curvePoint="false"/>
 <type value="normal"/>
 </arc>
@@ -528,8 +528,8 @@ These cause boats leaving region #4 to alternately take T45 and T46.</text>
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="522" y="413" curvePoint="false"/>
-<arcpath id="001" x="465" y="375" curvePoint="true"/>
+<arcpath id="000" x="522" y="414" curvePoint="false"/>
+<arcpath id="001" x="466" y="376" curvePoint="true"/>
 <arcpath id="002" x="456" y="331" curvePoint="false"/>
 <type value="normal"/>
 </arc>
@@ -543,7 +543,7 @@ These cause boats leaving region #4 to alternately take T45 and T46.</text>
 <value>false</value>
 </tagged>
 <arcpath id="000" x="551" y="415" curvePoint="false"/>
-<arcpath id="001" x="616" y="383" curvePoint="true"/>
+<arcpath id="001" x="617" y="384" curvePoint="true"/>
 <arcpath id="002" x="631" y="332" curvePoint="false"/>
 <type value="normal"/>
 </arc>
@@ -583,8 +583,8 @@ These cause boats leaving region #4 to alternately take T45 and T46.</text>
 <value>false</value>
 </tagged>
 <arcpath id="000" x="522" y="131" curvePoint="false"/>
-<arcpath id="001" x="449" y="145" curvePoint="true"/>
-<arcpath id="002" x="402" y="198" curvePoint="true"/>
+<arcpath id="001" x="450" y="146" curvePoint="true"/>
+<arcpath id="002" x="403" y="199" curvePoint="true"/>
 <arcpath id="003" x="376" y="192" curvePoint="false"/>
 <type value="normal"/>
 </arc>
@@ -637,7 +637,7 @@ These cause boats leaving region #4 to alternately take T45 and T46.</text>
 <value>false</value>
 </tagged>
 <arcpath id="000" x="376" y="342" curvePoint="false"/>
-<arcpath id="001" x="434" y="415" curvePoint="true"/>
+<arcpath id="001" x="435" y="416" curvePoint="true"/>
 <arcpath id="002" x="522" y="416" curvePoint="false"/>
 <type value="normal"/>
 </arc>
@@ -651,7 +651,7 @@ These cause boats leaving region #4 to alternately take T45 and T46.</text>
 <value>false</value>
 </tagged>
 <arcpath id="000" x="466" y="332" curvePoint="false"/>
-<arcpath id="001" x="483" y="348" curvePoint="true"/>
+<arcpath id="001" x="484" y="349" curvePoint="true"/>
 <arcpath id="002" x="522" y="354" curvePoint="false"/>
 <type value="normal"/>
 </arc>
@@ -678,7 +678,7 @@ These cause boats leaving region #4 to alternately take T45 and T46.</text>
 <value>false</value>
 </tagged>
 <arcpath id="000" x="621" y="321" curvePoint="false"/>
-<arcpath id="001" x="588" y="293" curvePoint="true"/>
+<arcpath id="001" x="589" y="294" curvePoint="true"/>
 <arcpath id="002" x="551" y="285" curvePoint="false"/>
 <type value="normal"/>
 </arc>
