@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1"?><pnml>
 <net id="Net-One" type="P/T net">
 <token id="Default" enabled="false" red="0" green="0" blue="0"/>
-<labels x="143" y="105" width="239" height="72" border="true">
-<text>Each place represents a region
-Each transition represents crossing a boundary between regions.</text>
+<labels x="144" y="106" width="240" height="52" border="true">
+<text>A new place and token have been added.
+These cause boats leaving region #4 to alternately take T4-5 and T4-6.</text>
 </labels>
 <place id="P-&gt;5">
 <graphics>
-<position x="521.5384615384615" y="274.61538461538464"/>
+<position x="525.0" y="270.0"/>
 </graphics>
 <name>
 <value>P-&gt;5</value>
@@ -27,7 +27,7 @@ Each transition represents crossing a boundary between regions.</text>
 </place>
 <place id="P-&gt;6">
 <graphics>
-<position x="521.5384615384615" y="346.15384615384613"/>
+<position x="525.0" y="345.0"/>
 </graphics>
 <name>
 <value>P-&gt;6</value>
@@ -147,7 +147,7 @@ Each transition represents crossing a boundary between regions.</text>
 </place>
 <place id="P5">
 <graphics>
-<position x="441.9230769230769" y="246.9230769230769"/>
+<position x="450.0" y="255.0"/>
 </graphics>
 <name>
 <value>P5</value>
@@ -167,7 +167,7 @@ Each transition represents crossing a boundary between regions.</text>
 </place>
 <place id="P6">
 <graphics>
-<position x="608.0769230769231" y="246.9230769230769"/>
+<position x="615.0" y="255.0"/>
 </graphics>
 <name>
 <value>P6</value>
@@ -311,7 +311,7 @@ Each transition represents crossing a boundary between regions.</text>
 </transition>
 <transition id="T4-5">
 <graphics>
-<position x="441.9230769230769" y="306.9230769230769"/>
+<position x="450.0" y="315.0"/>
 </graphics>
 <name>
 <value>T4-5</value>
@@ -337,7 +337,7 @@ Each transition represents crossing a boundary between regions.</text>
 </transition>
 <transition id="T4-6">
 <graphics>
-<position x="608.0769230769231" y="306.9230769230769"/>
+<position x="615.0" y="315.0"/>
 </graphics>
 <name>
 <value>T4-6</value>
@@ -363,7 +363,7 @@ Each transition represents crossing a boundary between regions.</text>
 </transition>
 <transition id="T5-7">
 <graphics>
-<position x="441.9230769230769" y="195.0"/>
+<position x="450.0" y="195.0"/>
 </graphics>
 <name>
 <value>T5-7</value>
@@ -389,7 +389,7 @@ Each transition represents crossing a boundary between regions.</text>
 </transition>
 <transition id="T6-7">
 <graphics>
-<position x="608.0769230769231" y="195.0"/>
+<position x="615.0" y="195.0"/>
 </graphics>
 <name>
 <value>T6-7</value>
@@ -415,7 +415,7 @@ Each transition represents crossing a boundary between regions.</text>
 </transition>
 <transition id="T7-3">
 <graphics>
-<position x="360.0" y="183.46153846153842"/>
+<position x="360.0" y="180.0"/>
 </graphics>
 <name>
 <value>T7-3</value>
@@ -448,9 +448,9 @@ Each transition represents crossing a boundary between regions.</text>
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="517" y="284" curvePoint="false"/>
-<arcpath id="001" x="473" y="296" curvePoint="true"/>
-<arcpath id="002" x="457" y="313" curvePoint="false"/>
+<arcpath id="000" x="522" y="280" curvePoint="false"/>
+<arcpath id="001" x="474" y="297" curvePoint="true"/>
+<arcpath id="002" x="466" y="322" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="P-&gt;6 to T4-6" source="P-&gt;6" target="T4-6">
@@ -462,9 +462,9 @@ Each transition represents crossing a boundary between regions.</text>
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="547" y="358" curvePoint="false"/>
-<arcpath id="001" x="596" y="346" curvePoint="true"/>
-<arcpath id="002" x="613" y="323" curvePoint="false"/>
+<arcpath id="000" x="551" y="356" curvePoint="false"/>
+<arcpath id="001" x="597" y="347" curvePoint="true"/>
+<arcpath id="002" x="621" y="331" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="P1 TO T1-2" source="P1" target="T1-2">
@@ -476,8 +476,8 @@ Each transition represents crossing a boundary between regions.</text>
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="153" y="233" curvePoint="false"/>
-<arcpath id="001" x="130" y="276" curvePoint="false"/>
+<arcpath id="000" x="154" y="235" curvePoint="false"/>
+<arcpath id="001" x="131" y="276" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="P2 TO T1-3" source="P2" target="T1-3">
@@ -489,8 +489,8 @@ Each transition represents crossing a boundary between regions.</text>
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="176" y="341" curvePoint="false"/>
-<arcpath id="001" x="230" y="341" curvePoint="false"/>
+<arcpath id="000" x="176" y="342" curvePoint="false"/>
+<arcpath id="001" x="231" y="342" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="P3B TO T3-1" source="P3B" target="T3-1">
@@ -502,8 +502,8 @@ Each transition represents crossing a boundary between regions.</text>
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="281" y="232" curvePoint="false"/>
-<arcpath id="001" x="240" y="221" curvePoint="false"/>
+<arcpath id="000" x="282" y="233" curvePoint="false"/>
+<arcpath id="001" x="241" y="222" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="P3 TO T3-4" source="P3A" target="T3-4">
@@ -515,8 +515,8 @@ Each transition represents crossing a boundary between regions.</text>
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="310" y="329" curvePoint="false"/>
-<arcpath id="001" x="366" y="341" curvePoint="false"/>
+<arcpath id="000" x="311" y="330" curvePoint="false"/>
+<arcpath id="001" x="366" y="342" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="P4 TO T4-5" source="P4" target="T4-5">
@@ -528,9 +528,9 @@ Each transition represents crossing a boundary between regions.</text>
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="521" y="413" curvePoint="false"/>
-<arcpath id="001" x="462" y="372" curvePoint="true"/>
-<arcpath id="002" x="447" y="323" curvePoint="false"/>
+<arcpath id="000" x="522" y="413" curvePoint="false"/>
+<arcpath id="001" x="463" y="373" curvePoint="true"/>
+<arcpath id="002" x="456" y="331" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="P4 TO T4-6" source="P4" target="T4-6">
@@ -542,9 +542,9 @@ Each transition represents crossing a boundary between regions.</text>
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="550" y="413" curvePoint="false"/>
-<arcpath id="001" x="613" y="380" curvePoint="true"/>
-<arcpath id="002" x="623" y="323" curvePoint="false"/>
+<arcpath id="000" x="551" y="414" curvePoint="false"/>
+<arcpath id="001" x="614" y="381" curvePoint="true"/>
+<arcpath id="002" x="631" y="332" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="P5 TO T5-7" source="P5" target="T5-7">
@@ -556,8 +556,8 @@ Each transition represents crossing a boundary between regions.</text>
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="453" y="243" curvePoint="false"/>
-<arcpath id="001" x="453" y="210" curvePoint="false"/>
+<arcpath id="000" x="461" y="252" curvePoint="false"/>
+<arcpath id="001" x="461" y="211" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="P6 TO T6-7" source="P6" target="T6-7">
@@ -569,8 +569,8 @@ Each transition represents crossing a boundary between regions.</text>
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="619" y="243" curvePoint="false"/>
-<arcpath id="001" x="619" y="210" curvePoint="false"/>
+<arcpath id="000" x="626" y="252" curvePoint="false"/>
+<arcpath id="001" x="626" y="211" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="P7 TO T7-3" source="P7" target="T7-3">
@@ -582,10 +582,10 @@ Each transition represents crossing a boundary between regions.</text>
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="521" y="130" curvePoint="false"/>
-<arcpath id="001" x="446" y="142" curvePoint="true"/>
-<arcpath id="002" x="399" y="195" curvePoint="true"/>
-<arcpath id="003" x="376" y="194" curvePoint="false"/>
+<arcpath id="000" x="522" y="131" curvePoint="false"/>
+<arcpath id="001" x="447" y="143" curvePoint="true"/>
+<arcpath id="002" x="400" y="196" curvePoint="true"/>
+<arcpath id="003" x="376" y="192" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="T1-2 TO P2" source="T1-2" target="P2">
@@ -597,8 +597,8 @@ Each transition represents crossing a boundary between regions.</text>
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="130" y="286" curvePoint="false"/>
-<arcpath id="001" x="153" y="327" curvePoint="false"/>
+<arcpath id="000" x="131" y="286" curvePoint="false"/>
+<arcpath id="001" x="154" y="328" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="T1-3 TO P3" source="T1-3" target="P3A">
@@ -610,8 +610,8 @@ Each transition represents crossing a boundary between regions.</text>
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="240" y="341" curvePoint="false"/>
-<arcpath id="001" x="281" y="330" curvePoint="false"/>
+<arcpath id="000" x="241" y="342" curvePoint="false"/>
+<arcpath id="001" x="282" y="331" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="T3-1 TO P1" source="T3-1" target="P1">
@@ -623,8 +623,8 @@ Each transition represents crossing a boundary between regions.</text>
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="230" y="221" curvePoint="false"/>
-<arcpath id="001" x="176" y="221" curvePoint="false"/>
+<arcpath id="000" x="231" y="222" curvePoint="false"/>
+<arcpath id="001" x="176" y="222" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="T3-4 TO P4" source="T3-4" target="P4">
@@ -636,9 +636,9 @@ Each transition represents crossing a boundary between regions.</text>
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="376" y="341" curvePoint="false"/>
-<arcpath id="001" x="431" y="412" curvePoint="true"/>
-<arcpath id="002" x="521" y="415" curvePoint="false"/>
+<arcpath id="000" x="376" y="342" curvePoint="false"/>
+<arcpath id="001" x="432" y="413" curvePoint="true"/>
+<arcpath id="002" x="522" y="416" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="T4-5 to P-&gt;6" source="T4-5" target="P-&gt;6">
@@ -650,9 +650,9 @@ Each transition represents crossing a boundary between regions.</text>
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="457" y="323" curvePoint="false"/>
-<arcpath id="001" x="480" y="345" curvePoint="true"/>
-<arcpath id="002" x="518" y="353" curvePoint="false"/>
+<arcpath id="000" x="466" y="332" curvePoint="false"/>
+<arcpath id="001" x="481" y="346" curvePoint="true"/>
+<arcpath id="002" x="522" y="354" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="T4-5 TO P5" source="T4-5" target="P5">
@@ -664,8 +664,8 @@ Each transition represents crossing a boundary between regions.</text>
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="447" y="313" curvePoint="false"/>
-<arcpath id="001" x="451" y="273" curvePoint="false"/>
+<arcpath id="000" x="456" y="321" curvePoint="false"/>
+<arcpath id="001" x="460" y="281" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="T4-6 to P-&gt;5" source="T4-6" target="P-&gt;5">
@@ -677,9 +677,9 @@ Each transition represents crossing a boundary between regions.</text>
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="613" y="313" curvePoint="false"/>
-<arcpath id="001" x="585" y="290" curvePoint="true"/>
-<arcpath id="002" x="547" y="286" curvePoint="false"/>
+<arcpath id="000" x="621" y="321" curvePoint="false"/>
+<arcpath id="001" x="586" y="291" curvePoint="true"/>
+<arcpath id="002" x="551" y="284" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="T4-6 TO P6" source="T4-6" target="P6">
@@ -691,8 +691,8 @@ Each transition represents crossing a boundary between regions.</text>
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="623" y="313" curvePoint="false"/>
-<arcpath id="001" x="620" y="273" curvePoint="false"/>
+<arcpath id="000" x="631" y="322" curvePoint="false"/>
+<arcpath id="001" x="628" y="281" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="T5-7 TO P7" source="T5-7" target="P7">
@@ -704,8 +704,8 @@ Each transition represents crossing a boundary between regions.</text>
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="452" y="200" curvePoint="false"/>
-<arcpath id="001" x="524" y="140" curvePoint="false"/>
+<arcpath id="000" x="461" y="201" curvePoint="false"/>
+<arcpath id="001" x="525" y="142" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="T6-7 TO P7" source="T6-7" target="P7">
@@ -717,8 +717,8 @@ Each transition represents crossing a boundary between regions.</text>
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="618" y="200" curvePoint="false"/>
-<arcpath id="001" x="547" y="140" curvePoint="false"/>
+<arcpath id="000" x="626" y="201" curvePoint="false"/>
+<arcpath id="001" x="548" y="141" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="T7-3 TO P3B" source="T7-3" target="P3B">
@@ -730,7 +730,7 @@ Each transition represents crossing a boundary between regions.</text>
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="366" y="195" curvePoint="false"/>
+<arcpath id="000" x="366" y="192" curvePoint="false"/>
 <arcpath id="001" x="309" y="228" curvePoint="false"/>
 <type value="normal"/>
 </arc>
