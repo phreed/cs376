@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?><pnml>
 <net id="Net-One" type="P/T net">
-<token id="Default" enabled="false" red="0" green="0" blue="0"/>
-<labels x="144" y="106" width="240" height="73" border="true">
+<token id="Default" enabled="true" red="0" green="0" blue="0"/>
+<labels x="145" y="107" width="241" height="74" border="true">
 <text>Each place represents a region
 Each transition represents crossing a boundary between regions.</text>
 </labels>
@@ -191,12 +191,12 @@ Each transition represents crossing a boundary between regions.</text>
 <value>1</value>
 </priority>
 </transition>
-<transition id="T13">
+<transition id="T23">
 <graphics>
 <position x="225.0" y="330.0"/>
 </graphics>
 <name>
-<value>T13</value>
+<value>T23</value>
 <graphics>
 <offset x="-5.0" y="35.0"/>
 </graphics>
@@ -412,7 +412,7 @@ Each transition represents crossing a boundary between regions.</text>
 <arcpath id="001" x="131" y="276" curvePoint="false"/>
 <type value="normal"/>
 </arc>
-<arc id="P2 TO T13" source="P2" target="T13">
+<arc id="P2 TO T23" source="P2" target="T23">
 <graphics/>
 <inscription>
 <value>Default,1</value>
@@ -529,7 +529,7 @@ Each transition represents crossing a boundary between regions.</text>
 <arcpath id="001" x="154" y="328" curvePoint="false"/>
 <type value="normal"/>
 </arc>
-<arc id="T13 TO P3" source="T13" target="P3A">
+<arc id="T23 TO P3" source="T23" target="P3A">
 <graphics/>
 <inscription>
 <value>Default,1</value>

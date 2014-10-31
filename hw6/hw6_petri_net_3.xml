@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?><pnml>
 <net id="Net-One" type="P/T net">
 <token id="Default" enabled="true" red="0" green="0" blue="0"/>
-<labels x="162" y="109" width="258" height="62" border="true">
+<labels x="163" y="110" width="259" height="63" border="true">
 <text>A new place and token are added which acts as a "pass" to region #3.
 Only the boat holding the is allowed admission.</text>
 </labels>
@@ -251,12 +251,12 @@ Only the boat holding the is allowed admission.</text>
 <value>1</value>
 </priority>
 </transition>
-<transition id="T13">
+<transition id="T23">
 <graphics>
 <position x="225.0" y="330.0"/>
 </graphics>
 <name>
-<value>T13</value>
+<value>T23</value>
 <graphics>
 <offset x="9.000000000000007" y="46.76923076923077"/>
 </graphics>
@@ -468,8 +468,8 @@ Only the boat holding the is allowed admission.</text>
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="522" y="281" curvePoint="false"/>
-<arcpath id="001" x="477" y="300" curvePoint="true"/>
+<arcpath id="000" x="522" y="282" curvePoint="false"/>
+<arcpath id="001" x="478" y="301" curvePoint="true"/>
 <arcpath id="002" x="466" y="322" curvePoint="false"/>
 <type value="normal"/>
 </arc>
@@ -483,7 +483,7 @@ Only the boat holding the is allowed admission.</text>
 <value>false</value>
 </tagged>
 <arcpath id="000" x="551" y="359" curvePoint="false"/>
-<arcpath id="001" x="600" y="350" curvePoint="true"/>
+<arcpath id="001" x="601" y="351" curvePoint="true"/>
 <arcpath id="002" x="621" y="331" curvePoint="false"/>
 <type value="normal"/>
 </arc>
@@ -500,7 +500,7 @@ Only the boat holding the is allowed admission.</text>
 <arcpath id="001" x="146" y="276" curvePoint="false"/>
 <type value="normal"/>
 </arc>
-<arc id="P2 TO T13" source="P2" target="T13">
+<arc id="P2 TO T23" source="P2" target="T23">
 <graphics/>
 <inscription>
 <value>Default,1</value>
@@ -548,8 +548,8 @@ Only the boat holding the is allowed admission.</text>
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="522" y="414" curvePoint="false"/>
-<arcpath id="001" x="466" y="376" curvePoint="true"/>
+<arcpath id="000" x="522" y="413" curvePoint="false"/>
+<arcpath id="001" x="467" y="377" curvePoint="true"/>
 <arcpath id="002" x="456" y="331" curvePoint="false"/>
 <type value="normal"/>
 </arc>
@@ -562,8 +562,8 @@ Only the boat holding the is allowed admission.</text>
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="551" y="415" curvePoint="false"/>
-<arcpath id="001" x="617" y="384" curvePoint="true"/>
+<arcpath id="000" x="551" y="416" curvePoint="false"/>
+<arcpath id="001" x="618" y="385" curvePoint="true"/>
 <arcpath id="002" x="631" y="332" curvePoint="false"/>
 <type value="normal"/>
 </arc>
@@ -602,13 +602,13 @@ Only the boat holding the is allowed admission.</text>
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="522" y="148" curvePoint="false"/>
-<arcpath id="001" x="465" y="161" curvePoint="true"/>
-<arcpath id="002" x="418" y="184" curvePoint="true"/>
+<arcpath id="000" x="522" y="149" curvePoint="false"/>
+<arcpath id="001" x="466" y="162" curvePoint="true"/>
+<arcpath id="002" x="419" y="185" curvePoint="true"/>
 <arcpath id="003" x="377" y="187" curvePoint="false"/>
 <type value="normal"/>
 </arc>
-<arc id="PX3 to T13" source="PX3" target="T13">
+<arc id="PX3 to T23" source="PX3" target="T23">
 <graphics/>
 <inscription>
 <value>Default,1</value>
@@ -618,7 +618,7 @@ Only the boat holding the is allowed admission.</text>
 <value>false</value>
 </tagged>
 <arcpath id="000" x="282" y="282" curvePoint="false"/>
-<arcpath id="001" x="208" y="310" curvePoint="true"/>
+<arcpath id="001" x="209" y="311" curvePoint="true"/>
 <arcpath id="002" x="232" y="337" curvePoint="false"/>
 <type value="normal"/>
 </arc>
@@ -632,7 +632,7 @@ Only the boat holding the is allowed admission.</text>
 <value>false</value>
 </tagged>
 <arcpath id="000" x="311" y="278" curvePoint="false"/>
-<arcpath id="001" x="400" y="224" curvePoint="true"/>
+<arcpath id="001" x="401" y="225" curvePoint="true"/>
 <arcpath id="002" x="376" y="197" curvePoint="false"/>
 <type value="normal"/>
 </arc>
@@ -649,7 +649,7 @@ Only the boat holding the is allowed admission.</text>
 <arcpath id="001" x="146" y="342" curvePoint="false"/>
 <type value="normal"/>
 </arc>
-<arc id="T13 TO P3" source="T13" target="P3A">
+<arc id="T23 TO P3" source="T23" target="P3A">
 <graphics/>
 <inscription>
 <value>Default,1</value>
@@ -672,7 +672,7 @@ Only the boat holding the is allowed admission.</text>
 <value>false</value>
 </tagged>
 <arcpath id="000" x="232" y="217" curvePoint="false"/>
-<arcpath id="001" x="161" y="209" curvePoint="false"/>
+<arcpath id="001" x="161" y="208" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="T31 to PX3" source="T31" target="PX3">
@@ -685,7 +685,7 @@ Only the boat holding the is allowed admission.</text>
 <value>false</value>
 </tagged>
 <arcpath id="000" x="231" y="227" curvePoint="false"/>
-<arcpath id="001" x="198" y="263" curvePoint="true"/>
+<arcpath id="001" x="199" y="264" curvePoint="true"/>
 <arcpath id="002" x="282" y="279" curvePoint="false"/>
 <type value="normal"/>
 </arc>
@@ -699,8 +699,8 @@ Only the boat holding the is allowed admission.</text>
 <value>false</value>
 </tagged>
 <arcpath id="000" x="376" y="362" curvePoint="false"/>
-<arcpath id="001" x="435" y="416" curvePoint="true"/>
-<arcpath id="002" x="522" y="416" curvePoint="false"/>
+<arcpath id="001" x="436" y="417" curvePoint="true"/>
+<arcpath id="002" x="522" y="417" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="T34 to PX3" source="T34" target="PX3">
@@ -713,7 +713,7 @@ Only the boat holding the is allowed admission.</text>
 <value>false</value>
 </tagged>
 <arcpath id="000" x="377" y="352" curvePoint="false"/>
-<arcpath id="001" x="412" y="317" curvePoint="true"/>
+<arcpath id="001" x="413" y="318" curvePoint="true"/>
 <arcpath id="002" x="311" y="286" curvePoint="false"/>
 <type value="normal"/>
 </arc>
@@ -727,7 +727,7 @@ Only the boat holding the is allowed admission.</text>
 <value>false</value>
 </tagged>
 <arcpath id="000" x="466" y="332" curvePoint="false"/>
-<arcpath id="001" x="484" y="349" curvePoint="true"/>
+<arcpath id="001" x="485" y="350" curvePoint="true"/>
 <arcpath id="002" x="522" y="354" curvePoint="false"/>
 <type value="normal"/>
 </arc>
@@ -754,7 +754,7 @@ Only the boat holding the is allowed admission.</text>
 <value>false</value>
 </tagged>
 <arcpath id="000" x="621" y="321" curvePoint="false"/>
-<arcpath id="001" x="589" y="294" curvePoint="true"/>
+<arcpath id="001" x="590" y="295" curvePoint="true"/>
 <arcpath id="002" x="551" y="285" curvePoint="false"/>
 <type value="normal"/>
 </arc>
