@@ -1,0 +1,135 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{CS 376 Hybrid Systems}
+\author{Fred Eisele}
+\date{November 2014}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{xfrac}
+
+\begin{document}
+
+\maketitle
+
+\tikzstyle{block} = [draw, fill=blue!20, rectangle, 
+    minimum height=3em, minimum width=6em]
+
+
+\section{Hybrid Timed Automaton}
+Construct a timed automaton that produces $tick$
+events in a periodic pattern.
+
+\begin{equation}
+1, 2, 3, 5, 6, 7 ,8, 10, 11, \ldots
+\end{equation}
+
+\ldots or the times between events \ldots
+
+\begin{equation}
+1, 1, 1, 2, 1, 1, 1, 2, 1, 1, \ldots
+\end{equation}
+
+That is three $tick$ events one second apart
+and one $tick$ event two seconds later repeated.
+
+\begin{figure}[h!]
+%% http://cremeronline.com/LaTeX/minimaltikz.pdf
+\begin{tikzpicture}[auto, node distance=4cm,>=latex']
+    % We start by placing the blocks
+    \node [block] (actorB)  {Actor B};
+    \node [block, below left of=actorB] (actorA) {Actor A};
+    \node [block, below right of=actorB] (actorC) {Actor C};
+
+    % Once the nodes are placed, connecting them is easy. 
+    \draw [->] (actorA) -- node {$1 \qquad 3$} (actorB);
+    \draw [->] (actorB) -- node [name=y] {$2 \qquad 3$}(actorC);
+    \draw [->] (actorA) -- node [name=y] {$1 \qquad n$}(actorC);
+    
+\end{tikzpicture}
+
+\caption{Hybrid timed automata}
+\label{fig:time_automata}
+\end{figure}
+
+\section{Automobile Features}
+
+\subsection{Dome Light}
+The dome light is turned on as soon as any door
+is opened.
+It stays on for 30 seconds after all doors are shut.
+A sensor which can detect when a door's position, 
+$\{opened, closed\}$ is needed for each door.
+
+\begin{figure}[h!]
+
+\begin{tikzpicture}[auto, node distance=4cm,>=latex']
+    % We start by placing the blocks
+    \node [block] (actorB)  {Actor B};
+    \node [block, below left of=actorB] (actorA) {Actor A};
+    \node [block, below right of=actorB] (actorC) {Actor C};
+
+    % Once the nodes are placed, connecting them is easy. 
+    \draw [->] (actorA) -- node {$1 \qquad 3$} (actorB);
+    \draw [->] (actorB) -- node [name=y] {$2 \qquad 3$}(actorC);
+    \draw [->] (actorA) -- node [name=y] {$1 \qquad n$}(actorC);
+    
+\end{tikzpicture}
+
+\caption{A dome light}
+\label{fig:dome_light}
+\end{figure}
+
+
+\subsection{Safety Belt Alarm}
+Once the engine is runing, 
+a beeper is sounded and
+a red light warning is indicated if thre are 
+passengers that have not buckled their seat belt.
+The beeper stops sounding after 30 seconds, or
+as soon as the seat belts are buckled,
+whichever is sooner.
+The warning light remains on so long as the
+seatbelt on an occupied seat is not buckled.
+
+The problem is made more tractable by 
+replacing the engine running condition with
+the ignition on condition (for gasoline engines
+this is a reasonable assumption).
+
+
+Each seat has two sensors, one indicating that
+the $seat \in \{occupied empty\}$
+and one indicating that the 
+$seatbelt \in \{buckled unbuckled\}$.
+Another sensor indicates 
+$ignition \in \{on off\}$
+
+Actuators $light_{warning} \in \{on off\}$
+and $beeper_{warning} \in \{on off\}$ are present.
+
+
+
+\begin{figure}[h!]
+
+\begin{tikzpicture}[auto, node distance=4cm,>=latex']
+    % We start by placing the blocks
+    \node [block] (actorB)  {Actor B};
+    \node [block, below left of=actorB] (actorA) {Actor A};
+    \node [block, below right of=actorB] (actorC) {Actor C};
+
+    % Once the nodes are placed, connecting them is easy. 
+    \draw [->] (actorA) -- node {$1 \qquad 3$} (actorB);
+    \draw [->] (actorB) -- node [name=y] {$2 \qquad 3$}(actorC);
+    \draw [->] (actorA) -- node [name=y] {$1 \qquad n$}(actorC);
+    
+\end{tikzpicture}
+\caption{Seatbelt alarm}
+\label{fig:seatbelt_alarm}
+\end{figure}
+
+\end{document}
