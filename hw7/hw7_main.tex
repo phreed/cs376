@@ -46,6 +46,7 @@ and one $tick$ event two seconds later repeated.
 \end{figure}
 
 The formal model is that of a hybrid automaton.
+There are also two constants $T_1 = 1$ and $T_2 = 2$.
 \begin{equation}
 H = (Q, X, Init, f, Inv, E, G, R)
 \end{equation}
@@ -251,12 +252,63 @@ turned $on$ and any $seat$ is $occupied$ or when
 the $ignition$ is already $on$ and a $seat$ becomes
 occupied.
 
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=0.3]{hw7_4b_formal_model.jpg}
-\caption{The formal model elements}
-\label{fig:4b_formal_model}
-\end{figure}
+
+The formal model is that of a multi-agent hybrid automaton.
+\begin{equation}
+H = (Q, X, Init, f, Inv, E, G, R)
+\end{equation}
+
+The set of discrete variables.
+\begin{align}
+Q_{total} & = \{clear, beep, light \} \\
+Q_{seat} & = \{ \} \\
+Q_{aggregate} & = \{ \} \\
+Q & = Q_{total} \cup Q_{seat}^n \cup Q_{aggregate}
+\end{align}
+
+First the output variables to the actuators.
+\begin{align}
+light_{warn} : l(t) & =
+   \begin{cases}
+      0, & \text{warning light off} \\
+      1, & \text{warning light on}
+    \end{cases} \\
+ beep_{warn} : b(t) & =
+   \begin{cases}
+      0, & \text{warning beeper off} \\
+      1, & \text{warning beeper on}
+    \end{cases}
+\end{align}
+
+And, the continuous variables from input sensors.
+\begin{align}
+ ignition : e(t) & =
+   \begin{cases}
+      0, & \text{ignition off} \\
+      1, & \text{ignition on}
+    \end{cases}
+  belt : f(t,i) & =
+   \begin{cases}
+      0, & \text{unbuckled} \\
+      1, & \text{buckled}
+    \end{cases}
+  seat : s(t,i) & =
+   \begin{cases}
+      0, & \text{empty} \\
+      1, & \text{occupied}
+    \end{cases}
+\end{align}
+
+Giving us the set of continuous variables.
+
+The set of continuous variables.
+$X = \mathbb{R}$
+Notice that $n$ seats/seatbelts are accomdated and indexed by $i$.
+The system state comprises the following elements.
+\begin{equation}
+ X = (e(t), r(t), (f(t,i), s(t,i))^n)
+\end{equation}
+
 
 The model consists of three types of connected agent models.
 
@@ -265,16 +317,9 @@ a $seat$ becomes $empty$ or the $ignition$ is turned $off$.
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.1]{hw7_4b_actor_total.jpg}
-\caption{The final actor environment}
-\label{fig:4b_actor_total_env}
-\end{figure}
-
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=0.3]{hw7_4b_actor_total_detail.jpg}
-\caption{The final actor detail}
-\label{fig:4b_actor_total_detail}
+\includegraphics[scale=0.7]{hw7_4b_actor_total.png}
+\caption{The final actor}
+\label{fig:4b_actor_total}
 \end{figure}
 
 The $warn$ and $noWarn$ inputs to the total model are
@@ -300,16 +345,10 @@ Feeding into the aggregator agent are $n$ seats.
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.1]{hw7_4b_actor_seat.jpg}
-\caption{A seat actor environment}
-\label{fig:4b_actor_seat_env}
+\includegraphics[scale=0.7]{hw7_4b_actor_seat.png}
+\caption{A seat actor}
+\label{fig:4b_actor_seat}
 \end{figure}
 
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=0.3]{hw7_4b_actor_seat_detail.jpg}
-\caption{A seat actor detail}
-\label{fig:4b_actor_seat_detail}
-\end{figure}
 
 \end{document}
