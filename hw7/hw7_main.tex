@@ -46,9 +46,13 @@ and one $tick$ event two seconds later repeated.
 \end{figure}
 
 The formal model is that of a hybrid automaton.
+The formal model for the hybred atutomaton presented in
+class differs slightly from the one implicit in the textbook.
+The textbook allows for signals on the guard and constants.
 There are also two constants $T_1 = 1$ and $T_2 = 2$.
+
 \begin{equation}
-H = (Q, X, Init, f, Inv, E, G, R)
+H = (Q, X, O, Init, f, Inv, E, G, R)
 \end{equation}
 
 The set of discrete variables.
@@ -62,6 +66,11 @@ $X = \mathbb{R}$
 X = \{s(t)\}
 \end{equation}
 
+The set of output signals.
+\begin{equation}
+O = \{ tick \} : \text{pure}
+\end{equation}
+
 The set of initial conditions.
 $Init \subseteq Q \times X$
 \begin{equation}
@@ -71,10 +80,10 @@ Init = \{ ( 1st, s(t)} := 0 ) \}
 The vector field.
 $f: Q \times X$
 \begin{align}
-f = \{ & ( 1st, \dot{s(t)}),  1 ) \\
-    & ( 2nd, \dot{s(t)}), 1 ) \\
-    & ( 3rd, \dot{s(t)}), 1 ) \\
-    & ( 4th, \dot{s(t)}), 1 ) \}
+f = \{ & ( 1st, \dot{s(t)} = 1 ) \\
+    & ( 2nd, \dot{s(t)} = 1 ) \\
+    & ( 3rd, \dot{s(t)} = 1 ) \\
+    & ( 4th, \dot{s(t)} = 1 ) \}
 \end{align}
 
 The invariant set. (all empty)
@@ -96,12 +105,15 @@ E = \{ & ( 1st, 2nd ) \\
 \end{align}
 
 The guards on the transitions.
-$G: E \mapsto 2^X$
+This makes an accomdation for signals,
+this could be emulated with a continuous variable
+but the problem specification calls for a signal.
+$G: E \mapsto (2^X / O)$
 \begin{align}
-G = \{ & (( 1st, 2nd ), s(t) >= T_1 / tick ) \\
-    & (( 2nd, 3rd ), s(t) >= T_1 / tick \\
-    & (( 3rd, 4th ), s(t) >= T_1 / tick \\
-    & (( 4th, 1st ), s(t) >= T_2 / tick \}
+G = \{ & (( 1st, 2nd ), (s(t) >= T_1 / tick ) \\
+    & (( 2nd, 3rd ), (s(t) >= T_1 / tick ) \\
+    & (( 3rd, 4th ), (s(t) >= T_1 / tick ) \\
+    & (( 4th, 1st ), (s(t) >= T_2 / tick ) \}
 \end{align}
 
 The reset relation on the transitions.
@@ -121,6 +133,14 @@ is opened.
 It stays on for 30 seconds after all doors are shut.
 A sensor which can detect when a door's position,
 $\{opened, closed\}$ is needed for each door.
+I have modeled this automaton with sensors that
+produce signals.
+I could have used a separate continuous variable
+for each door sensor, which would have resulted
+in a different model.
+The light invariant is not strictly necessary but
+it emphasizes the fact that the light should be on
+when any of the doors are open.
 
 \begin{figure}[h!]
 \centering
@@ -130,15 +150,17 @@ $\{opened, closed\}$ is needed for each door.
 \end{figure}
 
 
-The formal model is that of a hybrid automaton.
+The formal model is that of a hybrid automaton
+augmented with signals.
 \begin{equation}
-H = (Q, X, Init, f, Inv, E, G, R)
+H = (Q, X, O, Init, f, Inv, E, G, R)
 \end{equation}
 
 The set of discrete variables.
 \begin{equation}
 Q & = \{light_{off}, light_{on}, door_1, door_2, \ldots, door_n \}
 \end{equation}
+The light is off and all the doors are closed.
 
 The set of continuous variables.
 $X = \mathbb{R}$
@@ -146,36 +168,37 @@ $X = \mathbb{R}$
 X = \{ s(t), l(t) \}
 \end{equation}
 
+The set of signals.
+\begin{equation}
+O = \{ door_{open}, door_{close} \}
+\end{equation}
+
 The set of initial conditions.
 $Init \subseteq Q \times X$
 \begin{equation}
-Init = \{ ( light_{off}, l(t)} := 0 , s(t) := 0) \}
+Init = \{ ( light_{off}, l(t) := 0 , s(t) := 0) \}
 \end{equation}
 
 The vector field.
 $f: Q \times X$
 \begin{align}
-f = \{ & ( light_{off}, \dot{s(t)}), 1 ) \\
-    & ( light_{on}, \dot{s(t)}), 1 ) \\
-    & ( door_1, \dot{s(t)}), 1 ) \\
-    & \ldots \\
-    & ( door_n, \dot{s(t)}), 1 ) \}
+f = \{ & ( light_{on}, { \dot{s(t)} = 1 } )  \}
 \end{align}
 
-The invariant set. (all empty)
+The invariant set.
 $Q \mapsto 2^X$
 \begin{align}
-Inv = \{ & ( light_{off}, \emptyset ) \\
-    & ( light_{on}, \emptyset ) \\
-    & ( door_1, \emptyset ) \\
+Inv = \{
+    & ( light_{on}, { l(t) = 1 } ) \\
     & \ldots \\
-    & ( door_n, \emptyset ) \}
+    & ( door_n, { l(t)} = 1}) \}
 \end{align}
 
 The collection of discrete transitions.
 $E \subset Q \times Q$
 \begin{align}
-E = \{ & ( light_{off}, door_1 ) \\
+E = \{
+    & ( light_{off}, door_1 ) \\
     & ( light_{on}, door_1 ) \\
     & ( door_1, door_2 ) \\
     & \ldots \\
@@ -188,6 +211,8 @@ E = \{ & ( light_{off}, door_1 ) \\
 \end{align}
 
 The guards on the transitions.
+These guards also take signals in addition to
+predicates over the continuous variables.
 $G: E \mapsto 2^X$
 \begin{align}
 G = \{ & ( light_{off}, door_1 ) \mapsto door_{open} \\
@@ -205,15 +230,9 @@ G = \{ & ( light_{off}, door_1 ) \mapsto door_{open} \\
 The reset relation on the transitions.
 $R: E \times X \mapsto 2^X$
 \begin{align}
-R = \{ & ( light_{off}, door_1 ) \mapsto s(t) := 0 \\
-    & ( light_{on}, door_1 ) \mapsto  s(t) := 0 \\
-    & ( door_1, door_2 ) \mapsto  s(t) := 0 \\
-    & \ldots \\
-    & ( door_{n-1}, door_n ) \mapsto  s(t) := 0 \\
-    & ( door_n, door_{n-1} ) \mapsto l(t) := 1 \\
-    & \ldots \\
-    & ( door_2, door_1 ) \mapsto l(t) := 1 \\
-    & ( door_1, light_{on} ) \mapsto l(t) := 1 \\
+R = \{ & ( light_{off}, door_1 ) \mapsto l(t) := 1 \\
+    & ( light_{on}, door_1 ) \mapsto  l(t) := 1 \\
+    & ( door_1, light_{on} ) \mapsto s(t) := 0 \\
     & ( light_{on}, light_{off} \mapsto l(t) := 0 ) \}
 \end{align}
 
@@ -233,38 +252,40 @@ replacing the engine running condition with
 the ignition on condition (for gasoline engines
 this is a reasonable assumption).
 
-
 Each seat has two sensors, one indicating that
-the $seat \in \{occupied empty\}$
+the $seat \in \{occupied_i ,empty_i\}$
 and one indicating that the
-$seatbelt \in \{buckled unbuckled\}$.
+$seatbelt \in \{buckled_i, unbuckled_i\}$.
 Another sensor indicates
-$ignition \in \{on off\}$
-In the diagram only the driver and one passenger
-seat witll be shown.
-The formal model will be extended to $n$ seats.
+$ignition \in \{on, off\}$
 
-Actuators $light_{warning} \in \{on off\}$
-and $beeper_{warning} \in \{on off\}$ are present.
+The actuators are controlled by continuous variables,
+$light_{warning}$ as $l(t)$ and
+$beeper_{warning}$ as $b(t)$.
 
+There are some assumptions in play.
 $warn$ \is an event generated when the $ignition$ is
 turned $on$ and any $seat$ is $occupied$ or when
 the $ignition$ is already $on$ and a $seat$ becomes
 occupied.
 
-
 The formal model is that of a multi-agent hybrid automaton.
+The formal model is not required for the assignment
+and sections will be omitted.
+Some sections will be included sufficient to define terms.
+
 \begin{equation}
-H = (Q, X, Init, f, Inv, E, G, R)
+H = (Q, X, O, Init, f, Inv, E, G, R)
 \end{equation}
 
 The set of discrete variables.
 \begin{align}
 Q_{total} & = \{clear, beep, light \} \\
-Q_{seat} & = \{ \} \\
-Q_{aggregate} & = \{ \} \\
+Q_{seat} & = \text{the states that a seat can take} \\
+Q_{aggregate} & = \text{the aggregate seat states} \\
 Q & = Q_{total} \cup Q_{seat}^n \cup Q_{aggregate}
 \end{align}
+Here the $n$ seats are indexed by $i$.
 
 First the output variables to the actuators.
 \begin{align}
@@ -286,12 +307,12 @@ And, the continuous variables from input sensors.
    \begin{cases}
       0, & \text{ignition off} \\
       1, & \text{ignition on}
-    \end{cases}
+    \end{cases} \\
   belt : f(t,i) & =
    \begin{cases}
       0, & \text{unbuckled} \\
       1, & \text{buckled}
-    \end{cases}
+    \end{cases} \\
   seat : s(t,i) & =
    \begin{cases}
       0, & \text{empty} \\
@@ -322,9 +343,23 @@ a $seat$ becomes $empty$ or the $ignition$ is turned $off$.
 \label{fig:4b_actor_total}
 \end{figure}
 
+I have not place any invariants in this model.
+They could be added to the $beep$ mode to indicate
+that the light is $on$ ($l(t) = 1$) and to the $light$ mode to
+indicate that the $beeper$ is $off$ ($b(t) = 0$).
+Similarly, in the $clear$ mode they are both $off$.
+However, this is redundant information so I left
+them off the diagram.
+
+
 The $warn$ and $noWarn$ inputs to the total model are
 produced by an aggregation agent with combines the
-events for the individual $seats_i$.
+events for the individual $seats_i$ which have corresponding
+$warn_i$ and $noWarn_i$ variables.
+
+If a $warn$ is received in either the $light$ or $beep$
+mode there is no change in mode, according to
+ the assumptions.
 
 \begin{figure}[h!]
 \centering
@@ -335,7 +370,6 @@ events for the individual $seats_i$.
 
 
 Feeding into the aggregator agent are $n$ seats.
-
 
 \begin{figure}[h!]
 \centering
