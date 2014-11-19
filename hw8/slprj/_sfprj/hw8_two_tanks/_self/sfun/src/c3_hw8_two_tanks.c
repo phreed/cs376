@@ -1224,9 +1224,9 @@ static void sf_gateway_c3_hw8_two_tanks(SFc3_hw8_two_tanksInstanceStruct
     _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_q, 2U, c3_sf_marshallOut,
       c3_sf_marshallIn);
     CV_EML_FCN(6, 0);
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 5);
     c3_q = c3_const_Kin * *c3_flow;
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -5);
     _SFD_SYMBOL_SCOPE_POP();
     c3_hoistedGlobal = *c3_h1;
     c3_b_hoistedGlobal = *c3_h2;
@@ -1247,15 +1247,15 @@ static void sf_gateway_c3_hw8_two_tanks(SFc3_hw8_two_tanksInstanceStruct
     _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_b_q, 5U, c3_sf_marshallOut,
       c3_sf_marshallIn);
     CV_EML_FCN(4, 0);
-    _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, 3);
-    c3_delta = c3_ha - c3_hb;
     _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, 4);
+    c3_delta = c3_ha - c3_hb;
+    _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, 5);
     c3_d0 = c3_delta;
     c3_b_sign(chartInstance, &c3_d0);
     c3_d1 = 9810.0 * c3_abs(chartInstance, c3_delta);
     c3_b_sqrt(chartInstance, &c3_d1);
     c3_b_q = c3_d0 * c3_const_Ka * c3_d1;
-    _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, -4);
+    _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, -5);
     _SFD_SYMBOL_SCOPE_POP();
     c3_errorIfDataNotWrittenToFcn(chartInstance, 1U, 1U);
     c3_errorIfDataNotWrittenToFcn(chartInstance, 2U, 3U);
@@ -1278,15 +1278,15 @@ static void sf_gateway_c3_hw8_two_tanks(SFc3_hw8_two_tanksInstanceStruct
     _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_c_q, 5U, c3_sf_marshallOut,
       c3_sf_marshallIn);
     CV_EML_FCN(4, 0);
-    _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, 3);
-    c3_b_delta = c3_b_ha - c3_b_hb;
     _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, 4);
+    c3_b_delta = c3_b_ha - c3_b_hb;
+    _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, 5);
     c3_d2 = c3_b_delta;
     c3_b_sign(chartInstance, &c3_d2);
     c3_d3 = 9810.0 * c3_abs(chartInstance, c3_b_delta);
     c3_b_sqrt(chartInstance, &c3_d3);
     c3_c_q = c3_d2 * c3_const_Ka * c3_d3;
-    _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, -4);
+    _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, -5);
     _SFD_SYMBOL_SCOPE_POP();
     _SFD_SYMBOL_SCOPE_PUSH_EML(0U, 3U, 3U, c3_d_debug_family_names,
       c3_b_debug_family_var_map);
@@ -1319,9 +1319,9 @@ static void sf_gateway_c3_hw8_two_tanks(SFc3_hw8_two_tanksInstanceStruct
     _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_e_q, 2U, c3_sf_marshallOut,
       c3_sf_marshallIn);
     CV_EML_FCN(6, 0);
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 5);
     c3_e_q = c3_const_Kin * *c3_flow;
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -5);
     _SFD_SYMBOL_SCOPE_POP();
     *c3_Qin = c3_e_q;
     c3_updateDataWrittenToVector(chartInstance, 3U);
@@ -1347,15 +1347,15 @@ static void sf_gateway_c3_hw8_two_tanks(SFc3_hw8_two_tanksInstanceStruct
     _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_f_q, 5U, c3_sf_marshallOut,
       c3_sf_marshallIn);
     CV_EML_FCN(4, 0);
-    _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, 3);
-    c3_c_delta = c3_c_ha - c3_c_hb;
     _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, 4);
+    c3_c_delta = c3_c_ha - c3_c_hb;
+    _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, 5);
     c3_d6 = c3_c_delta;
     c3_b_sign(chartInstance, &c3_d6);
     c3_d7 = 9810.0 * c3_abs(chartInstance, c3_c_delta);
     c3_b_sqrt(chartInstance, &c3_d7);
     c3_f_q = c3_d6 * c3_const_Ka * c3_d7;
-    _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, -4);
+    _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, -5);
     _SFD_SYMBOL_SCOPE_POP();
     *c3_Qa = c3_f_q;
     c3_updateDataWrittenToVector(chartInstance, 5U);
@@ -1413,9 +1413,9 @@ static void sf_gateway_c3_hw8_two_tanks(SFc3_hw8_two_tanksInstanceStruct
     _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_h_q, 2U, c3_sf_marshallOut,
       c3_sf_marshallIn);
     CV_EML_FCN(6, 0);
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 5);
     c3_h_q = c3_const_Kin * *c3_flow;
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -5);
     _SFD_SYMBOL_SCOPE_POP();
     c3_g_hoistedGlobal = *c3_h1;
     c3_d_ha = c3_g_hoistedGlobal;
@@ -1505,9 +1505,9 @@ static void sf_gateway_c3_hw8_two_tanks(SFc3_hw8_two_tanksInstanceStruct
     _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_j_q, 2U, c3_sf_marshallOut,
       c3_sf_marshallIn);
     CV_EML_FCN(6, 0);
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 5);
     c3_j_q = c3_const_Kin * *c3_flow;
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -5);
     _SFD_SYMBOL_SCOPE_POP();
     *c3_Qin = c3_j_q;
     c3_updateDataWrittenToVector(chartInstance, 3U);
@@ -1597,9 +1597,9 @@ static void sf_gateway_c3_hw8_two_tanks(SFc3_hw8_two_tanksInstanceStruct
     _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_l_q, 2U, c3_sf_marshallOut,
       c3_sf_marshallIn);
     CV_EML_FCN(6, 0);
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 5);
     c3_l_q = c3_const_Kin * *c3_flow;
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -5);
     _SFD_SYMBOL_SCOPE_POP();
     c3_j_hoistedGlobal = *c3_h2;
     c3_g_ha = c3_j_hoistedGlobal;
@@ -1689,9 +1689,9 @@ static void sf_gateway_c3_hw8_two_tanks(SFc3_hw8_two_tanksInstanceStruct
     _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_n_q, 2U, c3_sf_marshallOut,
       c3_sf_marshallIn);
     CV_EML_FCN(6, 0);
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 5);
     c3_n_q = c3_const_Kin * *c3_flow;
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -5);
     _SFD_SYMBOL_SCOPE_POP();
     *c3_Qin = c3_n_q;
     c3_updateDataWrittenToVector(chartInstance, 3U);
@@ -1780,9 +1780,9 @@ static void sf_gateway_c3_hw8_two_tanks(SFc3_hw8_two_tanksInstanceStruct
     _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_p_q, 2U, c3_sf_marshallOut,
       c3_sf_marshallIn);
     CV_EML_FCN(6, 0);
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 5);
     c3_p_q = c3_const_Kin * *c3_flow;
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -5);
     _SFD_SYMBOL_SCOPE_POP();
     _SFD_SYMBOL_SCOPE_PUSH_EML(0U, 3U, 3U, c3_d_debug_family_names,
       c3_b_debug_family_var_map);
@@ -1815,9 +1815,9 @@ static void sf_gateway_c3_hw8_two_tanks(SFc3_hw8_two_tanksInstanceStruct
     _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_r_q, 2U, c3_sf_marshallOut,
       c3_sf_marshallIn);
     CV_EML_FCN(6, 0);
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 5);
     c3_r_q = c3_const_Kin * *c3_flow;
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -5);
     _SFD_SYMBOL_SCOPE_POP();
     *c3_Qin = c3_r_q;
     c3_updateDataWrittenToVector(chartInstance, 3U);
@@ -2578,9 +2578,9 @@ static void derivatives_c3_hw8_two_tanks(SFc3_hw8_two_tanksInstanceStruct
     _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_q, 2U, c3_sf_marshallOut,
       c3_sf_marshallIn);
     CV_EML_FCN(6, 0);
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 5);
     c3_q = c3_const_Kin * *c3_flow;
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -5);
     _SFD_SYMBOL_SCOPE_POP();
     c3_hoistedGlobal = *c3_h1;
     c3_b_hoistedGlobal = *c3_h2;
@@ -2601,15 +2601,15 @@ static void derivatives_c3_hw8_two_tanks(SFc3_hw8_two_tanksInstanceStruct
     _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_b_q, 5U, c3_sf_marshallOut,
       c3_sf_marshallIn);
     CV_EML_FCN(4, 0);
-    _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, 3);
-    c3_delta = c3_ha - c3_hb;
     _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, 4);
+    c3_delta = c3_ha - c3_hb;
+    _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, 5);
     c3_d34 = c3_delta;
     c3_b_sign(chartInstance, &c3_d34);
     c3_d35 = 9810.0 * c3_abs(chartInstance, c3_delta);
     c3_b_sqrt(chartInstance, &c3_d35);
     c3_b_q = c3_d34 * c3_const_Ka * c3_d35;
-    _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, -4);
+    _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, -5);
     _SFD_SYMBOL_SCOPE_POP();
     *c3_h1_dot = c3_mrdivide(chartInstance, c3_q - c3_b_q, c3_const_A);
     _SFD_DATA_RANGE_CHECK(*c3_h1_dot, 1U);
@@ -2634,15 +2634,15 @@ static void derivatives_c3_hw8_two_tanks(SFc3_hw8_two_tanksInstanceStruct
     _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_c_q, 5U, c3_sf_marshallOut,
       c3_sf_marshallIn);
     CV_EML_FCN(4, 0);
-    _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, 3);
-    c3_b_delta = c3_b_ha - c3_b_hb;
     _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, 4);
+    c3_b_delta = c3_b_ha - c3_b_hb;
+    _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, 5);
     c3_d36 = c3_b_delta;
     c3_b_sign(chartInstance, &c3_d36);
     c3_d37 = 9810.0 * c3_abs(chartInstance, c3_b_delta);
     c3_b_sqrt(chartInstance, &c3_d37);
     c3_c_q = c3_d36 * c3_const_Ka * c3_d37;
-    _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, -4);
+    _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, -5);
     _SFD_SYMBOL_SCOPE_POP();
     _SFD_SYMBOL_SCOPE_PUSH_EML(0U, 3U, 3U, c3_d_debug_family_names,
       c3_b_debug_family_var_map);
@@ -2676,9 +2676,9 @@ static void derivatives_c3_hw8_two_tanks(SFc3_hw8_two_tanksInstanceStruct
     _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_e_q, 2U, c3_sf_marshallOut,
       c3_sf_marshallIn);
     CV_EML_FCN(6, 0);
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 5);
     c3_e_q = c3_const_Kin * *c3_flow;
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -5);
     _SFD_SYMBOL_SCOPE_POP();
     c3_updateDataWrittenToVector(chartInstance, 3U);
     _SFD_DATA_RANGE_CHECK(*c3_Qin, 4U);
@@ -2703,15 +2703,15 @@ static void derivatives_c3_hw8_two_tanks(SFc3_hw8_two_tanksInstanceStruct
     _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_f_q, 5U, c3_sf_marshallOut,
       c3_sf_marshallIn);
     CV_EML_FCN(4, 0);
-    _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, 3);
-    c3_c_delta = c3_c_ha - c3_c_hb;
     _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, 4);
+    c3_c_delta = c3_c_ha - c3_c_hb;
+    _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, 5);
     c3_d40 = c3_c_delta;
     c3_b_sign(chartInstance, &c3_d40);
     c3_d41 = 9810.0 * c3_abs(chartInstance, c3_c_delta);
     c3_b_sqrt(chartInstance, &c3_d41);
     c3_f_q = c3_d40 * c3_const_Ka * c3_d41;
-    _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, -4);
+    _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, -5);
     _SFD_SYMBOL_SCOPE_POP();
     c3_updateDataWrittenToVector(chartInstance, 5U);
     _SFD_DATA_RANGE_CHECK(*c3_Qa, 6U);
@@ -2765,9 +2765,9 @@ static void derivatives_c3_hw8_two_tanks(SFc3_hw8_two_tanksInstanceStruct
     _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_h_q, 2U, c3_sf_marshallOut,
       c3_sf_marshallIn);
     CV_EML_FCN(6, 0);
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 5);
     c3_h_q = c3_const_Kin * *c3_flow;
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -5);
     _SFD_SYMBOL_SCOPE_POP();
     c3_g_hoistedGlobal = *c3_h1;
     c3_d_ha = c3_g_hoistedGlobal;
@@ -2860,9 +2860,9 @@ static void derivatives_c3_hw8_two_tanks(SFc3_hw8_two_tanksInstanceStruct
     _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_j_q, 2U, c3_sf_marshallOut,
       c3_sf_marshallIn);
     CV_EML_FCN(6, 0);
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 5);
     c3_j_q = c3_const_Kin * *c3_flow;
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -5);
     _SFD_SYMBOL_SCOPE_POP();
     c3_updateDataWrittenToVector(chartInstance, 3U);
     _SFD_DATA_RANGE_CHECK(*c3_Qin, 4U);
@@ -2947,9 +2947,9 @@ static void derivatives_c3_hw8_two_tanks(SFc3_hw8_two_tanksInstanceStruct
     _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_l_q, 2U, c3_sf_marshallOut,
       c3_sf_marshallIn);
     CV_EML_FCN(6, 0);
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 5);
     c3_l_q = c3_const_Kin * *c3_flow;
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -5);
     _SFD_SYMBOL_SCOPE_POP();
     c3_j_hoistedGlobal = *c3_h2;
     c3_g_ha = c3_j_hoistedGlobal;
@@ -3042,9 +3042,9 @@ static void derivatives_c3_hw8_two_tanks(SFc3_hw8_two_tanksInstanceStruct
     _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_n_q, 2U, c3_sf_marshallOut,
       c3_sf_marshallIn);
     CV_EML_FCN(6, 0);
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 5);
     c3_n_q = c3_const_Kin * *c3_flow;
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -5);
     _SFD_SYMBOL_SCOPE_POP();
     c3_updateDataWrittenToVector(chartInstance, 3U);
     _SFD_DATA_RANGE_CHECK(*c3_Qin, 4U);
@@ -3128,9 +3128,9 @@ static void derivatives_c3_hw8_two_tanks(SFc3_hw8_two_tanksInstanceStruct
     _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_p_q, 2U, c3_sf_marshallOut,
       c3_sf_marshallIn);
     CV_EML_FCN(6, 0);
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 5);
     c3_p_q = c3_const_Kin * *c3_flow;
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -5);
     _SFD_SYMBOL_SCOPE_POP();
     *c3_h1_dot = c3_mrdivide(chartInstance, c3_p_q, c3_const_A);
     _SFD_DATA_RANGE_CHECK(*c3_h1_dot, 1U);
@@ -3166,9 +3166,9 @@ static void derivatives_c3_hw8_two_tanks(SFc3_hw8_two_tanksInstanceStruct
     _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_r_q, 2U, c3_sf_marshallOut,
       c3_sf_marshallIn);
     CV_EML_FCN(6, 0);
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 5);
     c3_r_q = c3_const_Kin * *c3_flow;
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -5);
     _SFD_SYMBOL_SCOPE_POP();
     c3_updateDataWrittenToVector(chartInstance, 3U);
     _SFD_DATA_RANGE_CHECK(*c3_Qin, 4U);
@@ -3411,9 +3411,9 @@ static void outputs_c3_hw8_two_tanks(SFc3_hw8_two_tanksInstanceStruct
     _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_q, 2U, c3_sf_marshallOut,
       c3_sf_marshallIn);
     CV_EML_FCN(6, 0);
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 5);
     c3_q = c3_const_Kin * *c3_flow;
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -5);
     _SFD_SYMBOL_SCOPE_POP();
     c3_hoistedGlobal = *c3_h1;
     c3_b_hoistedGlobal = *c3_h2;
@@ -3434,15 +3434,15 @@ static void outputs_c3_hw8_two_tanks(SFc3_hw8_two_tanksInstanceStruct
     _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_b_q, 5U, c3_sf_marshallOut,
       c3_sf_marshallIn);
     CV_EML_FCN(4, 0);
-    _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, 3);
-    c3_delta = c3_ha - c3_hb;
     _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, 4);
+    c3_delta = c3_ha - c3_hb;
+    _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, 5);
     c3_d68 = c3_delta;
     c3_b_sign(chartInstance, &c3_d68);
     c3_d69 = 9810.0 * c3_abs(chartInstance, c3_delta);
     c3_b_sqrt(chartInstance, &c3_d69);
     c3_b_q = c3_d68 * c3_const_Ka * c3_d69;
-    _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, -4);
+    _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, -5);
     _SFD_SYMBOL_SCOPE_POP();
     c3_errorIfDataNotWrittenToFcn(chartInstance, 1U, 1U);
     c3_errorIfDataNotWrittenToFcn(chartInstance, 2U, 3U);
@@ -3465,15 +3465,15 @@ static void outputs_c3_hw8_two_tanks(SFc3_hw8_two_tanksInstanceStruct
     _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_c_q, 5U, c3_sf_marshallOut,
       c3_sf_marshallIn);
     CV_EML_FCN(4, 0);
-    _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, 3);
-    c3_b_delta = c3_b_ha - c3_b_hb;
     _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, 4);
+    c3_b_delta = c3_b_ha - c3_b_hb;
+    _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, 5);
     c3_d70 = c3_b_delta;
     c3_b_sign(chartInstance, &c3_d70);
     c3_d71 = 9810.0 * c3_abs(chartInstance, c3_b_delta);
     c3_b_sqrt(chartInstance, &c3_d71);
     c3_c_q = c3_d70 * c3_const_Ka * c3_d71;
-    _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, -4);
+    _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, -5);
     _SFD_SYMBOL_SCOPE_POP();
     _SFD_SYMBOL_SCOPE_PUSH_EML(0U, 3U, 3U, c3_d_debug_family_names,
       c3_b_debug_family_var_map);
@@ -3506,9 +3506,9 @@ static void outputs_c3_hw8_two_tanks(SFc3_hw8_two_tanksInstanceStruct
     _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_e_q, 2U, c3_sf_marshallOut,
       c3_sf_marshallIn);
     CV_EML_FCN(6, 0);
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 5);
     c3_e_q = c3_const_Kin * *c3_flow;
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -5);
     _SFD_SYMBOL_SCOPE_POP();
     *c3_Qin = c3_e_q;
     c3_updateDataWrittenToVector(chartInstance, 3U);
@@ -3534,15 +3534,15 @@ static void outputs_c3_hw8_two_tanks(SFc3_hw8_two_tanksInstanceStruct
     _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_f_q, 5U, c3_sf_marshallOut,
       c3_sf_marshallIn);
     CV_EML_FCN(4, 0);
-    _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, 3);
-    c3_c_delta = c3_c_ha - c3_c_hb;
     _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, 4);
+    c3_c_delta = c3_c_ha - c3_c_hb;
+    _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, 5);
     c3_d74 = c3_c_delta;
     c3_b_sign(chartInstance, &c3_d74);
     c3_d75 = 9810.0 * c3_abs(chartInstance, c3_c_delta);
     c3_b_sqrt(chartInstance, &c3_d75);
     c3_f_q = c3_d74 * c3_const_Ka * c3_d75;
-    _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, -4);
+    _SFD_EML_CALL(4U, chartInstance->c3_sfEvent, -5);
     _SFD_SYMBOL_SCOPE_POP();
     *c3_Qa = c3_f_q;
     c3_updateDataWrittenToVector(chartInstance, 5U);
@@ -3600,9 +3600,9 @@ static void outputs_c3_hw8_two_tanks(SFc3_hw8_two_tanksInstanceStruct
     _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_h_q, 2U, c3_sf_marshallOut,
       c3_sf_marshallIn);
     CV_EML_FCN(6, 0);
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 5);
     c3_h_q = c3_const_Kin * *c3_flow;
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -5);
     _SFD_SYMBOL_SCOPE_POP();
     c3_g_hoistedGlobal = *c3_h1;
     c3_d_ha = c3_g_hoistedGlobal;
@@ -3692,9 +3692,9 @@ static void outputs_c3_hw8_two_tanks(SFc3_hw8_two_tanksInstanceStruct
     _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_j_q, 2U, c3_sf_marshallOut,
       c3_sf_marshallIn);
     CV_EML_FCN(6, 0);
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 5);
     c3_j_q = c3_const_Kin * *c3_flow;
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -5);
     _SFD_SYMBOL_SCOPE_POP();
     *c3_Qin = c3_j_q;
     c3_updateDataWrittenToVector(chartInstance, 3U);
@@ -3784,9 +3784,9 @@ static void outputs_c3_hw8_two_tanks(SFc3_hw8_two_tanksInstanceStruct
     _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_l_q, 2U, c3_sf_marshallOut,
       c3_sf_marshallIn);
     CV_EML_FCN(6, 0);
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 5);
     c3_l_q = c3_const_Kin * *c3_flow;
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -5);
     _SFD_SYMBOL_SCOPE_POP();
     c3_j_hoistedGlobal = *c3_h2;
     c3_g_ha = c3_j_hoistedGlobal;
@@ -3876,9 +3876,9 @@ static void outputs_c3_hw8_two_tanks(SFc3_hw8_two_tanksInstanceStruct
     _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_n_q, 2U, c3_sf_marshallOut,
       c3_sf_marshallIn);
     CV_EML_FCN(6, 0);
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 5);
     c3_n_q = c3_const_Kin * *c3_flow;
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -5);
     _SFD_SYMBOL_SCOPE_POP();
     *c3_Qin = c3_n_q;
     c3_updateDataWrittenToVector(chartInstance, 3U);
@@ -3967,9 +3967,9 @@ static void outputs_c3_hw8_two_tanks(SFc3_hw8_two_tanksInstanceStruct
     _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_p_q, 2U, c3_sf_marshallOut,
       c3_sf_marshallIn);
     CV_EML_FCN(6, 0);
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 5);
     c3_p_q = c3_const_Kin * *c3_flow;
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -5);
     _SFD_SYMBOL_SCOPE_POP();
     _SFD_SYMBOL_SCOPE_PUSH_EML(0U, 3U, 3U, c3_d_debug_family_names,
       c3_b_debug_family_var_map);
@@ -4002,9 +4002,9 @@ static void outputs_c3_hw8_two_tanks(SFc3_hw8_two_tanksInstanceStruct
     _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_r_q, 2U, c3_sf_marshallOut,
       c3_sf_marshallIn);
     CV_EML_FCN(6, 0);
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, 5);
     c3_r_q = c3_const_Kin * *c3_flow;
-    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -2);
+    _SFD_EML_CALL(6U, chartInstance->c3_sfEvent, -5);
     _SFD_SYMBOL_SCOPE_POP();
     *c3_Qin = c3_r_q;
     c3_updateDataWrittenToVector(chartInstance, 3U);
@@ -5063,10 +5063,10 @@ extern void utFree(void*);
 
 void sf_c3_hw8_two_tanks_get_check_sum(mxArray *plhs[])
 {
-  ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(3991860406U);
-  ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(6513286U);
-  ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(551922536U);
-  ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(2333334286U);
+  ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(2191697729U);
+  ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(3557224732U);
+  ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(3549908550U);
+  ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(1669466393U);
 }
 
 mxArray *sf_c3_hw8_two_tanks_get_autoinheritance_info(void)
@@ -5078,7 +5078,7 @@ mxArray *sf_c3_hw8_two_tanks_get_autoinheritance_info(void)
     autoinheritanceFields);
 
   {
-    mxArray *mxChecksum = mxCreateString("xvrckM2qr7mZGHzQyGZD3G");
+    mxArray *mxChecksum = mxCreateString("SkAg3CSsI0OXFXPJ7LfgF");
     mxSetField(mxAutoinheritanceInfo,0,"checksum",mxChecksum);
   }
 
@@ -5493,13 +5493,13 @@ static void chart_debug_initialization(SimStruct *S, unsigned int
 
         /* Initialization of MATLAB Function Model Coverage */
         _SFD_CV_INIT_EML(6,1,1,0,0,0,0,0,0,0,0);
-        _SFD_CV_INIT_EML_FCN(6,0,"qi",0,-1,34);
+        _SFD_CV_INIT_EML_FCN(6,0,"qi",0,-1,145);
         _SFD_CV_INIT_EML(7,1,1,0,0,0,0,0,0,0,0);
         _SFD_CV_INIT_EML_FCN(7,0,"qo",0,-1,181);
         _SFD_CV_INIT_EML(5,1,1,0,0,0,0,0,0,0,0);
         _SFD_CV_INIT_EML_FCN(5,0,"qa_from_tank",0,-1,234);
         _SFD_CV_INIT_EML(4,1,1,0,0,0,0,0,0,0,0);
-        _SFD_CV_INIT_EML_FCN(4,0,"qa_balancing",0,-1,101);
+        _SFD_CV_INIT_EML_FCN(4,0,"qa_balancing",0,-1,209);
         _SFD_CV_INIT_EML(1,1,0,0,0,0,0,0,0,0,0);
         _SFD_CV_INIT_EML(3,1,0,0,0,0,0,0,0,0,0);
         _SFD_CV_INIT_EML(0,1,0,0,0,0,0,0,0,0,0);
@@ -5716,7 +5716,7 @@ static void chart_debug_initialization(SimStruct *S, unsigned int
 
 static const char* sf_get_instance_specialization(void)
 {
-  return "ciBPslj5pOvjlkQKUFKZlB";
+  return "v0t0c2QLCbS4rR8vG0XrkE";
 }
 
 static void sf_opaque_initialize_c3_hw8_two_tanks(void *chartInstanceVar)
@@ -5913,10 +5913,10 @@ static void mdlSetWorkWidths_c3_hw8_two_tanks(SimStruct *S)
   }
 
   ssSetOptions(S,ssGetOptions(S)|SS_OPTION_WORKS_WITH_CODE_REUSE);
-  ssSetChecksum0(S,(3118984429U));
-  ssSetChecksum1(S,(2805444328U));
-  ssSetChecksum2(S,(1348978089U));
-  ssSetChecksum3(S,(2965630929U));
+  ssSetChecksum0(S,(1668112415U));
+  ssSetChecksum1(S,(3311129302U));
+  ssSetChecksum2(S,(4222198487U));
+  ssSetChecksum3(S,(1812187528U));
   ssSetNumContStates(S,2);
   ssSetExplicitFCSSCtrl(S,1);
   ssSupportsMultipleExecInstances(S,1);

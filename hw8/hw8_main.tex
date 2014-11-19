@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[letterpaper]{article}
 \usepackage[utf8]{inputenc}
 
 \title{CS 376 Hybrid Systems : HW 8}
@@ -19,10 +19,10 @@ Consider the two-tank systems shown in Fig. \ref{fig:two-tanks}.
 The system consists of two identical cylindrical tanks,
 of unlimited height,
 that are connected by a pipe at level $h$.
-We denote by $h_1$ and $h_2$ the water levels in
+We denote by $h_1$ and $h_2$ the water levels in 
 tanks 1 and 2 respectively.
 The input flow $Q_{in}$ is provided by a pump and
-it is described by
+it is described by 
 
 \begin{equation}
 Q_{in} = V_{in} k_{in} u(t),
@@ -36,14 +36,14 @@ The flow $Q_a$ between the two tanks is controlled by
 a valve $V_a$. An outlet value $V_{out}$ located at the
 bottom of tank 2 is used to empty the tank.
 Tank 2 is equipped with a sensor that measures the output
-flow which is described by
+flow which is described by 
 
 \begin{equation}
 Q_{out} = V_{out} k_{out} \sqrt{\rho g h_{2}}
 \end{equation}
 
 where $V_{out} \in \{0, 1\}$ represents the outlet valve,
-$k_{out}$ is a linear gain, $\rho$ is the density of
+$k_{out}$ is a linear gain, $\rho$ is the density of 
 the water, and $g$ is the gravitational constant.
 
 \begin{figure}[h!]
@@ -57,15 +57,15 @@ The dynamic evolution of the systems is described by
 
 \begin{align}
 \dot{h_1} & = \frac{1}{A} (Q_{in} - Q_{a}) \\
-\dot{h_2} & = \frac{1}{A} (Q_{a} - Q_{a})
+\dot{h_2} & = \frac{1}{A} (Q_{a} - Q_{a}) 
 \end{align}
 
 where $A$ is the section of the identical cylindrical tanks.
-Following Toricelli's law, the flow $Q_{a}$ depends on
+Following Toricelli's law, the flow $Q_{a}$ depends on 
 the water levels $h_1$ and $h_2$ as follows:
 
 \begin{equation}
-Q_{a}  =
+Q_{a}  =  
  \begin{cases}
  0,        & \mbox{if } h_1 < h \wedge h_2 < h \\
  V_a k_a \sqrt{\rho g (h_1 - h)}, & \mbox{if } h_1 > h \wedge h_2 < h \\
@@ -83,7 +83,7 @@ x & = [h_1, h_2]^T \\
 \end{align}
 
 where $q$ is the discrete mode of the sytem.
-The mode transitions are based on guard conditions
+The mode transitions are based on guard conditions 
 indicated in Equation \ref{eq:flow-rate-a}.
 
 Assume the following values for the system parameters and initial conditions:
@@ -92,17 +92,17 @@ Assume the following values for the system parameters and initial conditions:
  V_{in} = V_{a} = V_{out} = 1, & \mbox{  all valves are open} \\
 \end{align}
 
-$u(t)$ is a pulse with amplitude $1$ $m^3$ and frequency $1$ $Hz$
+$u(t)$ is a pulse with amplitude $1$ $m^3$ and frequency $1$ $Hz$ 
 resulting in an average rate of $1$ $m^3/sec$.
 
 \begin{align}
  h &= 0.3 \mbox{ m } \\
  k_{in} &= 0.06, \\
- k_{a} &= 0.001, \\
- k_{out} &= 0.001, \\
+ k_{a} &= 0.001, \\ 
+ k_{out} &= 0.001, \\ 
  g &= 9.81 \mbox{ $m/sec^2$ }, \\
  \rho& = 1000 \mbox{ $kg/m^3$ }, \\
- A &= 0.0154 \mbox{ $m^2$ }
+ A &= 0.0154 \mbox{ $m^2$ } 
 \end{align}
 
 
@@ -132,13 +132,13 @@ $X = \mathbb{R}$
 X = \{ u(t), x, Q_{a}, Q_{out} \}
 \end{equation}
 
-The set of initial conditions.
+The set of initial conditions. 
 $Init \subseteq Q \times X$
 \begin{equation}
 Init = \{  \}
 \end{equation}
 
-The vector field.
+The vector field. 
 $f: Q \times X$
 
 \begin{equation}
@@ -164,43 +164,43 @@ $Inv_{i} = $
 $f_{separated} = $
 \begin{align}
   Q_{in} &= k_{in} \mbox{ $m/sec^2$ } \\
-  Q_a &= 0, \\
+  Q_a &= 0, \\ 
   \dot{h_1} &= \frac{Q_{in}}{A} \\
   \dot{h_2} &= -\frac{Q_{out}}{A} \\
-  Q_out &= k_{out} \sqrt{\rho g h_2}
-\end{align}
+  Q_out &= k_{out} \sqrt{\rho g h_2} 
+\end{align} 
 
 $f_{from_1} = $
 \begin{align}
   Q_{in} &= k_{in} \mbox{ $m/sec^2$ } \\
-  Q_a &= k_{a} \sqrt{\rho g (h_1 - h)}, \\
+  Q_a &= k_{a} \sqrt{\rho g (h_1 - h)}, \\ 
   \dot{h_1} &= \frac{Q_{in} - Q_a}{A} \\
   \dot{h_2} &= \frac{Q_a - Q_{out}}{A} \\
-  Q_out &= k_{out} \sqrt{\rho g h_2}
-\end{align}
+  Q_out &= k_{out} \sqrt{\rho g h_2} 
+\end{align} 
 
 $f_{from_2} = $
 \begin{align}
   Q_{in} &= k_{in} \mbox{ $m/sec^2$ } \\
-  Q_a &= k_{a} \sqrt{\rho g (h - h_2)}, \\
+  Q_a &= k_{a} \sqrt{\rho g (h - h_2)}, \\ 
   \dot{h_1} &= \frac{Q_{in} - Q_a}{A} \\
   \dot{h_2} &= \frac{Q_a - Q_{out}}{A} \\
-  Q_out &= k_{out} \sqrt{\rho g h_2}
-\end{align}
+  Q_out &= k_{out} \sqrt{\rho g h_2} 
+\end{align} 
 
 $f_{balancing} = $
 \begin{align}
   Q_{in} &= k_{in} \mbox{ $m/sec^2$ } \\
-  Q_a &= sign(h_1 - h_2) k_a \sqrt{\rho g |h_1 - h_2|} \\
+  Q_a &= sign(h_1 - h_2) k_a \sqrt{\rho g |h_1 - h_2|} \\ 
   \dot{h_1} &= \frac{Q_{in} - Q_a}{A} \\
   \dot{h_2} &= \frac{Q_a - Q_{out}}{A} \\
-  Q_out &= k_{out} \sqrt{\rho g h_2}
-\end{align}
+  Q_out &= k_{out} \sqrt{\rho g h_2} 
+\end{align} 
 
 The collection of discrete transitions.
 $E \subset Q \times Q$
 \begin{align}
-E = \{
+E = \{ 
   & ( separated, from_1 ) \\
   & ( separated, from_2 ) \\
   & ( separated, balanced ) \\
@@ -218,7 +218,7 @@ E = \{
 The guards on the transitions.
 $G: E \mapsto 2^X$
 \begin{align}
-E = \{
+E = \{ 
   & ( separated, from_1 ), h_1 > h \wedge h_2 < h, \\
   & ( separated, from_2 ), h_1 < h \wedge h2 > h, \\
   & ( separated, balanced ), h_1 > h \wedge h_2 > h, \\
@@ -236,20 +236,56 @@ E = \{
 The reset relation on the transitions.
 $R: E \times X \mapsto 2^X$
 \begin{align}
-R = \emptyset
+R = \emptyset 
 \end{align}
 
 \section{Simulink Simulation}
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.7]{hw8_two_tank_model.png}
+\includegraphics[scale=0.7]{hw8_two_tanks_simulink.png}
 \caption{Two-tank SimuLink Model}
-\label{fig:two-tank-model}
+\label{fig:two-tank-simulink}
 \end{figure}
 
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.4]{hw8_two_tanks_Chart.png}
+\caption{Two-tank StateFlow Model}
+\label{fig:two-tank-stateflow}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.7]{hw8_qi_fn.png}
+\caption{Input Flow Function}
+\label{fig:q_in}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.7]{hw8_qo_fn.png}
+\caption{Output Flow Function}
+\label{fig:q_out}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.7]{hw8_qa_from_tank_fn.png}
+\caption{From Tank Flow Function}
+\label{fig:qa_from_tank}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.7]{hw8_qa_balancing_fn.png}
+\caption{Balancing Flow Function}
+\label{fig:q_balancing}
+\end{figure}
+
+
 The model is simulated for several initial conditions $x_0 = [h_1, h_2]^T$.
-The continuous state $Q_{a}, x$, discrete state $q$, and
+The continuous state $Q_{a}, x$, discrete state $q$, and 
 output $Q_{out}$ of the system are plotted.
 
 \subsection{$x_0 = [0.20, 0.75]^T$}
@@ -289,3 +325,4 @@ output $Q_{out}$ of the system are plotted.
 \end{figure}
 
 \end{document}
+
