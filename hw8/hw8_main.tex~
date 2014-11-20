@@ -109,23 +109,6 @@ resulting in an average rate of $1$ $m^3/sec$.
 \section{A hybrid automaton model}
 
 The formal model for the two-tank system hybrid automaton.
-There were a number of simplifications which could have been made.
-Rather than make these simplifications I tried to 
-stay as close to the specification as possible.
-
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=0.5]{hw8_two_tank_hybrid.png}
-\caption{Two-tank Hybrid Model}
-\label{fig:two-tank-hybrid}
-\end{figure}
-
-All the $V_i$ variables are $1$ so they have no 
-net effect on the model so they have been ommitted.
-
-There is a further assumption on this problem
-in that the input flow is allways positive (or zero).
-
 
 \begin{equation}
 H = (q, X, Init, f, Inv, E, G, R)
@@ -152,7 +135,7 @@ X = \{ u(t), x, Q_{a}, Q_{out} \}
 The set of initial conditions. 
 $Init \subseteq Q \times X$
 \begin{equation}
-Init = \{ h_1 = h_{1_0}, h_2 = h_{2_0} \}
+Init = \{  \}
 \end{equation}
 
 The vector field. 
@@ -184,7 +167,7 @@ $f_{separated} = $
   Q_a &= 0, \\ 
   \dot{h_1} &= \frac{Q_{in}}{A} \\
   \dot{h_2} &= -\frac{Q_{out}}{A} \\
-  Q_{out} &= k_{out} \sqrt{\rho g h_2} 
+  Q_out &= k_{out} \sqrt{\rho g h_2} 
 \end{align} 
 
 $f_{from_1} = $
@@ -193,7 +176,7 @@ $f_{from_1} = $
   Q_a &= k_{a} \sqrt{\rho g (h_1 - h)}, \\ 
   \dot{h_1} &= \frac{Q_{in} - Q_a}{A} \\
   \dot{h_2} &= \frac{Q_a - Q_{out}}{A} \\
-  Q_{out} &= k_{out} \sqrt{\rho g h_2} 
+  Q_out &= k_{out} \sqrt{\rho g h_2} 
 \end{align} 
 
 $f_{from_2} = $
@@ -202,7 +185,7 @@ $f_{from_2} = $
   Q_a &= k_{a} \sqrt{\rho g (h - h_2)}, \\ 
   \dot{h_1} &= \frac{Q_{in} - Q_a}{A} \\
   \dot{h_2} &= \frac{Q_a - Q_{out}}{A} \\
-  Q_{out} &= k_{out} \sqrt{\rho g h_2} 
+  Q_out &= k_{out} \sqrt{\rho g h_2} 
 \end{align} 
 
 $f_{balancing} = $
@@ -211,7 +194,7 @@ $f_{balancing} = $
   Q_a &= sign(h_1 - h_2) k_a \sqrt{\rho g |h_1 - h_2|} \\ 
   \dot{h_1} &= \frac{Q_{in} - Q_a}{A} \\
   \dot{h_2} &= \frac{Q_a - Q_{out}}{A} \\
-  Q_{out} &= k_{out} \sqrt{\rho g h_2} 
+  Q_out &= k_{out} \sqrt{\rho g h_2} 
 \end{align} 
 
 The collection of discrete transitions.
@@ -272,15 +255,6 @@ R = \emptyset
 \label{fig:two-tank-stateflow}
 \end{figure}
 
-I choose to implement this model using continuous StateFlow.
-The tricky part of this simulation was constructing 
-functions on continuous variables.
-The difficulty was the limitations imposed on the 
-continuous variables.
-In particular relational checks were not allowed.
-I used the $sign()$ and $abs()$ functions to accomdate
-this limitation.
-
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.7]{hw8_qi_fn.png}
@@ -294,20 +268,6 @@ this limitation.
 \caption{Output Flow Function}
 \label{fig:q_out}
 \end{figure}
-
-It was likely that the functions would require
-taking the $sqrt()$ of a negative value.
-Also, the $sqrt()$ function does not actually
-cross zero.  
-The functions have been modified to handle
-the invariant conditions by using a modified
-square root that is monotinic increasing, continuous,
-and differentiable.
-
-\begin{equation}
-qa = K_a * V_a * \sqrt{\rho * g * | delta |} * sign(delta)
-\end{equation}
-
 
 \begin{figure}[h!]
 \centering
@@ -330,28 +290,12 @@ output $Q_{out}$ of the system are plotted.
 
 \subsection{$x_0 = [0.20, 0.75]^T$}
 
-For the most part the outcome is unremarkable.
-Regardless of the initial state the system quickly
-reaches a quasi-steady-state condition alternating 
-between brief periods where the $h_1 > h \wedge h_2 > h$ 
-immediately before the end of a pulse and
-the condition where $h_1 > 1 \wedge h_2 < h$.
-The $Q_in = 0.06$ when the pulse is active.
-The $h_1$ level rises during the pulse approaching $\approx 0.65$
-and between pulses it falls to $0.3$ and holds.
-The $Q_a$ generally follows the $h_1$ except near the 
-end of the pulse.
-
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.7]{hw8_20_75.png}
 \caption{Two-tank SimuLink Model, $x_0 = [0.2, 0.75]^T$ }
 \label{fig:two-tank-model-20-75}
 \end{figure}
-
-There is an initial shift, Figure \ref{fig:tow-tank-model-20-75},
-of water from Tank 2 back to Tank 1 but this is short lived,
-resolving itself before the end of the first pulse.
 
 \subsection{$x_0 = [0.50, 0.20]^T$}
 
@@ -362,10 +306,6 @@ resolving itself before the end of the first pulse.
 \label{fig:two-tank-model-50-20}
 \end{figure}
 
-There is a slightly lengthened duration in $h1 > h \wedge h2 > h$, 
-Figure \ref{fig:tow-tank-model-50-20} but this is short lived,
-resolving itself before the end of the first pulse.
-
 \subsection{$x_0 = [0.50, 0.50]^T$}
 
 \begin{figure}[h!]
@@ -375,11 +315,6 @@ resolving itself before the end of the first pulse.
 \label{fig:two-tank-model-50-50}
 \end{figure}
 
-There is a immediate and lengthened duration in $h1 > h \wedge h2 > h$, 
-Figure \ref{fig:tow-tank-model-50-50} and the initial 
-output flow is increased but this is short lived,
-resolving itself before the end of the first pulse.
-
 \subsection{$x_0 = [0.20, 0.20]^T$}
 
 \begin{figure}[h!]
@@ -388,11 +323,6 @@ resolving itself before the end of the first pulse.
 \caption{Two-tank SimuLink Model, $x_0 = [0.20, 0.20]^T$ }
 \label{fig:two-tank-model-20-20}
 \end{figure}
-
-There no time spent in $h1 > h \wedge h2 > h$, 
-Figure \ref{fig:tow-tank-model-20-20} and the initial 
-output flow is decreased but this is short lived,
-resolving itself before the end of the first pulse.
 
 \end{document}
 
