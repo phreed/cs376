@@ -1,0 +1,1580 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>snowpack_water</title><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div lang="en" class="book" title="snowpack_water"><div class="titlepage"><div><div><h1 class="title"><a name="d0e1"></a>snowpack_water</h1></div><div><h2 class="subtitle"></h2></div><div><div class="mediaobject"><map name="d0e13"><area coords="52,28,82,58" shape="rect" href="#fdebb2d3b2d152e1d4e1eef19f76a84b"><area coords="52,158,82,188" shape="rect" href="#3e722aceb663726007379416249b9df3"><area coords="52,223,82,253" shape="rect" href="#7d78a652ecb2be21b04d680f5fc6aed5"><area coords="52,93,82,123" shape="rect" href="#0311b5aaa658b01fd4cbc622efe6da66"><area coords="52,288,82,318" shape="rect" href="#7fca5f7357031aea1a37cc2a8d315cbf"><area coords="192,11,407,335" shape="rect" href="#13dd4847221120d4830297107dd96b69"></map><img src="./snowpack_water_html_files/image-001-sl.png" usemap="%0A                #d0e13" ismap="" border="0"></div></div><div><div class="author"><h3 class="author"><span class="firstname">feisele
+ </span></h3></div></div><div><p class="pubdate">29-Nov-2014 18:42:14</p></div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="chapter"><a href="#d0e34">Model - snowpack_water</a></span></dt><dd><dl><dt><span class="sect1"><a href="#6b20329c20913a2a09bbf7c2e3864f5c">Machine - snowpack_water</a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e230">System - snowpack_water</a></span></dt><dd><dl><dt><span class="sect1"><a href="#dd58af9be6da05d8f3fe12016f785d5f">Chart - supervisor</a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e1349">System - snowpack_water/supervisor/Frozen.steady_frozen</a></span></dt><dt><span class="chapter"><a href="#d0e2201">System - snowpack_water/supervisor/Melt.steady_melting</a></span></dt><dt><span class="chapter"><a href="#d0e3096">System - snowpack_water/supervisor/Thaw.steady_thaw</a></span></dt><dt><span class="chapter"><a href="#d0e3922">Appendix</a></span></dt></dl></div><div class="list-of-tables"><p><b>List of Tables</b></p><dl><dt>1. <a href="#d0e101">Sample Times</a></dt><dt>2. <a href="#d0e256">Chart Block Properties</a></dt><dt>3. <a href="#d0e284">Constant Block Properties</a></dt><dt>4. <a href="#d0e419">Sin Block Properties</a></dt><dt>5. <a href="#d0e1384">Constant Block Properties</a></dt><dt>6. <a href="#d0e1444">DiscreteIntegrator Block Properties</a></dt><dt>7. <a href="#d0e1569">Inport Block Properties</a></dt><dt>8. <a href="#d0e1706">MATLAB Function Block Properties</a></dt><dt>9. <a href="#d0e1743">Outport Block Properties</a></dt><dt>10. <a href="#d0e1944">Product Block Properties</a></dt><dt>11. <a href="#d0e2025">Sum Block Properties</a></dt><dt>12. <a href="#d0e2113">TriggerPort Block Properties</a></dt><dt>13. <a href="#d0e2238">Constant Block Properties</a></dt><dt>14. <a href="#d0e2373">DiscreteIntegrator Block Properties</a></dt><dt>15. <a href="#d0e2535">Gain Block Properties</a></dt><dt>16. <a href="#d0e2602">Inport Block Properties</a></dt><dt>17. <a href="#d0e2739">MATLAB Function Block Properties</a></dt><dt>18. <a href="#d0e2795">Outport Block Properties</a></dt><dt>19. <a href="#d0e2990">Terminator Block Properties</a></dt><dt>20. <a href="#d0e3008">TriggerPort Block Properties</a></dt><dt>21. <a href="#d0e3130">Constant Block Properties</a></dt><dt>22. <a href="#d0e3190">DiscreteIntegrator Block Properties</a></dt><dt>23. <a href="#d0e3352">Gain Block Properties</a></dt><dt>24. <a href="#d0e3447">Inport Block Properties</a></dt><dt>25. <a href="#d0e3584">MATLAB Function Block Properties</a></dt><dt>26. <a href="#d0e3621">Outport Block Properties</a></dt><dt>27. <a href="#d0e3816">Terminator Block Properties</a></dt><dt>28. <a href="#d0e3834">TriggerPort Block Properties</a></dt><dt>29. <a href="#d0e3927">Block Type Count</a></dt><dt>30. <a href="#d0e4295">Model Variables</a></dt><dt>31. <a href="#d0e4448">Model Functions</a></dt><dt>32. <a href="#d0e4489">Count:snowpack_water</a></dt><dt>33. <a href="#d0e4761">Data Properties</a></dt></dl></div><div class="chapter" title="Model - snowpack_water"><div class="titlepage"><div><div><h2 class="title"><a name="d0e34"></a>Model - snowpack_water</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="sect1"><a href="#6b20329c20913a2a09bbf7c2e3864f5c">Machine - snowpack_water</a></span></dt></dl></div><a name="7810d8c011d4ce08b3b8c7007b7a9220"></a><div class="orderedlist" title="Full Model Hierarchy"><p class="title"><b>Full Model Hierarchy</b></p><ol class="orderedlist" type="1" compact><li class="listitem">
+            <a class="link" href="#7810d8c011d4ce08b3b8c7007b7a9220">snowpack_water</a>
+        </li></ol></div><a name="d0e48"></a><div class="table"><div class="table-contents"><table summary="" border="1" cellspacing="0" fastRender="1" width="100%"><col width="9000*"><col width="30000*"><thead><tr>
+            <th align="left">Simulation Parameter</th>
+            <th align="left">Value</th>
+        </tr></thead><tbody><tr>
+            <td align="left">Solver</td>
+            <td align="left">ode45</td>
+        </tr><tr>
+            <td align="left">RelTol</td>
+            <td align="left">1e-3</td>
+        </tr><tr>
+            <td align="left">Refine</td>
+            <td align="left">1</td>
+        </tr><tr>
+            <td align="left">MaxOrder</td>
+            <td align="left">5</td>
+        </tr><tr>
+            <td align="left">ZeroCross</td>
+            <td align="left">on</td>
+        </tr></tbody></table></div></div><a name="d0e101"></a><div class="table"><p class="title"><b>Table&nbsp;1.&nbsp;Sample Times</b></p><div class="table-contents"><table summary="Sample Times" border="1" cellspacing="0" fastRender="1" width="100%"><col width="60*"><col width="120*"><col width="180*"><col width="180*"><thead><tr>
+            <th align="left">Color</th>
+            <th align="left">Annotation</th>
+            <th align="left">Description</th>
+            <th align="left">Value</th>
+        </tr></thead><tbody><tr>
+            <td align="left">
+                <span class="inlinemediaobject"><img src="./snowpack_water_html_files/image-003-sampletime.bmp"></span>
+            </td>
+            <td align="left">FiM</td>
+            <td align="left">Fixed in Minor Step</td>
+            <td align="left">[0,1]</td>
+        </tr><tr>
+            <td align="left">
+                <span class="inlinemediaobject"><img src="./snowpack_water_html_files/image-004-sampletime.bmp"></span>
+            </td>
+            <td align="left">D1</td>
+            <td align="left">Discrete 1</td>
+            <td align="left">0.0083333</td>
+        </tr><tr>
+            <td align="left">
+                <span class="inlinemediaobject"><img src="./snowpack_water_html_files/image-005-sampletime.bmp"></span>
+            </td>
+            <td align="left">T1</td>
+            <td align="left">Triggered</td>
+            <td align="left">Source: D1</td>
+        </tr></tbody></table></div></div><p>
+    <a class="link" href="#appendix-sl">
+        <span class="emphasis"><em>[more info]</em></span>
+    </a>
+</p><div class="sect1" title="Machine - snowpack_water"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="6b20329c20913a2a09bbf7c2e3864f5c"></a>Machine - snowpack_water</h2></div></div></div><a name="d0e190"></a><div class="table"><div class="table-contents"><table summary="" border="1" cellspacing="0" fastRender="1" width="100%"><col width="9000*"><col width="30000*"><thead><tr>
+            <th align="left">Machine</th>
+            <th align="left">snowpack_water</th>
+        </tr></thead><tbody><tr>
+            <td align="left">Creation Date</td>
+            <td align="left">22-Nov-2014 11:59:24</td>
+        </tr><tr>
+            <td align="left">Charts</td>
+            <td align="left">
+                <a class="link" href="#dd58af9be6da05d8f3fe12016f785d5f" title="Chart - supervisor">supervisor</a>
+            </td>
+        </tr></tbody></table></div></div><p>
+    <a class="link" href="#appendix-sf">
+        <span class="emphasis"><em>[more info]</em></span>
+    </a>
+</p></div></div><div class="chapter" title="System - snowpack_water"><div class="titlepage"><div><div><h2 class="title"><a name="d0e230"></a>System - snowpack_water</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="sect1"><a href="#dd58af9be6da05d8f3fe12016f785d5f">Chart - supervisor</a></span></dt></dl></div><a name="5c3e741f52a6bd5a508bff9d02e05cc5"></a><div class="mediaobject"><map name="d0e237"><area coords="52,28,82,58" shape="rect" href="#fdebb2d3b2d152e1d4e1eef19f76a84b"><area coords="52,158,82,188" shape="rect" href="#3e722aceb663726007379416249b9df3"><area coords="52,223,82,253" shape="rect" href="#7d78a652ecb2be21b04d680f5fc6aed5"><area coords="52,93,82,123" shape="rect" href="#0311b5aaa658b01fd4cbc622efe6da66"><area coords="52,288,82,318" shape="rect" href="#7fca5f7357031aea1a37cc2a8d315cbf"><area coords="192,11,407,335" shape="rect" href="#13dd4847221120d4830297107dd96b69"></map><img src="./snowpack_water_html_files/image-009-sl.png" usemap="%0A                #d0e237" ismap="" border="0"></div><a name="d0e256"></a><div class="table"><p class="title"><b>Table&nbsp;2.&nbsp;Chart Block Properties</b></p><div class="table-contents"><table summary="Chart Block Properties" border="1" cellspacing="0" fastRender="1" width="100%"><col width="60*"><col width="60*"><thead><tr>
+            <th align="left">Name</th>
+            <th align="left">Chart</th>
+        </tr></thead><tbody><tr>
+            <td align="left">
+                <a name="13dd4847221120d4830297107dd96b69"></a>supervisor</td>
+            <td align="left">
+                <a class="link" href="#dd58af9be6da05d8f3fe12016f785d5f" title="Chart - supervisor">supervisor</a>
+            </td>
+        </tr></tbody></table></div></div><a name="d0e284"></a><div class="table"><p class="title"><b>Table&nbsp;3.&nbsp;Constant Block Properties</b></p><div class="table-contents"><table summary="Constant Block Properties" border="1" cellspacing="0" fastRender="1" width="100%"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><thead><tr>
+            <th align="left">Name</th>
+            <th align="left">Value</th>
+            <th align="left">Sampling Mode</th>
+            <th align="left">Out Data Type Str</th>
+            <th align="left">Lock Scale</th>
+            <th align="left">Sample Time</th>
+            <th align="left">Frame Period</th>
+        </tr></thead><tbody><tr>
+            <td align="left">
+                <a name="fdebb2d3b2d152e1d4e1eef19f76a84b"></a>Initial Showpack</td>
+            <td align="left">200</td>
+            <td align="left">Sample based</td>
+            <td align="left">Inherit: Inherit from 'Constant value'</td>
+            <td align="left">off</td>
+            <td align="left">inf</td>
+            <td align="left">inf</td>
+        </tr><tr>
+            <td align="left">
+                <a name="3e722aceb663726007379416249b9df3"></a>Initial Showpack Density</td>
+            <td align="left">500</td>
+            <td align="left">Sample based</td>
+            <td align="left">Inherit: Inherit from 'Constant value'</td>
+            <td align="left">off</td>
+            <td align="left">inf</td>
+            <td align="left">inf</td>
+        </tr><tr>
+            <td align="left">
+                <a name="7d78a652ecb2be21b04d680f5fc6aed5"></a>Initial Temperature</td>
+            <td align="left">-1</td>
+            <td align="left">Sample based</td>
+            <td align="left">Inherit: Inherit from 'Constant value'</td>
+            <td align="left">off</td>
+            <td align="left">inf</td>
+            <td align="left">inf</td>
+        </tr><tr>
+            <td align="left">
+                <a name="0311b5aaa658b01fd4cbc622efe6da66"></a>Initial Water in Snowpack</td>
+            <td align="left">0</td>
+            <td align="left">Sample based</td>
+            <td align="left">Inherit: Inherit from 'Constant value'</td>
+            <td align="left">off</td>
+            <td align="left">inf</td>
+            <td align="left">inf</td>
+        </tr></tbody></table></div></div><a name="d0e419"></a><div class="table"><p class="title"><b>Table&nbsp;4.&nbsp;Sin Block Properties</b></p><div class="table-contents"><table summary="Sin Block Properties" border="1" cellspacing="0" fastRender="1" width="100%"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><thead><tr>
+            <th align="left">Name</th>
+            <th align="left">Sine Type</th>
+            <th align="left">Time Source</th>
+            <th align="left">Amplitude</th>
+            <th align="left">Bias</th>
+            <th align="left">Frequency</th>
+            <th align="left">Phase</th>
+            <th align="left">Samples</th>
+            <th align="left">Offset</th>
+            <th align="left">Sample Time</th>
+        </tr></thead><tbody><tr>
+            <td align="left">
+                <a name="7fca5f7357031aea1a37cc2a8d315cbf"></a>Insolation diurinal</td>
+            <td align="left">Time based</td>
+            <td align="left">Use simulation time</td>
+            <td align="left">500</td>
+            <td align="left">400</td>
+            <td align="left">2*pi</td>
+            <td align="left">0</td>
+            <td align="left">10</td>
+            <td align="left">0</td>
+            <td align="left">1/120</td>
+        </tr></tbody></table></div></div><div class="sect1" title="Chart - supervisor"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="dd58af9be6da05d8f3fe12016f785d5f"></a>Chart - supervisor</h2></div></div></div><a name="d0e504"></a><div class="table"><div class="table-contents"><table summary="" border="1" cellspacing="0" fastRender="1" width="100%"><col width="9000*"><col width="30000*"><thead><tr>
+            <th align="left">Chart</th>
+            <th align="left">
+                <a class="link" href="#6b20329c20913a2a09bbf7c2e3864f5c" title="Machine - snowpack_water">snowpack_water</a>/supervisor</th>
+        </tr></thead><tbody><tr>
+            <td align="left">States</td>
+            <td align="left">
+                <table border="0" summary="Simple list" class="simplelist"><tr><td>
+                        <a class="link" href="#d5fce0cc4c69248484536295e398496c">Frozen</a>
+                    </td></tr><tr><td>
+                        <a class="link" href="#f4c47970f574a29a3711d072951c30b1">Thaw</a>
+                    </td></tr><tr><td>
+                        <a class="link" href="#985e8b8721ace8d0efce6e9d9b7ed55a">Melt</a>
+                    </td></tr></table>
+            </td>
+        </tr><tr>
+            <td align="left">Transitions</td>
+            <td align="left">
+                <table border="0" summary="Simple list" class="simplelist"><tr><td>
+                        <a class="link" href="#5a3fbb2b63cd131418e3ec79abfb58e9">{...</a>
+                    </td></tr><tr><td>
+                        <a class="link" href="#06236fcb6ab216242f52e9ee3263c08c">[Mw &lt;= 0]</a>
+                    </td></tr><tr><td>
+                        <a class="link" href="#7f834db0d8b889defea8c15df5683e6f">[Ts &gt;= 0]</a>
+                    </td></tr><tr><td>
+                        <a class="link" href="#8f2929a06bc07b8a33333889f8f81480">[ (Ps * Mw) / (Pw * (Mi + Mw)) &lt; Or]</a>
+                    </td></tr><tr><td>
+                        <a class="link" href="#49a5fdc3ffc58299f951aa1ce338b4cc">[ (Ps * Mw) / (Pw * (Mi + Mw)) &gt;= Or]</a>
+                    </td></tr></table>
+            </td>
+        </tr><tr>
+            <td align="left">Data</td>
+            <td align="left">
+                <table border="0" summary="Simple list" class="simplelist"><tr><td>
+                        <a class="link" href="#8feebec9e0b9f3459cfc3d32fbcbcc52">q</a>
+                    </td></tr><tr><td>
+                        <a class="link" href="#bceebdb23b0dbb62c4a0e486994ddea6">Mi_in</a>
+                    </td></tr><tr><td>
+                        <a class="link" href="#8dabf6f4596aa62f5dbd73cc27cda6e1">Mw_in</a>
+                    </td></tr><tr><td>
+                        <a class="link" href="#7b7b49d31245c856ce12346f74e386fc">Ps_in</a>
+                    </td></tr><tr><td>
+                        <a class="link" href="#6456d439f96cbdc9184663f3f47af03e">Ts_in</a>
+                    </td></tr><tr><td>
+                        <a class="link" href="#8e2a8ed45e6a83b839a534951745d651">Mi_out</a>
+                    </td></tr><tr><td>
+                        <a class="link" href="#fa1527842d1b5e5bc007fa3bd03f1fd0">Mw_out</a>
+                    </td></tr><tr><td>
+                        <a class="link" href="#3480316355a26a7dd478848be00b417b">Ps_out</a>
+                    </td></tr><tr><td>
+                        <a class="link" href="#31f6039b02768ec1f42f847c184ce818">Ts_out</a>
+                    </td></tr><tr><td>
+                        <a class="link" href="#a7f90ab0c986e5de497ecb6412ad2442">ut</a>
+                    </td></tr><tr><td>
+                        <a class="link" href="#0150b952722b8b8c435df58d8a670158">Mi</a>
+                    </td></tr><tr><td>
+                        <a class="link" href="#a29ad557a6b07889ab4743b061546ef8">Mw</a>
+                    </td></tr><tr><td>
+                        <a class="link" href="#b2cc691b0c6aac747d6d40df53d11e54">Ps</a>
+                    </td></tr><tr><td>
+                        <a class="link" href="#f475ff7571958782d4d040de6a565386">Ts</a>
+                    </td></tr><tr><td>
+                        <a class="link" href="#7ffd21d8192641c48dbfa3135b648143">Or</a>
+                    </td></tr><tr><td>
+                        <a class="link" href="#8f12589c75387981dafe7a01d5291dbb">Lf</a>
+                    </td></tr><tr><td>
+                        <a class="link" href="#39cd351a2bd7eabbf12951b2a789cb65">Pw</a>
+                    </td></tr></table>
+            </td>
+        </tr></tbody></table></div></div><div class="mediaobject"><map name="d0e677"><area coords="188,7,197,25" shape="rect" href="#d5fce0cc4c69248484536295e398496c"><area coords="188,375,197,393" shape="rect" href="#f4c47970f574a29a3711d072951c30b1"><area coords="200,375,209,393" shape="rect" href="#985e8b8721ace8d0efce6e9d9b7ed55a"><area coords="167,7,176,25" shape="rect" href="#5a3fbb2b63cd131418e3ec79abfb58e9"><area coords="11,172,21,190" shape="rect" href="#06236fcb6ab216242f52e9ee3263c08c"><area coords="364,169,374,187" shape="rect" href="#7f834db0d8b889defea8c15df5683e6f"><area coords="11,265,21,283" shape="rect" href="#8f2929a06bc07b8a33333889f8f81480"><area coords="364,263,374,281" shape="rect" href="#49a5fdc3ffc58299f951aa1ce338b4cc"><area coords="50,111,335,170" shape="rect" href="#d5fce0cc4c69248484536295e398496c"><area coords="53,190,332,262" shape="rect" href="#f4c47970f574a29a3711d072951c30b1"><area coords="55,284,334,350" shape="rect" href="#985e8b8721ace8d0efce6e9d9b7ed55a"><area coords="170,103,172,105" shape="rect" href="#5a3fbb2b63cd131418e3ec79abfb58e9"><area coords="87,180,89,182" shape="rect" href="#06236fcb6ab216242f52e9ee3263c08c"><area coords="293,177,295,179" shape="rect" href="#7f834db0d8b889defea8c15df5683e6f"><area coords="82,273,84,275" shape="rect" href="#8f2929a06bc07b8a33333889f8f81480"><area coords="301,271,303,273" shape="rect" href="#49a5fdc3ffc58299f951aa1ce338b4cc"></map><img src="./snowpack_water_html_files/image-011-sf.png" usemap="%0A                #d0e677" ismap="" border="0"><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p>(1)</p></td><td valign="top" align="left"><p>
+                    <a class="link" href="#d5fce0cc4c69248484536295e398496c">Frozen</a>
+                </p></td></tr><tr><td width="5%" valign="top" align="left"><p>(2)</p></td><td valign="top" align="left"><p>
+                    <a class="link" href="#f4c47970f574a29a3711d072951c30b1">Thaw</a>
+                </p></td></tr><tr><td width="5%" valign="top" align="left"><p>(3)</p></td><td valign="top" align="left"><p>
+                    <a class="link" href="#985e8b8721ace8d0efce6e9d9b7ed55a">Melt</a>
+                </p></td></tr><tr><td width="5%" valign="top" align="left"><p>(4)</p></td><td valign="top" align="left"><p>
+                    <a class="link" href="#5a3fbb2b63cd131418e3ec79abfb58e9">{...</a>
+                </p></td></tr><tr><td width="5%" valign="top" align="left"><p>(5)</p></td><td valign="top" align="left"><p>
+                    <a class="link" href="#06236fcb6ab216242f52e9ee3263c08c">[Mw &lt;= 0]</a>
+                </p></td></tr><tr><td width="5%" valign="top" align="left"><p>(6)</p></td><td valign="top" align="left"><p>
+                    <a class="link" href="#7f834db0d8b889defea8c15df5683e6f">[Ts &gt;= 0]</a>
+                </p></td></tr><tr><td width="5%" valign="top" align="left"><p>(7)</p></td><td valign="top" align="left"><p>
+                    <a class="link" href="#8f2929a06bc07b8a33333889f8f81480">[ (Ps * Mw) / (Pw * (Mi + Mw)) &lt; Or]</a>
+                </p></td></tr><tr><td width="5%" valign="top" align="left"><p>(8)</p></td><td valign="top" align="left"><p>
+                    <a class="link" href="#49a5fdc3ffc58299f951aa1ce338b4cc">[ (Ps * Mw) / (Pw * (Mi + Mw)) &gt;= Or]</a>
+                </p></td></tr></table></div></div><p></p><div class="orderedlist" title="Stateflow Hierarchy"><p class="title"><b>Stateflow Hierarchy</b></p><ol class="orderedlist" type="1" compact><li class="listitem"><p class="simpara">
+            <a class="link" href="#6b20329c20913a2a09bbf7c2e3864f5c" title="Machine - snowpack_water">snowpack_water</a>
+        </p><div class="orderedlist"><table border="0" class="orderedlist"><col align="left" valign="top"><tbody><tr><td>1.1.</td><td><p class="simpara">
+                    <span class="emphasis"><em>
+                        <a class="link" href="#dd58af9be6da05d8f3fe12016f785d5f" title="Chart - supervisor">supervisor</a>
+                    </em></span>
+                </p><div class="orderedlist"><table border="0" class="orderedlist"><col align="left" valign="top"><tbody><tr><td>1.1.1.</td><td>Data: <a class="link" href="#8feebec9e0b9f3459cfc3d32fbcbcc52">q</a>, <a class="link" href="#bceebdb23b0dbb62c4a0e486994ddea6">Mi_in</a>, <a class="link" href="#8dabf6f4596aa62f5dbd73cc27cda6e1">Mw_in</a>, <a class="link" href="#7b7b49d31245c856ce12346f74e386fc">Ps_in</a>, <a class="link" href="#6456d439f96cbdc9184663f3f47af03e">Ts_in</a>, <a class="link" href="#8e2a8ed45e6a83b839a534951745d651">Mi_out</a>, <a class="link" href="#fa1527842d1b5e5bc007fa3bd03f1fd0">Mw_out</a>, <a class="link" href="#3480316355a26a7dd478848be00b417b">Ps_out</a>, <a class="link" href="#31f6039b02768ec1f42f847c184ce818">Ts_out</a>, <a class="link" href="#a7f90ab0c986e5de497ecb6412ad2442">ut</a>, <a class="link" href="#0150b952722b8b8c435df58d8a670158">Mi</a>, <a class="link" href="#a29ad557a6b07889ab4743b061546ef8">Mw</a>, <a class="link" href="#b2cc691b0c6aac747d6d40df53d11e54">Ps</a>, <a class="link" href="#f475ff7571958782d4d040de6a565386">Ts</a>, <a class="link" href="#7ffd21d8192641c48dbfa3135b648143">Or</a>, <a class="link" href="#8f12589c75387981dafe7a01d5291dbb">Lf</a>, <a class="link" href="#39cd351a2bd7eabbf12951b2a789cb65">Pw</a>
+                        </td></tr><tr><td>1.1.2.</td><td>Transition: <a class="link" href="#5a3fbb2b63cd131418e3ec79abfb58e9">{...</a>, <a class="link" href="#06236fcb6ab216242f52e9ee3263c08c">[Mw &lt;= 0]</a>, <a class="link" href="#7f834db0d8b889defea8c15df5683e6f">[Ts &gt;= 0]</a>, <a class="link" href="#8f2929a06bc07b8a33333889f8f81480">[ (Ps * Mw) / (Pw * (Mi + Mw)) &lt; Or]</a>, <a class="link" href="#49a5fdc3ffc58299f951aa1ce338b4cc">[ (Ps * Mw) / (Pw * (Mi + Mw)) &gt;= Or]</a>
+                        </td></tr><tr><td>1.1.3.</td><td><p class="simpara">
+                            <a class="link" href="#d5fce0cc4c69248484536295e398496c">Frozen</a>
+                        </p><div class="orderedlist"><table border="0" class="orderedlist"><col align="left" valign="top"><tbody><tr><td>1.1.3.1.</td><td><p class="simpara">
+                                    <a class="link" href="#2d07a9ee4a6e5b68604447a8caa17109">steady_frozen</a>
+                                </p><div class="orderedlist"><table border="0" class="orderedlist"><col align="left" valign="top"><tbody><tr><td>1.1.3.1.1.</td><td>Data: <a class="link" href="#c6ce3db8febe57ecfe21736d3810ddee">x1</a>, <a class="link" href="#47b6a939b3e54bfb3398bd999b60e7e0">x2</a>, <a class="link" href="#9170adf63db5b3e2b05f04e0ba01d207">x3</a>, <a class="link" href="#6e6ac8d5c8f45fc3898a20d06745860d">x4</a>, <a class="link" href="#3b3b4bf4826c0bd21f566748f8af293c">uu</a>, <a class="link" href="#f1afbf1e0d3c4a635321a21d6176e92b">mi</a>, <a class="link" href="#df966d81c84aae5a34c72068e921a96a">mw</a>, <a class="link" href="#81fe82d9b1d8ed5f3e5e257816a8685a">ps</a>, <a class="link" href="#ba3ea752dd518ff993a1b1bc164a0f1e">ts</a>
+                                    </td></tr></tbody></table></div></td></tr></tbody></table></div></td></tr><tr><td>1.1.4.</td><td><p class="simpara">
+                            <a class="link" href="#f4c47970f574a29a3711d072951c30b1">Thaw</a>
+                        </p><div class="orderedlist"><table border="0" class="orderedlist"><col align="left" valign="top"><tbody><tr><td>1.1.4.1.</td><td><p class="simpara">
+                                    <a class="link" href="#97cfd3ba360640d085ed890509de9bc0">steady_thaw</a>
+                                </p><div class="orderedlist"><table border="0" class="orderedlist"><col align="left" valign="top"><tbody><tr><td>1.1.4.1.1.</td><td>Data: <a class="link" href="#170ce5c2a88ed9533143dba0bd669bc0">uu</a>, <a class="link" href="#3afa0b4ef1b4863b3722dac88e3a5fc3">mi</a>, <a class="link" href="#8107f59896a67014e05057f159adabd8">mw</a>, <a class="link" href="#f77c518f18dec1e8cee50e958d771004">ps</a>, <a class="link" href="#11710378a2c47bc71ab4fda6fc926539">ts</a>, <a class="link" href="#c02c5bf6c9540638cf14f3268491a6cf">x1</a>, <a class="link" href="#484362ff35681bd5e4297dd177db9d30">x2</a>, <a class="link" href="#11e1c4251784fc11239acf6937589a7f">x3</a>, <a class="link" href="#2e4529e45237e2d525ebed8518f85a52">x4</a>
+                                    </td></tr></tbody></table></div></td></tr></tbody></table></div></td></tr><tr><td>1.1.5.</td><td><p class="simpara">
+                            <a class="link" href="#985e8b8721ace8d0efce6e9d9b7ed55a">Melt</a>
+                        </p><div class="orderedlist"><table border="0" class="orderedlist"><col align="left" valign="top"><tbody><tr><td>1.1.5.1.</td><td><p class="simpara">
+                                    <a class="link" href="#8b40c9ccac34d0544c46782761b006be">steady_melting</a>
+                                </p><div class="orderedlist"><table border="0" class="orderedlist"><col align="left" valign="top"><tbody><tr><td>1.1.5.1.1.</td><td>Data: <a class="link" href="#86927c031e4da67793f194b00035894e">mi_out</a>, <a class="link" href="#166ff79b18caf332df94ab4c460ad5d8">mw_out</a>, <a class="link" href="#1c71cfe2d262a094905c5266cabb39a3">ps_out</a>, <a class="link" href="#69d9aa9df61b898cc79d736fd20c366b">ts_out</a>, <a class="link" href="#08f491fb5a2c94a9d7ffd87bd9a75a30">uu</a>, <a class="link" href="#791a48b8548b084ac8879d20a1f19270">mi</a>, <a class="link" href="#ff480c8189d2a29839fbe9ad133c4e5e">mw</a>, <a class="link" href="#6ca606d8676b67e9de72bb519028c918">ps</a>, <a class="link" href="#bc1876814b14dd1e22a4d358b4f70685">ts</a>
+                                    </td></tr></tbody></table></div></td></tr></tbody></table></div></td></tr></tbody></table></div></td></tr></tbody></table></div></li></ol></div><a name="8f2929a06bc07b8a33333889f8f81480"></a><a name="d0e971"></a><div class="table"><div class="table-contents"><table summary="" border="1" cellspacing="0" fastRender="1" width="100%"><col width="9000*"><col width="30000*"><thead><tr><th align="left">Transition</th><th align="left"><a class="link" href="#6b20329c20913a2a09bbf7c2e3864f5c" title="Machine - snowpack_water">snowpack_water</a>/<a class="link" href="#dd58af9be6da05d8f3fe12016f785d5f" title="Chart - supervisor">supervisor</a>/[ (Ps * Mw) / (Pw * (Mi + Mw)) &lt; Or]</th></tr></thead><tbody><tr><td align="left">Source</td><td align="left"><a class="link" href="#985e8b8721ace8d0efce6e9d9b7ed55a">Melt</a></td></tr><tr><td align="left">Destination</td><td align="left"><a class="link" href="#f4c47970f574a29a3711d072951c30b1">Thaw</a></td></tr><tr><td align="left">Description</td><td align="left">When the water content, Ow, of the snowpack reache a value lower than the adsorbtion threshold, Or, water ceases to melt from the system.</td></tr><tr><td align="left">ExecutionOrder</td><td align="left">1</td></tr><tr><td align="left">Label</td><td align="left">[ (Ps * Mw) / (Pw * (Mi + Mw)) &lt; Or]</td></tr></tbody></table></div></div><a name="49a5fdc3ffc58299f951aa1ce338b4cc"></a><a name="d0e1014"></a><div class="table"><div class="table-contents"><table summary="" border="1" cellspacing="0" fastRender="1" width="100%"><col width="9000*"><col width="30000*"><thead><tr><th align="left">Transition</th><th align="left"><a class="link" href="#6b20329c20913a2a09bbf7c2e3864f5c" title="Machine - snowpack_water">snowpack_water</a>/<a class="link" href="#dd58af9be6da05d8f3fe12016f785d5f" title="Chart - supervisor">supervisor</a>/[ (Ps * Mw) / (Pw * (Mi + Mw)) &gt;= Or]</th></tr></thead><tbody><tr><td align="left">Source</td><td align="left"><a class="link" href="#f4c47970f574a29a3711d072951c30b1">Thaw</a></td></tr><tr><td align="left">Destination</td><td align="left"><a class="link" href="#985e8b8721ace8d0efce6e9d9b7ed55a">Melt</a></td></tr><tr><td align="left">Description</td><td align="left">When the water content, Ow, of the snowpack reaches a value greater than or equal to the adsorbtion threshold, Or, water begins to leave the system; melting begins.</td></tr><tr><td align="left">ExecutionOrder</td><td align="left">1</td></tr><tr><td align="left">Label</td><td align="left">[ (Ps * Mw) / (Pw * (Mi + Mw)) &gt;= Or]</td></tr></tbody></table></div></div><a name="06236fcb6ab216242f52e9ee3263c08c"></a><a name="d0e1057"></a><div class="table"><div class="table-contents"><table summary="" border="1" cellspacing="0" fastRender="1" width="100%"><col width="9000*"><col width="30000*"><thead><tr><th align="left">Transition</th><th align="left"><a class="link" href="#6b20329c20913a2a09bbf7c2e3864f5c" title="Machine - snowpack_water">snowpack_water</a>/<a class="link" href="#dd58af9be6da05d8f3fe12016f785d5f" title="Chart - supervisor">supervisor</a>/[Mw &lt;= 0]</th></tr></thead><tbody><tr><td align="left">Source</td><td align="left"><a class="link" href="#f4c47970f574a29a3711d072951c30b1">Thaw</a></td></tr><tr><td align="left">Destination</td><td align="left"><a class="link" href="#d5fce0cc4c69248484536295e398496c">Frozen</a></td></tr><tr><td align="left">Description</td><td align="left">Once all the water has frozen; there is no more liquid water, the frozen state is entered.</td></tr><tr><td align="left">ExecutionOrder</td><td align="left">2</td></tr><tr><td align="left">Label</td><td align="left">[Mw &lt;= 0]</td></tr></tbody></table></div></div><a name="7f834db0d8b889defea8c15df5683e6f"></a><a name="d0e1100"></a><div class="table"><div class="table-contents"><table summary="" border="1" cellspacing="0" fastRender="1" width="100%"><col width="9000*"><col width="30000*"><thead><tr><th align="left">Transition</th><th align="left"><a class="link" href="#6b20329c20913a2a09bbf7c2e3864f5c" title="Machine - snowpack_water">snowpack_water</a>/<a class="link" href="#dd58af9be6da05d8f3fe12016f785d5f" title="Chart - supervisor">supervisor</a>/[Ts &gt;= 0]</th></tr></thead><tbody><tr><td align="left">Source</td><td align="left"><a class="link" href="#d5fce0cc4c69248484536295e398496c">Frozen</a></td></tr><tr><td align="left">Destination</td><td align="left"><a class="link" href="#f4c47970f574a29a3711d072951c30b1">Thaw</a></td></tr><tr><td align="left">Description</td><td align="left">The isothermal region is reached, T = 0 degrees C.</td></tr><tr><td align="left">ExecutionOrder</td><td align="left">1</td></tr><tr><td align="left">Label</td><td align="left">[Ts &gt;= 0]</td></tr></tbody></table></div></div><a name="5a3fbb2b63cd131418e3ec79abfb58e9"></a><a name="d0e1143"></a><div class="table"><div class="table-contents"><table summary="" border="1" cellspacing="0" fastRender="1" width="100%"><col width="9000*"><col width="30000*"><thead><tr><th align="left">Transition</th><th align="left"><a class="link" href="#6b20329c20913a2a09bbf7c2e3864f5c" title="Machine - snowpack_water">snowpack_water</a>/<a class="link" href="#dd58af9be6da05d8f3fe12016f785d5f" title="Chart - supervisor">supervisor</a>/{...</th></tr></thead><tbody><tr><td align="left">Destination</td><td align="left"><a class="link" href="#d5fce0cc4c69248484536295e398496c">Frozen</a></td></tr><tr><td align="left">Description</td><td align="left">Generally, when snow falls the T is &lt;= 0 degrees C, the density is some initial value and there is no liquid water present, all ice.</td></tr><tr><td align="left">ExecutionOrder</td><td align="left">1</td></tr><tr><td align="left">Label</td><td align="left"><table border="0" summary="Simple list" class="simplelist"><tr><td>{</td></tr><tr><td>Mi = Mi_in;</td></tr><tr><td>Mi_out = Mi_in;</td></tr><tr><td>Mw = Mw_in;</td></tr><tr><td>Mw_out = Mw_in;</td></tr><tr><td>Ps = Ps_in;</td></tr><tr><td>Ps_out = Ps_in;</td></tr><tr><td>Ts = Ts_in;</td></tr><tr><td>Ts_out = Ts_in; </td></tr><tr><td>}</td></tr></table></td></tr></tbody></table></div></div><a name="d5fce0cc4c69248484536295e398496c"></a><a name="d0e1200"></a><div class="table"><div class="table-contents"><table summary="" border="1" cellspacing="0" fastRender="1" width="100%"><col width="9000*"><col width="30000*"><thead><tr><th align="left">OR State</th><th align="left"><a class="link" href="#6b20329c20913a2a09bbf7c2e3864f5c" title="Machine - snowpack_water">snowpack_water</a>/<a class="link" href="#dd58af9be6da05d8f3fe12016f785d5f" title="Chart - supervisor">supervisor</a>/Frozen</th></tr></thead><tbody><tr><td align="left">Label</td><td align="left"><table border="0" summary="Simple list" class="simplelist"><tr><td>Frozen/</td></tr><tr><td>entry: q = 1;</td></tr><tr><td>during:</td></tr><tr><td> [Mi, Mw, Ps, Ts] = steady_frozen(ut,Mi, Mw, Ps, Ts);</td></tr><tr><td> Mi_out = real(Mi);</td></tr><tr><td> Mw_out = real(Mw);</td></tr><tr><td> Ps_out = real(Ps);</td></tr><tr><td> Ts_out = real(Ts);</td></tr></table></td></tr></tbody></table></div></div><div class="mediaobject"><map name="d0e1238"><area coords="413,192,423,210" shape="rect" href="#2d07a9ee4a6e5b68604447a8caa17109"><area coords="255,111,581,152" shape="rect" href="#2d07a9ee4a6e5b68604447a8caa17109"></map><img src="./snowpack_water_html_files/image-018-sf.png" usemap="%0A                #d0e1238" ismap="" border="0"><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p>(1)</p></td><td valign="top" align="left"><p><a class="link" href="#2d07a9ee4a6e5b68604447a8caa17109">steady_frozen</a></p></td></tr></table></div></div><p></p><a name="f4c47970f574a29a3711d072951c30b1"></a><a name="d0e1250"></a><div class="table"><div class="table-contents"><table summary="" border="1" cellspacing="0" fastRender="1" width="100%"><col width="9000*"><col width="30000*"><thead><tr><th align="left">OR State</th><th align="left"><a class="link" href="#6b20329c20913a2a09bbf7c2e3864f5c" title="Machine - snowpack_water">snowpack_water</a>/<a class="link" href="#dd58af9be6da05d8f3fe12016f785d5f" title="Chart - supervisor">supervisor</a>/Thaw</th></tr></thead><tbody><tr><td align="left">Label</td><td align="left"><table border="0" summary="Simple list" class="simplelist"><tr><td>Thaw/</td></tr><tr><td>entry: q = 2;</td></tr><tr><td>during:</td></tr><tr><td> [Mi, Mw, Ps, Ts] = steady_thaw(ut,Mi, Mw, Ps, Ts);</td></tr><tr><td> Mi_out = real(Mi);</td></tr><tr><td> Mw_out = real(Mw);</td></tr><tr><td> Ps_out = real(Ps);</td></tr><tr><td> Ts_out = real(Ts);</td></tr></table></td></tr></tbody></table></div></div><div class="mediaobject"><map name="d0e1288"><area coords="319,218,328,236" shape="rect" href="#97cfd3ba360640d085ed890509de9bc0"><area coords="175,124,472,167" shape="rect" href="#97cfd3ba360640d085ed890509de9bc0"></map><img src="./snowpack_water_html_files/image-020-sf.png" usemap="%0A                #d0e1288" ismap="" border="0"><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p>(1)</p></td><td valign="top" align="left"><p><a class="link" href="#97cfd3ba360640d085ed890509de9bc0">steady_thaw</a></p></td></tr></table></div></div><p></p><a name="985e8b8721ace8d0efce6e9d9b7ed55a"></a><a name="d0e1300"></a><div class="table"><div class="table-contents"><table summary="" border="1" cellspacing="0" fastRender="1" width="100%"><col width="9000*"><col width="30000*"><thead><tr><th align="left">OR State</th><th align="left"><a class="link" href="#6b20329c20913a2a09bbf7c2e3864f5c" title="Machine - snowpack_water">snowpack_water</a>/<a class="link" href="#dd58af9be6da05d8f3fe12016f785d5f" title="Chart - supervisor">supervisor</a>/Melt</th></tr></thead><tbody><tr><td align="left">Label</td><td align="left"><table border="0" summary="Simple list" class="simplelist"><tr><td>Melt/</td></tr><tr><td>entry: q = 3;</td></tr><tr><td>during:</td></tr><tr><td> [Mi, Mw, Ps, Ts] = steady_melting(ut,Mi, Mw, Ps, Ts);</td></tr><tr><td> Mi_out = real(Mi);</td></tr><tr><td> Mw_out = real(Mw);</td></tr><tr><td> Ps_out = real(Ps);</td></tr><tr><td> Ts_out = real(Ts);</td></tr></table></td></tr></tbody></table></div></div><div class="mediaobject"><map name="d0e1338"><area coords="366,205,375,223" shape="rect" href="#8b40c9ccac34d0544c46782761b006be"><area coords="177,132,565,170" shape="rect" href="#8b40c9ccac34d0544c46782761b006be"></map><img src="./snowpack_water_html_files/image-022-sf.png" usemap="%0A                #d0e1338" ismap="" border="0"><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p>(1)</p></td><td valign="top" align="left"><p><a class="link" href="#8b40c9ccac34d0544c46782761b006be">steady_melting</a></p></td></tr></table></div></div><p></p></div></div><div class="chapter" title="System - snowpack_water/supervisor/Frozen.steady_frozen"><div class="titlepage"><div><div><h2 class="title"><a name="d0e1349"></a>System - <a class="link" href="#7810d8c011d4ce08b3b8c7007b7a9220">snowpack_water</a>/<a class="link" href="#13dd4847221120d4830297107dd96b69">supervisor</a>/Frozen.steady_frozen</h2></div></div></div><a name="2d07a9ee4a6e5b68604447a8caa17109"></a><div class="mediaobject"><map name="d0e1362"><area coords="11,100,39,113" shape="rect" href="#a11cc0e7ff67a1d75c5c2b74d8794208"><area coords="11,162,39,175" shape="rect" href="#5f47fbfbaebe2d2c6cdaaa61b8c23e7e"><area coords="11,210,39,223" shape="rect" href="#19cd948920d2352d01676b08269a5573"><area coords="11,449,39,462" shape="rect" href="#d157189ba3e59520dde35bbd56373243"><area coords="11,315,39,328" shape="rect" href="#d191db5702d437995c1f106bcdf2b23f"><area coords="264,11,298,39" shape="rect" href="#7e95fc7c4ae74ba5ab048a691f0ddbb7"><area coords="111,216,140,245" shape="rect" href="#c59aec57ffe6764b453cbd4ebd060048"><area coords="364,90,422,400" shape="rect" href="#e5a090c9bb21c8b5f7fb35eb6faff9ad"><area coords="255,76,293,261" shape="rect" href="#d1bfc4cf1ca855d827b573189f95fa46"><area coords="78,159,97,178" shape="rect" href="#2d39154242512136524de2852eadb20a"><area coords="345,424,393,549" shape="rect" href="#34999d21792ad20e62087e213af50b30"><area coords="159,433,298,477" shape="rect" href="#942e0002bee7683fed05b4600c14ee84"><area coords="178,133,207,147" shape="rect" href="#7efa70a1169101f0ad2e9406f7cd4979"><area coords="178,281,207,295" shape="rect" href="#594a14c64ef7f11def0cc00888aa51b6"><area coords="431,482,460,495" shape="rect" href="#a7d19cff394280535d9656d0978aaf42"><area coords="503,238,532,252" shape="rect" href="#9024f56f5bde23483ea9f86c740f4a38"></map><img src="./snowpack_water_html_files/image-025-sl.png" usemap="%0A                #d0e1362" ismap="" border="0"></div><a name="d0e1384"></a><div class="table"><p class="title"><b>Table&nbsp;5.&nbsp;Constant Block Properties</b></p><div class="table-contents"><table summary="Constant Block Properties" border="1" cellspacing="0" fastRender="1" width="100%"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><thead><tr>
+            <th align="left">Name</th>
+            <th align="left">Value</th>
+            <th align="left">Sampling Mode</th>
+            <th align="left">Out Data Type Str</th>
+            <th align="left">Lock Scale</th>
+            <th align="left">Sample Time</th>
+            <th align="left">Frame Period</th>
+        </tr></thead><tbody><tr>
+            <td align="left">
+                <a name="c59aec57ffe6764b453cbd4ebd060048"></a>C snow</td>
+            <td align="left">Cs</td>
+            <td align="left">Sample based</td>
+            <td align="left">Inherit: Inherit from 'Constant value'</td>
+            <td align="left">off</td>
+            <td align="left">inf</td>
+            <td align="left">inf</td>
+        </tr></tbody></table></div></div><a name="d0e1444"></a><div class="table"><p class="title"><b>Table&nbsp;6.&nbsp;DiscreteIntegrator Block Properties</b></p><div class="table-contents"><table summary="DiscreteIntegrator Block Properties" border="1" cellspacing="0" fastRender="1" width="100%"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><thead><tr>
+            <th align="left">Name</th>
+            <th align="left">Integrator Method</th>
+            <th align="left">Gainval</th>
+            <th align="left">External Reset</th>
+            <th align="left">Initial Condition Source</th>
+            <th align="left">Initial Condition Setting</th>
+            <th align="left">Out Data Type Str</th>
+            <th align="left">Lock Scale</th>
+            <th align="left">Rnd Meth</th>
+            <th align="left">Saturate On Integer Overflow</th>
+            <th align="left">State Storage Class</th>
+        </tr></thead><tbody><tr>
+            <td align="left">
+                <a name="34999d21792ad20e62087e213af50b30"></a>compressor</td>
+            <td align="left">Integration: Forward Euler</td>
+            <td align="left">1.0</td>
+            <td align="left">none</td>
+            <td align="left">external</td>
+            <td align="left">Output</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+            <td align="left">off</td>
+            <td align="left">Floor</td>
+            <td align="left">off</td>
+            <td align="left">Auto</td>
+        </tr><tr>
+            <td align="left">
+                <a name="e5a090c9bb21c8b5f7fb35eb6faff9ad"></a>Discrete-Time Integrator</td>
+            <td align="left">Accumulation: Forward Euler</td>
+            <td align="left">1.0</td>
+            <td align="left">none</td>
+            <td align="left">external</td>
+            <td align="left">Output</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+            <td align="left">off</td>
+            <td align="left">Floor</td>
+            <td align="left">off</td>
+            <td align="left">Auto</td>
+        </tr></tbody></table></div></div><a name="d0e1569"></a><div class="table"><p class="title"><b>Table&nbsp;7.&nbsp;Inport Block Properties</b></p><div class="table-contents"><table summary="Inport Block Properties" border="1" cellspacing="0" fastRender="1" width="100%"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><thead><tr>
+            <th align="left">Name</th>
+            <th align="left">Port</th>
+            <th align="left">Port Dimensions</th>
+            <th align="left">Defined In Blk</th>
+            <th align="left">Out Data Type Str</th>
+        </tr></thead><tbody><tr>
+            <td align="left">
+                <a name="5f47fbfbaebe2d2c6cdaaa61b8c23e7e"></a>mi</td>
+            <td align="left">2</td>
+            <td align="left">1</td>
+            <td align="left">
+                 SFunction 
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="19cd948920d2352d01676b08269a5573"></a>mw</td>
+            <td align="left">3</td>
+            <td align="left">1</td>
+            <td align="left">
+                 SFunction 
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="d157189ba3e59520dde35bbd56373243"></a>ps</td>
+            <td align="left">4</td>
+            <td align="left">1</td>
+            <td align="left">
+                 SFunction 
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="d191db5702d437995c1f106bcdf2b23f"></a>ts</td>
+            <td align="left">5</td>
+            <td align="left">1</td>
+            <td align="left">
+                 SFunction 
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="a11cc0e7ff67a1d75c5c2b74d8794208"></a>uu</td>
+            <td align="left">1</td>
+            <td align="left">1</td>
+            <td align="left">
+                 SFunction 
+            </td>
+            <td align="left">double</td>
+        </tr></tbody></table></div></div><a name="d0e1706"></a><div class="table"><p class="title"><b>Table&nbsp;8.&nbsp;MATLAB Function Block Properties</b></p><div class="table-contents"><table summary="MATLAB Function Block Properties" border="1" cellspacing="0" fastRender="1" width="100%"><col width="60*"><col width="60*"><thead><tr>
+            <th align="left">Name</th>
+            <th align="left">Script</th>
+        </tr></thead><tbody><tr>
+            <td align="left">
+                <a name="942e0002bee7683fed05b4600c14ee84"></a>snow compression</td>
+            <td align="left">
+                <pre class="programlisting"><pre xmlns:mwsh="http://www.mathworks.com/namespace/mcode/v1/syntaxhighlight.dtd"><span style="color:blue">function</span> dps_out = snow_compression(ps_in)
+<span style="color:green">%#codegen</span>
+As = 450;
+Bs = 20; <span style="color:green">% days</span>
+ratio = 1 + (ps_in / (As - ps_in));
+dps_out = As / (Bs * ratio * ratio);</pre></pre>
+            </td>
+        </tr></tbody></table></div></div><a name="d0e1743"></a><div class="table"><p class="title"><b>Table&nbsp;9.&nbsp;Outport Block Properties</b></p><div class="table-contents"><table summary="Outport Block Properties" border="1" cellspacing="0" fastRender="1" width="100%"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><thead><tr>
+            <th align="left">Name</th>
+            <th align="left">Port</th>
+            <th align="left">Icon Display</th>
+            <th align="left">Lock Scale</th>
+            <th align="left">Var Size Sig</th>
+            <th align="left">Signal Type</th>
+            <th align="left">Sampling Mode</th>
+            <th align="left">Source Of Initial Output Value</th>
+            <th align="left">Output When Disabled</th>
+            <th align="left">Used By Blk</th>
+        </tr></thead><tbody><tr>
+            <td align="left">
+                <a name="7efa70a1169101f0ad2e9406f7cd4979"></a>x1</td>
+            <td align="left">1</td>
+            <td align="left">Port number</td>
+            <td align="left">off</td>
+            <td align="left">Inherit</td>
+            <td align="left">auto</td>
+            <td align="left">auto</td>
+            <td align="left">Dialog</td>
+            <td align="left">held</td>
+            <td align="left">
+                 SFunction , <a class="link" href="#2d39154242512136524de2852eadb20a">Sum</a>
+            </td>
+        </tr><tr>
+            <td align="left">
+                <a name="594a14c64ef7f11def0cc00888aa51b6"></a>x2</td>
+            <td align="left">2</td>
+            <td align="left">Port number</td>
+            <td align="left">off</td>
+            <td align="left">Inherit</td>
+            <td align="left">auto</td>
+            <td align="left">auto</td>
+            <td align="left">Dialog</td>
+            <td align="left">held</td>
+            <td align="left">
+                 SFunction , <a class="link" href="#2d39154242512136524de2852eadb20a">Sum</a>
+            </td>
+        </tr><tr>
+            <td align="left">
+                <a name="a7d19cff394280535d9656d0978aaf42"></a>x3</td>
+            <td align="left">3</td>
+            <td align="left">Port number</td>
+            <td align="left">off</td>
+            <td align="left">Inherit</td>
+            <td align="left">auto</td>
+            <td align="left">auto</td>
+            <td align="left">Dialog</td>
+            <td align="left">held</td>
+            <td align="left">
+                 SFunction 
+            </td>
+        </tr><tr>
+            <td align="left">
+                <a name="9024f56f5bde23483ea9f86c740f4a38"></a>x4</td>
+            <td align="left">4</td>
+            <td align="left">Port number</td>
+            <td align="left">off</td>
+            <td align="left">Inherit</td>
+            <td align="left">auto</td>
+            <td align="left">auto</td>
+            <td align="left">Dialog</td>
+            <td align="left">held</td>
+            <td align="left">
+                 SFunction 
+            </td>
+        </tr></tbody></table></div></div><a name="d0e1944"></a><div class="table"><p class="title"><b>Table&nbsp;10.&nbsp;Product Block Properties</b></p><div class="table-contents"><table summary="Product Block Properties" border="1" cellspacing="0" fastRender="1" width="100%"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><thead><tr>
+            <th align="left">Name</th>
+            <th align="left">Inputs</th>
+            <th align="left">Multiplication</th>
+            <th align="left">Collapse Mode</th>
+            <th align="left">Collapse Dim</th>
+            <th align="left">Input Same DT</th>
+            <th align="left">Out Data Type Str</th>
+            <th align="left">Lock Scale</th>
+            <th align="left">Rnd Meth</th>
+            <th align="left">Saturate On Integer Overflow</th>
+        </tr></thead><tbody><tr>
+            <td align="left">
+                <a name="d1bfc4cf1ca855d827b573189f95fa46"></a>Divide</td>
+            <td align="left">*//</td>
+            <td align="left">Element-wise(.*)</td>
+            <td align="left">All dimensions</td>
+            <td align="left">1</td>
+            <td align="left">off</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+            <td align="left">off</td>
+            <td align="left">Floor</td>
+            <td align="left">off</td>
+        </tr></tbody></table></div></div><a name="d0e2025"></a><div class="table"><p class="title"><b>Table&nbsp;11.&nbsp;Sum Block Properties</b></p><div class="table-contents"><table summary="Sum Block Properties" border="1" cellspacing="0" fastRender="1" width="100%"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><thead><tr>
+            <th align="left">Name</th>
+            <th align="left">Icon Shape</th>
+            <th align="left">Inputs</th>
+            <th align="left">Collapse Mode</th>
+            <th align="left">Collapse Dim</th>
+            <th align="left">Input Same DT</th>
+            <th align="left">Accum Data Type Str</th>
+            <th align="left">Out Data Type Str</th>
+            <th align="left">Lock Scale</th>
+            <th align="left">Rnd Meth</th>
+            <th align="left">Saturate On Integer Overflow</th>
+        </tr></thead><tbody><tr>
+            <td align="left">
+                <a name="2d39154242512136524de2852eadb20a"></a>Sum</td>
+            <td align="left">round</td>
+            <td align="left">|++</td>
+            <td align="left">All dimensions</td>
+            <td align="left">1</td>
+            <td align="left">off</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+            <td align="left">off</td>
+            <td align="left">Floor</td>
+            <td align="left">off</td>
+        </tr></tbody></table></div></div><a name="d0e2113"></a><div class="table"><p class="title"><b>Table&nbsp;12.&nbsp;TriggerPort Block Properties</b></p><div class="table-contents"><table summary="TriggerPort Block Properties" border="1" cellspacing="0" fastRender="1" width="100%"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><thead><tr>
+            <th align="left">Name</th>
+            <th align="left">Trigger Type</th>
+            <th align="left">States When Enabling</th>
+            <th align="left">Propagate Var Size</th>
+            <th align="left">Show Output Port</th>
+            <th align="left">Output Data Type</th>
+            <th align="left">Sample Time Type</th>
+            <th align="left">Sample Time</th>
+            <th align="left">Zero Cross</th>
+            <th align="left">Trigger Signal Sample Time</th>
+            <th align="left">Interpolate</th>
+        </tr></thead><tbody><tr>
+            <td align="left">
+                <a name="7e95fc7c4ae74ba5ab048a691f0ddbb7"></a>steady_frozen</td>
+            <td align="left">function-call</td>
+            <td align="left">held</td>
+            <td align="left">During execution</td>
+            <td align="left">off</td>
+            <td align="left">auto</td>
+            <td align="left">triggered</td>
+            <td align="left">1</td>
+            <td align="left">on</td>
+            <td align="left">-1</td>
+            <td align="left">on</td>
+        </tr></tbody></table></div></div></div><div class="chapter" title="System - snowpack_water/supervisor/Melt.steady_melting"><div class="titlepage"><div><div><h2 class="title"><a name="d0e2201"></a>System - <a class="link" href="#7810d8c011d4ce08b3b8c7007b7a9220">snowpack_water</a>/<a class="link" href="#13dd4847221120d4830297107dd96b69">supervisor</a>/Melt.steady_melting</h2></div></div></div><a name="8b40c9ccac34d0544c46782761b006be"></a><div class="mediaobject"><map name="d0e2214"><area coords="159,94,189,108" shape="rect" href="#393921c3460ba11b9d30da0575d47749"><area coords="159,139,189,153" shape="rect" href="#475719bd00b67216e5c3c533ba439266"><area coords="109,339,139,353" shape="rect" href="#d5a5f5f4691134a18dbaa5651b039d19"><area coords="109,394,139,408" shape="rect" href="#5655c0952eea4ca9a05f2162aee00e9c"><area coords="114,494,144,508" shape="rect" href="#e18eda0de9efbe8d379eee887fc6d7b6"><area coords="354,11,374,31" shape="rect" href="#05135111a8de212d9592e97400d5800d"><area coords="354,77,409,125" shape="rect" href="#3f52d12d3c174b2bfaf2b9b4892952d7"><area coords="309,486,339,516" shape="rect" href="#1d0bb575b9c795f776ebcae720d57350"><area coords="19,241,49,271" shape="rect" href="#cf5c2e1936921dc96b83fae46521e4a8"><area coords="64,261,94,291" shape="rect" href="#678f22e011818c67448dbfb4c2f050d3"><area coords="114,281,144,311" shape="rect" href="#9be15e2017c32381ea76bc8fda7f1989"><area coords="474,373,519,489" shape="rect" href="#acaaf4f4ea3a406a5afa2c94144330d7"><area coords="499,78,549,169" shape="rect" href="#2ec333b10929d5e3662d745de27ddec3"><area coords="499,208,544,324" shape="rect" href="#bf54320bcd915f6ad5939072eb262154"><area coords="204,491,224,511" shape="rect" href="#fb6fe648b84a79827d6563c4bfc16d53"><area coords="214,378,359,424" shape="rect" href="#27f04d9b0c0fd077e275456cf871f645"><area coords="299,164,379,308" shape="rect" href="#2756034efeacbe4a11b13a96a3657fbe"><area coords="604,119,634,133" shape="rect" href="#0d4bf3cfd9433f9c5e1af421c82a420e"><area coords="604,224,634,238" shape="rect" href="#3bcff28ad0ba8068e5138cf04c5525e1"><area coords="604,424,634,438" shape="rect" href="#39982bb647d1419935096efdc626a902"><area coords="374,494,404,508" shape="rect" href="#7aa9f27d57ef8b5e1f03981f9832a743"></map><img src="./snowpack_water_html_files/image-028-sl.png" usemap="%0A                #d0e2214" ismap="" border="0"></div><a name="d0e2238"></a><div class="table"><p class="title"><b>Table&nbsp;13.&nbsp;Constant Block Properties</b></p><div class="table-contents"><table summary="Constant Block Properties" border="1" cellspacing="0" fastRender="1" width="100%"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><thead><tr>
+            <th align="left">Name</th>
+            <th align="left">Value</th>
+            <th align="left">Sampling Mode</th>
+            <th align="left">Out Data Type Str</th>
+            <th align="left">Lock Scale</th>
+            <th align="left">Sample Time</th>
+            <th align="left">Frame Period</th>
+        </tr></thead><tbody><tr>
+            <td align="left">
+                <a name="1d0bb575b9c795f776ebcae720d57350"></a>Constant</td>
+            <td align="left">0</td>
+            <td align="left">Sample based</td>
+            <td align="left">Inherit: Inherit from 'Constant value'</td>
+            <td align="left">off</td>
+            <td align="left">inf</td>
+            <td align="left">inf</td>
+        </tr><tr>
+            <td align="left">
+                <a name="cf5c2e1936921dc96b83fae46521e4a8"></a>Constant1</td>
+            <td align="left">Lf</td>
+            <td align="left">Sample based</td>
+            <td align="left">Inherit: Inherit from 'Constant value'</td>
+            <td align="left">off</td>
+            <td align="left">inf</td>
+            <td align="left">inf</td>
+        </tr><tr>
+            <td align="left">
+                <a name="678f22e011818c67448dbfb4c2f050d3"></a>Constant2</td>
+            <td align="left">Or</td>
+            <td align="left">Sample based</td>
+            <td align="left">Inherit: Inherit from 'Constant value'</td>
+            <td align="left">off</td>
+            <td align="left">inf</td>
+            <td align="left">inf</td>
+        </tr><tr>
+            <td align="left">
+                <a name="9be15e2017c32381ea76bc8fda7f1989"></a>Constant3</td>
+            <td align="left">Pw</td>
+            <td align="left">Sample based</td>
+            <td align="left">Inherit: Inherit from 'Constant value'</td>
+            <td align="left">off</td>
+            <td align="left">inf</td>
+            <td align="left">inf</td>
+        </tr></tbody></table></div></div><a name="d0e2373"></a><div class="table"><p class="title"><b>Table&nbsp;14.&nbsp;DiscreteIntegrator Block Properties</b></p><div class="table-contents"><table summary="DiscreteIntegrator Block Properties" border="1" cellspacing="0" fastRender="1" width="100%"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><thead><tr>
+            <th align="left">Name</th>
+            <th align="left">Integrator Method</th>
+            <th align="left">Gainval</th>
+            <th align="left">External Reset</th>
+            <th align="left">Initial Condition Source</th>
+            <th align="left">Initial Condition Setting</th>
+            <th align="left">Out Data Type Str</th>
+            <th align="left">Lock Scale</th>
+            <th align="left">Rnd Meth</th>
+            <th align="left">Saturate On Integer Overflow</th>
+            <th align="left">State Storage Class</th>
+        </tr></thead><tbody><tr>
+            <td align="left">
+                <a name="acaaf4f4ea3a406a5afa2c94144330d7"></a>Discrete-Time Integrator1</td>
+            <td align="left">Integration: Forward Euler</td>
+            <td align="left">1.0</td>
+            <td align="left">none</td>
+            <td align="left">external</td>
+            <td align="left">Output</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+            <td align="left">off</td>
+            <td align="left">Floor</td>
+            <td align="left">off</td>
+            <td align="left">Auto</td>
+        </tr><tr>
+            <td align="left">
+                <a name="2ec333b10929d5e3662d745de27ddec3"></a>Discrete-Time Integrator2</td>
+            <td align="left">Integration: Forward Euler</td>
+            <td align="left">1.0</td>
+            <td align="left">none</td>
+            <td align="left">external</td>
+            <td align="left">Output</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+            <td align="left">off</td>
+            <td align="left">Floor</td>
+            <td align="left">off</td>
+            <td align="left">Auto</td>
+        </tr><tr>
+            <td align="left">
+                <a name="bf54320bcd915f6ad5939072eb262154"></a>Discrete-Time Integrator3</td>
+            <td align="left">Integration: Forward Euler</td>
+            <td align="left">1.0</td>
+            <td align="left">none</td>
+            <td align="left">external</td>
+            <td align="left">Output</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+            <td align="left">off</td>
+            <td align="left">Floor</td>
+            <td align="left">off</td>
+            <td align="left">Auto</td>
+        </tr></tbody></table></div></div><a name="d0e2535"></a><div class="table"><p class="title"><b>Table&nbsp;15.&nbsp;Gain Block Properties</b></p><div class="table-contents"><table summary="Gain Block Properties" border="1" cellspacing="0" fastRender="1" width="100%"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><thead><tr>
+            <th align="left">Name</th>
+            <th align="left">Gain</th>
+            <th align="left">Multiplication</th>
+            <th align="left">Param Data Type Str</th>
+            <th align="left">Out Data Type Str</th>
+            <th align="left">Lock Scale</th>
+            <th align="left">Rnd Meth</th>
+            <th align="left">Saturate On Integer Overflow</th>
+        </tr></thead><tbody><tr>
+            <td align="left">
+                <a name="3f52d12d3c174b2bfaf2b9b4892952d7"></a>1 / latent</td>
+            <td align="left">-1 / Lf</td>
+            <td align="left">Element-wise(K.*u)</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+            <td align="left">off</td>
+            <td align="left">Floor</td>
+            <td align="left">off</td>
+        </tr></tbody></table></div></div><a name="d0e2602"></a><div class="table"><p class="title"><b>Table&nbsp;16.&nbsp;Inport Block Properties</b></p><div class="table-contents"><table summary="Inport Block Properties" border="1" cellspacing="0" fastRender="1" width="100%"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><thead><tr>
+            <th align="left">Name</th>
+            <th align="left">Port</th>
+            <th align="left">Port Dimensions</th>
+            <th align="left">Defined In Blk</th>
+            <th align="left">Out Data Type Str</th>
+        </tr></thead><tbody><tr>
+            <td align="left">
+                <a name="475719bd00b67216e5c3c533ba439266"></a>mi</td>
+            <td align="left">2</td>
+            <td align="left">1</td>
+            <td align="left">
+                 SFunction 
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="d5a5f5f4691134a18dbaa5651b039d19"></a>mw</td>
+            <td align="left">3</td>
+            <td align="left">1</td>
+            <td align="left">
+                 SFunction 
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="5655c0952eea4ca9a05f2162aee00e9c"></a>ps</td>
+            <td align="left">4</td>
+            <td align="left">1</td>
+            <td align="left">
+                 SFunction 
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="e18eda0de9efbe8d379eee887fc6d7b6"></a>ts</td>
+            <td align="left">5</td>
+            <td align="left">1</td>
+            <td align="left">
+                 SFunction 
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="393921c3460ba11b9d30da0575d47749"></a>uu</td>
+            <td align="left">1</td>
+            <td align="left">1</td>
+            <td align="left">
+                 SFunction 
+            </td>
+            <td align="left">double</td>
+        </tr></tbody></table></div></div><a name="d0e2739"></a><div class="table"><p class="title"><b>Table&nbsp;17.&nbsp;MATLAB Function Block Properties</b></p><div class="table-contents"><table summary="MATLAB Function Block Properties" border="1" cellspacing="0" fastRender="1" width="100%"><col width="60*"><col width="60*"><thead><tr>
+            <th align="left">Name</th>
+            <th align="left">Script</th>
+        </tr></thead><tbody><tr>
+            <td align="left">
+                <a name="27f04d9b0c0fd077e275456cf871f645"></a>compress snowpack</td>
+            <td align="left">
+                <pre class="programlisting"><pre xmlns:mwsh="http://www.mathworks.com/namespace/mcode/v1/syntaxhighlight.dtd"><span style="color:blue">function</span> dps_out = snow_compression(ps_in)
+<span style="color:green">%#codegen</span>
+As = 450;
+Bs = 20; <span style="color:green">% days</span>
+ratio = 1 + (ps_in / (As - ps_in));
+dps_out = As / (Bs * ratio * ratio);</pre></pre>
+            </td>
+        </tr><tr>
+            <td align="left">
+                <a name="2756034efeacbe4a11b13a96a3657fbe"></a>melting snowpack</td>
+            <td align="left">
+                <pre class="programlisting"><pre xmlns:mwsh="http://www.mathworks.com/namespace/mcode/v1/syntaxhighlight.dtd"><span style="color:blue">function</span> g = snow_melter(z, v, w, dw, lf, or, density)
+<span style="color:green">%#codegen</span>
+reduction = z * (w - or * density) / lf + v * dw;
+g = -(or * density * reduction) / (w - density)^2;</pre></pre>
+            </td>
+        </tr></tbody></table></div></div><a name="d0e2795"></a><div class="table"><p class="title"><b>Table&nbsp;18.&nbsp;Outport Block Properties</b></p><div class="table-contents"><table summary="Outport Block Properties" border="1" cellspacing="0" fastRender="1" width="100%"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><thead><tr>
+            <th align="left">Name</th>
+            <th align="left">Port</th>
+            <th align="left">Icon Display</th>
+            <th align="left">Lock Scale</th>
+            <th align="left">Var Size Sig</th>
+            <th align="left">Signal Type</th>
+            <th align="left">Sampling Mode</th>
+            <th align="left">Source Of Initial Output Value</th>
+            <th align="left">Output When Disabled</th>
+            <th align="left">Used By Blk</th>
+        </tr></thead><tbody><tr>
+            <td align="left">
+                <a name="0d4bf3cfd9433f9c5e1af421c82a420e"></a>mi_out</td>
+            <td align="left">1</td>
+            <td align="left">Port number</td>
+            <td align="left">off</td>
+            <td align="left">Inherit</td>
+            <td align="left">auto</td>
+            <td align="left">auto</td>
+            <td align="left">Dialog</td>
+            <td align="left">held</td>
+            <td align="left">
+                 SFunction 
+            </td>
+        </tr><tr>
+            <td align="left">
+                <a name="3bcff28ad0ba8068e5138cf04c5525e1"></a>mw_out</td>
+            <td align="left">2</td>
+            <td align="left">Port number</td>
+            <td align="left">off</td>
+            <td align="left">Inherit</td>
+            <td align="left">auto</td>
+            <td align="left">auto</td>
+            <td align="left">Dialog</td>
+            <td align="left">held</td>
+            <td align="left">
+                 SFunction 
+            </td>
+        </tr><tr>
+            <td align="left">
+                <a name="39982bb647d1419935096efdc626a902"></a>ps_out</td>
+            <td align="left">3</td>
+            <td align="left">Port number</td>
+            <td align="left">off</td>
+            <td align="left">Inherit</td>
+            <td align="left">auto</td>
+            <td align="left">auto</td>
+            <td align="left">Dialog</td>
+            <td align="left">held</td>
+            <td align="left">
+                 SFunction 
+            </td>
+        </tr><tr>
+            <td align="left">
+                <a name="7aa9f27d57ef8b5e1f03981f9832a743"></a>ts_out</td>
+            <td align="left">4</td>
+            <td align="left">Port number</td>
+            <td align="left">off</td>
+            <td align="left">Inherit</td>
+            <td align="left">auto</td>
+            <td align="left">auto</td>
+            <td align="left">Dialog</td>
+            <td align="left">held</td>
+            <td align="left">
+                 SFunction 
+            </td>
+        </tr></tbody></table></div></div><a name="d0e2990"></a><div class="table"><p class="title"><b>Table&nbsp;19.&nbsp;Terminator Block Properties</b></p><div class="table-contents"><table summary="Terminator Block Properties" border="1" cellspacing="0" fastRender="1" width="100%"><col width="60*"><thead><tr>
+            <th align="left">Name</th>
+        </tr></thead><tbody><tr>
+            <td align="left">
+                <a name="fb6fe648b84a79827d6563c4bfc16d53"></a>Terminator</td>
+        </tr></tbody></table></div></div><a name="d0e3008"></a><div class="table"><p class="title"><b>Table&nbsp;20.&nbsp;TriggerPort Block Properties</b></p><div class="table-contents"><table summary="TriggerPort Block Properties" border="1" cellspacing="0" fastRender="1" width="100%"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><thead><tr>
+            <th align="left">Name</th>
+            <th align="left">Trigger Type</th>
+            <th align="left">States When Enabling</th>
+            <th align="left">Propagate Var Size</th>
+            <th align="left">Show Output Port</th>
+            <th align="left">Output Data Type</th>
+            <th align="left">Sample Time Type</th>
+            <th align="left">Sample Time</th>
+            <th align="left">Zero Cross</th>
+            <th align="left">Trigger Signal Sample Time</th>
+            <th align="left">Interpolate</th>
+        </tr></thead><tbody><tr>
+            <td align="left">
+                <a name="05135111a8de212d9592e97400d5800d"></a>steady_melting</td>
+            <td align="left">function-call</td>
+            <td align="left">held</td>
+            <td align="left">During execution</td>
+            <td align="left">off</td>
+            <td align="left">auto</td>
+            <td align="left">triggered</td>
+            <td align="left">1</td>
+            <td align="left">on</td>
+            <td align="left">-1</td>
+            <td align="left">on</td>
+        </tr></tbody></table></div></div></div><div class="chapter" title="System - snowpack_water/supervisor/Thaw.steady_thaw"><div class="titlepage"><div><div><h2 class="title"><a name="d0e3096"></a>System - <a class="link" href="#7810d8c011d4ce08b3b8c7007b7a9220">snowpack_water</a>/<a class="link" href="#13dd4847221120d4830297107dd96b69">supervisor</a>/Thaw.steady_thaw</h2></div></div></div><a name="97cfd3ba360640d085ed890509de9bc0"></a><div class="mediaobject"><map name="d0e3109"><area coords="11,104,41,118" shape="rect" href="#a6912d5e45c94311270d04dc34ff052d"><area coords="11,149,41,163" shape="rect" href="#06197f6cb16363b91db42f461b187cf0"><area coords="11,274,41,288" shape="rect" href="#5dbdae1ac781ba5483a6c5645e3a97da"><area coords="11,389,41,403" shape="rect" href="#fe27f98a51c9f03e71c5e6d484ffe036"><area coords="11,524,41,538" shape="rect" href="#6764e1badb36606236f4de2aea8649b8"><area coords="306,11,326,31" shape="rect" href="#7ecd0c8321b3dd8eb6286ace13120774"><area coords="286,87,341,135" shape="rect" href="#8be5a47d41d4089fec6bd56f31576253"><area coords="286,212,341,260" shape="rect" href="#79c36810abfe4fc23f3c4f2336ea0530"><area coords="461,516,491,546" shape="rect" href="#b20a72043517b2dbc4d353a04fee9020"><area coords="451,373,501,464" shape="rect" href="#60c1203c724309bc66803ef8cf2ad7be"><area coords="431,213,481,304" shape="rect" href="#4272e8ba4252593b46eeb5f76acae08e"><area coords="431,88,481,179" shape="rect" href="#1330f60aef7168cbb550be134223fa72"><area coords="181,521,201,541" shape="rect" href="#a2a0b3cf02e55cc1b7579a2aeb1ad6f5"><area coords="231,373,376,419" shape="rect" href="#e7f438aa26556eb44e508f9d32e4ea41"><area coords="576,129,606,143" shape="rect" href="#74b1b609593e73b2550ff52617a5f8e5"><area coords="576,254,606,268" shape="rect" href="#5c604c28deab4fc7505dcfd1da857909"><area coords="576,414,606,428" shape="rect" href="#b3c13e3106b3b0a0676da4e24707fbe4"><area coords="576,524,606,538" shape="rect" href="#c3f5acd40b0490bf5291bae5cc6670e9"></map><img src="./snowpack_water_html_files/image-031-sl.png" usemap="%0A                #d0e3109" ismap="" border="0"></div><a name="d0e3130"></a><div class="table"><p class="title"><b>Table&nbsp;21.&nbsp;Constant Block Properties</b></p><div class="table-contents"><table summary="Constant Block Properties" border="1" cellspacing="0" fastRender="1" width="100%"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><thead><tr>
+            <th align="left">Name</th>
+            <th align="left">Value</th>
+            <th align="left">Sampling Mode</th>
+            <th align="left">Out Data Type Str</th>
+            <th align="left">Lock Scale</th>
+            <th align="left">Sample Time</th>
+            <th align="left">Frame Period</th>
+        </tr></thead><tbody><tr>
+            <td align="left">
+                <a name="b20a72043517b2dbc4d353a04fee9020"></a>Constant</td>
+            <td align="left">0</td>
+            <td align="left">Sample based</td>
+            <td align="left">Inherit: Inherit from 'Constant value'</td>
+            <td align="left">off</td>
+            <td align="left">inf</td>
+            <td align="left">inf</td>
+        </tr></tbody></table></div></div><a name="d0e3190"></a><div class="table"><p class="title"><b>Table&nbsp;22.&nbsp;DiscreteIntegrator Block Properties</b></p><div class="table-contents"><table summary="DiscreteIntegrator Block Properties" border="1" cellspacing="0" fastRender="1" width="100%"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><thead><tr>
+            <th align="left">Name</th>
+            <th align="left">Integrator Method</th>
+            <th align="left">Gainval</th>
+            <th align="left">External Reset</th>
+            <th align="left">Initial Condition Source</th>
+            <th align="left">Initial Condition Setting</th>
+            <th align="left">Out Data Type Str</th>
+            <th align="left">Lock Scale</th>
+            <th align="left">Rnd Meth</th>
+            <th align="left">Saturate On Integer Overflow</th>
+            <th align="left">State Storage Class</th>
+        </tr></thead><tbody><tr>
+            <td align="left">
+                <a name="60c1203c724309bc66803ef8cf2ad7be"></a>Discrete-Time Integrator1</td>
+            <td align="left">Integration: Forward Euler</td>
+            <td align="left">1.0</td>
+            <td align="left">none</td>
+            <td align="left">external</td>
+            <td align="left">Output</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+            <td align="left">off</td>
+            <td align="left">Floor</td>
+            <td align="left">off</td>
+            <td align="left">Auto</td>
+        </tr><tr>
+            <td align="left">
+                <a name="4272e8ba4252593b46eeb5f76acae08e"></a>Discrete-Time Integrator2</td>
+            <td align="left">Integration: Forward Euler</td>
+            <td align="left">1.0</td>
+            <td align="left">none</td>
+            <td align="left">external</td>
+            <td align="left">Output</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+            <td align="left">off</td>
+            <td align="left">Floor</td>
+            <td align="left">off</td>
+            <td align="left">Auto</td>
+        </tr><tr>
+            <td align="left">
+                <a name="1330f60aef7168cbb550be134223fa72"></a>Discrete-Time Integrator3</td>
+            <td align="left">Integration: Forward Euler</td>
+            <td align="left">1.0</td>
+            <td align="left">none</td>
+            <td align="left">external</td>
+            <td align="left">Output</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+            <td align="left">off</td>
+            <td align="left">Floor</td>
+            <td align="left">off</td>
+            <td align="left">Auto</td>
+        </tr></tbody></table></div></div><a name="d0e3352"></a><div class="table"><p class="title"><b>Table&nbsp;23.&nbsp;Gain Block Properties</b></p><div class="table-contents"><table summary="Gain Block Properties" border="1" cellspacing="0" fastRender="1" width="100%"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><thead><tr>
+            <th align="left">Name</th>
+            <th align="left">Gain</th>
+            <th align="left">Multiplication</th>
+            <th align="left">Param Data Type Str</th>
+            <th align="left">Out Data Type Str</th>
+            <th align="left">Lock Scale</th>
+            <th align="left">Rnd Meth</th>
+            <th align="left">Saturate On Integer Overflow</th>
+        </tr></thead><tbody><tr>
+            <td align="left">
+                <a name="8be5a47d41d4089fec6bd56f31576253"></a>1 / latent</td>
+            <td align="left">-1 / Lf</td>
+            <td align="left">Element-wise(K.*u)</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+            <td align="left">off</td>
+            <td align="left">Floor</td>
+            <td align="left">off</td>
+        </tr><tr>
+            <td align="left">
+                <a name="79c36810abfe4fc23f3c4f2336ea0530"></a>1 / latent1</td>
+            <td align="left">-1 / Lf</td>
+            <td align="left">Element-wise(K.*u)</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+            <td align="left">off</td>
+            <td align="left">Floor</td>
+            <td align="left">off</td>
+        </tr></tbody></table></div></div><a name="d0e3447"></a><div class="table"><p class="title"><b>Table&nbsp;24.&nbsp;Inport Block Properties</b></p><div class="table-contents"><table summary="Inport Block Properties" border="1" cellspacing="0" fastRender="1" width="100%"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><thead><tr>
+            <th align="left">Name</th>
+            <th align="left">Port</th>
+            <th align="left">Port Dimensions</th>
+            <th align="left">Defined In Blk</th>
+            <th align="left">Out Data Type Str</th>
+        </tr></thead><tbody><tr>
+            <td align="left">
+                <a name="06197f6cb16363b91db42f461b187cf0"></a>mi</td>
+            <td align="left">2</td>
+            <td align="left">1</td>
+            <td align="left">
+                 SFunction 
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="5dbdae1ac781ba5483a6c5645e3a97da"></a>mw</td>
+            <td align="left">3</td>
+            <td align="left">1</td>
+            <td align="left">
+                 SFunction 
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="fe27f98a51c9f03e71c5e6d484ffe036"></a>ps</td>
+            <td align="left">4</td>
+            <td align="left">1</td>
+            <td align="left">
+                 SFunction 
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="6764e1badb36606236f4de2aea8649b8"></a>ts</td>
+            <td align="left">5</td>
+            <td align="left">1</td>
+            <td align="left">
+                 SFunction 
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="a6912d5e45c94311270d04dc34ff052d"></a>uu</td>
+            <td align="left">1</td>
+            <td align="left">1</td>
+            <td align="left">
+                 SFunction 
+            </td>
+            <td align="left">double</td>
+        </tr></tbody></table></div></div><a name="d0e3584"></a><div class="table"><p class="title"><b>Table&nbsp;25.&nbsp;MATLAB Function Block Properties</b></p><div class="table-contents"><table summary="MATLAB Function Block Properties" border="1" cellspacing="0" fastRender="1" width="100%"><col width="60*"><col width="60*"><thead><tr>
+            <th align="left">Name</th>
+            <th align="left">Script</th>
+        </tr></thead><tbody><tr>
+            <td align="left">
+                <a name="e7f438aa26556eb44e508f9d32e4ea41"></a>snow compression</td>
+            <td align="left">
+                <pre class="programlisting"><pre xmlns:mwsh="http://www.mathworks.com/namespace/mcode/v1/syntaxhighlight.dtd"><span style="color:blue">function</span> dps_out = snow_compression(ps_in)
+<span style="color:green">%#codegen</span>
+As = 450;
+Bs = 20; <span style="color:green">% days</span>
+ratio = 1 + (ps_in / (As - ps_in));
+dps_out = As / (Bs * ratio * ratio);</pre></pre>
+            </td>
+        </tr></tbody></table></div></div><a name="d0e3621"></a><div class="table"><p class="title"><b>Table&nbsp;26.&nbsp;Outport Block Properties</b></p><div class="table-contents"><table summary="Outport Block Properties" border="1" cellspacing="0" fastRender="1" width="100%"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><thead><tr>
+            <th align="left">Name</th>
+            <th align="left">Port</th>
+            <th align="left">Icon Display</th>
+            <th align="left">Lock Scale</th>
+            <th align="left">Var Size Sig</th>
+            <th align="left">Signal Type</th>
+            <th align="left">Sampling Mode</th>
+            <th align="left">Source Of Initial Output Value</th>
+            <th align="left">Output When Disabled</th>
+            <th align="left">Used By Blk</th>
+        </tr></thead><tbody><tr>
+            <td align="left">
+                <a name="74b1b609593e73b2550ff52617a5f8e5"></a>x1</td>
+            <td align="left">1</td>
+            <td align="left">Port number</td>
+            <td align="left">off</td>
+            <td align="left">Inherit</td>
+            <td align="left">auto</td>
+            <td align="left">auto</td>
+            <td align="left">Dialog</td>
+            <td align="left">held</td>
+            <td align="left">
+                 SFunction 
+            </td>
+        </tr><tr>
+            <td align="left">
+                <a name="5c604c28deab4fc7505dcfd1da857909"></a>x2</td>
+            <td align="left">2</td>
+            <td align="left">Port number</td>
+            <td align="left">off</td>
+            <td align="left">Inherit</td>
+            <td align="left">auto</td>
+            <td align="left">auto</td>
+            <td align="left">Dialog</td>
+            <td align="left">held</td>
+            <td align="left">
+                 SFunction 
+            </td>
+        </tr><tr>
+            <td align="left">
+                <a name="b3c13e3106b3b0a0676da4e24707fbe4"></a>x3</td>
+            <td align="left">3</td>
+            <td align="left">Port number</td>
+            <td align="left">off</td>
+            <td align="left">Inherit</td>
+            <td align="left">auto</td>
+            <td align="left">auto</td>
+            <td align="left">Dialog</td>
+            <td align="left">held</td>
+            <td align="left">
+                 SFunction 
+            </td>
+        </tr><tr>
+            <td align="left">
+                <a name="c3f5acd40b0490bf5291bae5cc6670e9"></a>x4</td>
+            <td align="left">4</td>
+            <td align="left">Port number</td>
+            <td align="left">off</td>
+            <td align="left">Inherit</td>
+            <td align="left">auto</td>
+            <td align="left">auto</td>
+            <td align="left">Dialog</td>
+            <td align="left">held</td>
+            <td align="left">
+                 SFunction 
+            </td>
+        </tr></tbody></table></div></div><a name="d0e3816"></a><div class="table"><p class="title"><b>Table&nbsp;27.&nbsp;Terminator Block Properties</b></p><div class="table-contents"><table summary="Terminator Block Properties" border="1" cellspacing="0" fastRender="1" width="100%"><col width="60*"><thead><tr>
+            <th align="left">Name</th>
+        </tr></thead><tbody><tr>
+            <td align="left">
+                <a name="a2a0b3cf02e55cc1b7579a2aeb1ad6f5"></a>Terminator</td>
+        </tr></tbody></table></div></div><a name="d0e3834"></a><div class="table"><p class="title"><b>Table&nbsp;28.&nbsp;TriggerPort Block Properties</b></p><div class="table-contents"><table summary="TriggerPort Block Properties" border="1" cellspacing="0" fastRender="1" width="100%"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><col width="60*"><thead><tr>
+            <th align="left">Name</th>
+            <th align="left">Trigger Type</th>
+            <th align="left">States When Enabling</th>
+            <th align="left">Propagate Var Size</th>
+            <th align="left">Show Output Port</th>
+            <th align="left">Output Data Type</th>
+            <th align="left">Sample Time Type</th>
+            <th align="left">Sample Time</th>
+            <th align="left">Zero Cross</th>
+            <th align="left">Trigger Signal Sample Time</th>
+            <th align="left">Interpolate</th>
+        </tr></thead><tbody><tr>
+            <td align="left">
+                <a name="7ecd0c8321b3dd8eb6286ace13120774"></a>steady_thaw</td>
+            <td align="left">function-call</td>
+            <td align="left">held</td>
+            <td align="left">During execution</td>
+            <td align="left">off</td>
+            <td align="left">auto</td>
+            <td align="left">triggered</td>
+            <td align="left">1</td>
+            <td align="left">on</td>
+            <td align="left">-1</td>
+            <td align="left">on</td>
+        </tr></tbody></table></div></div></div><div class="chapter" title="Appendix"><div class="titlepage"><div><div><h2 class="title"><a name="d0e3922"></a>Appendix</h2></div></div></div><a name="appendix-sl"></a><a name="d0e3927"></a><div class="table"><p class="title"><b>Table&nbsp;29.&nbsp;Block Type Count</b></p><div class="table-contents"><table summary="Block Type Count" border="1" cellspacing="0" fastRender="1" width="100%"><col width="120*"><col width="60*"><col width="240*"><thead><tr>
+            <th align="left">BlockType</th>
+            <th align="left">Count</th>
+            <th align="left">Block Names</th>
+        </tr></thead><tbody><tr>
+            <td align="left">Inport</td>
+            <td align="left">15</td>
+            <td align="left">
+                <a class="link" href="#5f47fbfbaebe2d2c6cdaaa61b8c23e7e">mi</a>, <a class="link" href="#19cd948920d2352d01676b08269a5573">mw</a>, <a class="link" href="#d157189ba3e59520dde35bbd56373243">ps</a>, <a class="link" href="#d191db5702d437995c1f106bcdf2b23f">ts</a>, <a class="link" href="#a11cc0e7ff67a1d75c5c2b74d8794208">uu</a>, <a class="link" href="#475719bd00b67216e5c3c533ba439266">mi</a>, <a class="link" href="#d5a5f5f4691134a18dbaa5651b039d19">mw</a>, <a class="link" href="#5655c0952eea4ca9a05f2162aee00e9c">ps</a>, <a class="link" href="#e18eda0de9efbe8d379eee887fc6d7b6">ts</a>, <a class="link" href="#393921c3460ba11b9d30da0575d47749">uu</a>, <a class="link" href="#06197f6cb16363b91db42f461b187cf0">mi</a>, <a class="link" href="#5dbdae1ac781ba5483a6c5645e3a97da">mw</a>, <a class="link" href="#fe27f98a51c9f03e71c5e6d484ffe036">ps</a>, <a class="link" href="#6764e1badb36606236f4de2aea8649b8">ts</a>, <a class="link" href="#a6912d5e45c94311270d04dc34ff052d">uu</a>
+            </td>
+        </tr><tr>
+            <td align="left">Outport</td>
+            <td align="left">12</td>
+            <td align="left">
+                <a class="link" href="#7efa70a1169101f0ad2e9406f7cd4979">x1</a>, <a class="link" href="#594a14c64ef7f11def0cc00888aa51b6">x2</a>, <a class="link" href="#a7d19cff394280535d9656d0978aaf42">x3</a>, <a class="link" href="#9024f56f5bde23483ea9f86c740f4a38">x4</a>, <a class="link" href="#0d4bf3cfd9433f9c5e1af421c82a420e">mi_out</a>, <a class="link" href="#3bcff28ad0ba8068e5138cf04c5525e1">mw_out</a>, <a class="link" href="#39982bb647d1419935096efdc626a902">ps_out</a>, <a class="link" href="#7aa9f27d57ef8b5e1f03981f9832a743">ts_out</a>, <a class="link" href="#74b1b609593e73b2550ff52617a5f8e5">x1</a>, <a class="link" href="#5c604c28deab4fc7505dcfd1da857909">x2</a>, <a class="link" href="#b3c13e3106b3b0a0676da4e24707fbe4">x3</a>, <a class="link" href="#c3f5acd40b0490bf5291bae5cc6670e9">x4</a>
+            </td>
+        </tr><tr>
+            <td align="left">Constant</td>
+            <td align="left">10</td>
+            <td align="left">
+                <a class="link" href="#fdebb2d3b2d152e1d4e1eef19f76a84b">Initial Showpack</a>, <a class="link" href="#3e722aceb663726007379416249b9df3">Initial Showpack Density</a>, <a class="link" href="#7d78a652ecb2be21b04d680f5fc6aed5">Initial Temperature</a>, <a class="link" href="#0311b5aaa658b01fd4cbc622efe6da66">Initial Water in Snowpack</a>, <a class="link" href="#c59aec57ffe6764b453cbd4ebd060048">C snow</a>, <a class="link" href="#1d0bb575b9c795f776ebcae720d57350">Constant</a>, <a class="link" href="#cf5c2e1936921dc96b83fae46521e4a8">Constant1</a>, <a class="link" href="#678f22e011818c67448dbfb4c2f050d3">Constant2</a>, <a class="link" href="#9be15e2017c32381ea76bc8fda7f1989">Constant3</a>, <a class="link" href="#b20a72043517b2dbc4d353a04fee9020">Constant</a>
+            </td>
+        </tr><tr>
+            <td align="left">DiscreteIntegrator</td>
+            <td align="left">8</td>
+            <td align="left">
+                <a class="link" href="#e5a090c9bb21c8b5f7fb35eb6faff9ad">Discrete-Time Integrator</a>, <a class="link" href="#34999d21792ad20e62087e213af50b30">compressor</a>, <a class="link" href="#acaaf4f4ea3a406a5afa2c94144330d7">Discrete-Time Integrator1</a>, <a class="link" href="#2ec333b10929d5e3662d745de27ddec3">Discrete-Time Integrator2</a>, <a class="link" href="#bf54320bcd915f6ad5939072eb262154">Discrete-Time Integrator3</a>, <a class="link" href="#60c1203c724309bc66803ef8cf2ad7be">Discrete-Time Integrator1</a>, <a class="link" href="#4272e8ba4252593b46eeb5f76acae08e">Discrete-Time Integrator2</a>, <a class="link" href="#1330f60aef7168cbb550be134223fa72">Discrete-Time Integrator3</a>
+            </td>
+        </tr><tr>
+            <td align="left">MATLAB Function</td>
+            <td align="left">4</td>
+            <td align="left">
+                <a class="link" href="#942e0002bee7683fed05b4600c14ee84">snow compression</a>, <a class="link" href="#27f04d9b0c0fd077e275456cf871f645">compress snowpack</a>, <a class="link" href="#2756034efeacbe4a11b13a96a3657fbe">melting snowpack</a>, <a class="link" href="#e7f438aa26556eb44e508f9d32e4ea41">snow compression</a>
+            </td>
+        </tr><tr>
+            <td align="left">TriggerPort</td>
+            <td align="left">3</td>
+            <td align="left">
+                <a class="link" href="#7e95fc7c4ae74ba5ab048a691f0ddbb7">steady_frozen</a>, <a class="link" href="#05135111a8de212d9592e97400d5800d">steady_melting</a>, <a class="link" href="#7ecd0c8321b3dd8eb6286ace13120774">steady_thaw</a>
+            </td>
+        </tr><tr>
+            <td align="left">SubSystem</td>
+            <td align="left">3</td>
+            <td align="left">
+                <a class="link" href="#2d07a9ee4a6e5b68604447a8caa17109">Frozen.steady_frozen</a>, <a class="link" href="#8b40c9ccac34d0544c46782761b006be">Melt.steady_melting</a>, <a class="link" href="#97cfd3ba360640d085ed890509de9bc0">Thaw.steady_thaw</a>
+            </td>
+        </tr><tr>
+            <td align="left">Gain</td>
+            <td align="left">3</td>
+            <td align="left">
+                <a class="link" href="#3f52d12d3c174b2bfaf2b9b4892952d7">1 / latent</a>, <a class="link" href="#8be5a47d41d4089fec6bd56f31576253">1 / latent</a>, <a class="link" href="#79c36810abfe4fc23f3c4f2336ea0530">1 / latent1</a>
+            </td>
+        </tr><tr>
+            <td align="left">Terminator</td>
+            <td align="left">2</td>
+            <td align="left">
+                <a class="link" href="#fb6fe648b84a79827d6563c4bfc16d53">Terminator</a>, <a class="link" href="#a2a0b3cf02e55cc1b7579a2aeb1ad6f5">Terminator</a>
+            </td>
+        </tr><tr>
+            <td align="left">Sum</td>
+            <td align="left">1</td>
+            <td align="left">
+                <a class="link" href="#2d39154242512136524de2852eadb20a">Sum</a>
+            </td>
+        </tr><tr>
+            <td align="left">Sin</td>
+            <td align="left">1</td>
+            <td align="left">
+                <a class="link" href="#7fca5f7357031aea1a37cc2a8d315cbf">Insolation diurinal</a>
+            </td>
+        </tr><tr>
+            <td align="left">Scope</td>
+            <td align="left">1</td>
+            <td align="left">
+                Scope
+            </td>
+        </tr><tr>
+            <td align="left">Product</td>
+            <td align="left">1</td>
+            <td align="left">
+                <a class="link" href="#d1bfc4cf1ca855d827b573189f95fa46">Divide</a>
+            </td>
+        </tr><tr>
+            <td align="left">Chart</td>
+            <td align="left">1</td>
+            <td align="left">
+                <a class="link" href="#13dd4847221120d4830297107dd96b69">supervisor</a>
+            </td>
+        </tr></tbody></table></div></div><a name="d0e4295"></a><div class="table"><p class="title"><b>Table&nbsp;30.&nbsp;Model Variables</b></p><div class="table-contents"><table summary="Model Variables" border="1" cellspacing="0" fastRender="1" width="100%"><col width="60*"><col width="180*"><col width="120*"><col width="120*"><thead><tr>
+            <th align="left">Variable Name</th>
+            <th align="left">Parent Blocks</th>
+            <th align="left">Calling string</th>
+            <th align="left">Value</th>
+        </tr></thead><tbody><tr>
+            <td align="left">Cs</td>
+            <td align="left">
+                <a class="link" href="#c59aec57ffe6764b453cbd4ebd060048">C snow</a>
+            </td>
+            <td align="left">
+                <table border="0" summary="Simple list" class="simplelist"><tr><td>
+                        <code class="computeroutput">Cs</code>
+                    </td></tr></table>
+            </td>
+            <td align="left">2050</td>
+        </tr><tr>
+            <td align="left">Lf</td>
+            <td align="left">
+                <table border="0" summary="Simple list" class="simplelist"><tr><td>
+                        <a class="link" href="#3f52d12d3c174b2bfaf2b9b4892952d7">1 / latent</a>
+                    </td></tr><tr><td>
+                        <a class="link" href="#cf5c2e1936921dc96b83fae46521e4a8">Constant1</a>
+                    </td></tr><tr><td>
+                        <a class="link" href="#8be5a47d41d4089fec6bd56f31576253">1 / latent</a>
+                    </td></tr><tr><td>
+                        <a class="link" href="#79c36810abfe4fc23f3c4f2336ea0530">1 / latent1</a>
+                    </td></tr></table>
+            </td>
+            <td align="left">
+                <table border="0" summary="Simple list" class="simplelist"><tr><td>
+                        <code class="computeroutput">-1 / Lf</code>
+                    </td></tr><tr><td>
+                        <code class="computeroutput">Lf</code>
+                    </td></tr><tr><td>
+                        <code class="computeroutput">-1 / Lf</code>
+                    </td></tr><tr><td>
+                        <code class="computeroutput">-1 / Lf</code>
+                    </td></tr></table>
+            </td>
+            <td align="left">334000</td>
+        </tr><tr>
+            <td align="left">Or</td>
+            <td align="left">
+                <a class="link" href="#678f22e011818c67448dbfb4c2f050d3">Constant2</a>
+            </td>
+            <td align="left">
+                <table border="0" summary="Simple list" class="simplelist"><tr><td>
+                        <code class="computeroutput">Or</code>
+                    </td></tr></table>
+            </td>
+            <td align="left">0.0100</td>
+        </tr><tr>
+            <td align="left">Pw</td>
+            <td align="left">
+                <a class="link" href="#9be15e2017c32381ea76bc8fda7f1989">Constant3</a>
+            </td>
+            <td align="left">
+                <table border="0" summary="Simple list" class="simplelist"><tr><td>
+                        <code class="computeroutput">Pw</code>
+                    </td></tr></table>
+            </td>
+            <td align="left">1000</td>
+        </tr></tbody></table></div></div><a name="d0e4448"></a><div class="table"><p class="title"><b>Table&nbsp;31.&nbsp;Model Functions</b></p><div class="table-contents"><table summary="Model Functions" border="1" cellspacing="0" fastRender="1" width="100%"><col width="60*"><col width="240*"><col width="120*"><thead><tr>
+            <th align="left">Function Name</th>
+            <th align="left">Parent Blocks</th>
+            <th align="left">Calling string</th>
+        </tr></thead><tbody><tr>
+            <td align="left">pi</td>
+            <td align="left">
+                <a class="link" href="#7fca5f7357031aea1a37cc2a8d315cbf">Insolation diurinal</a>
+            </td>
+            <td align="left">
+                <table border="0" summary="Simple list" class="simplelist"><tr><td>
+                        <code class="computeroutput">2*pi</code>
+                    </td></tr></table>
+            </td>
+        </tr></tbody></table></div></div><a name="appendix-sf"></a><a name="d0e4489"></a><div class="table"><p class="title"><b>Table&nbsp;32.&nbsp;Count:<a class="link" href="#6b20329c20913a2a09bbf7c2e3864f5c" title="Machine - snowpack_water">snowpack_water</a></b></p><div class="table-contents"><table summary="Count:snowpack_water" border="1" cellspacing="0" fastRender="1" width="100%"><col width="120*"><col width="60*"><col width="180*"><thead><tr>
+            <th align="left">Count</th>
+            <th align="left">Count</th>
+            <th align="left">Objects</th>
+        </tr></thead><tbody><tr>
+            <td align="left">Data</td>
+            <td align="left">44</td>
+            <td align="left">
+                <a class="link" href="#8feebec9e0b9f3459cfc3d32fbcbcc52">q</a>, <a class="link" href="#bceebdb23b0dbb62c4a0e486994ddea6">Mi_in</a>, <a class="link" href="#8dabf6f4596aa62f5dbd73cc27cda6e1">Mw_in</a>, <a class="link" href="#7b7b49d31245c856ce12346f74e386fc">Ps_in</a>, <a class="link" href="#6456d439f96cbdc9184663f3f47af03e">Ts_in</a>, <a class="link" href="#8e2a8ed45e6a83b839a534951745d651">Mi_out</a>, <a class="link" href="#fa1527842d1b5e5bc007fa3bd03f1fd0">Mw_out</a>, <a class="link" href="#3480316355a26a7dd478848be00b417b">Ps_out</a>, <a class="link" href="#31f6039b02768ec1f42f847c184ce818">Ts_out</a>, <a class="link" href="#a7f90ab0c986e5de497ecb6412ad2442">ut</a>, <a class="link" href="#0150b952722b8b8c435df58d8a670158">Mi</a>, <a class="link" href="#a29ad557a6b07889ab4743b061546ef8">Mw</a>, <a class="link" href="#b2cc691b0c6aac747d6d40df53d11e54">Ps</a>, <a class="link" href="#f475ff7571958782d4d040de6a565386">Ts</a>, <a class="link" href="#7ffd21d8192641c48dbfa3135b648143">Or</a>, <a class="link" href="#8f12589c75387981dafe7a01d5291dbb">Lf</a>, <a class="link" href="#39cd351a2bd7eabbf12951b2a789cb65">Pw</a>, <a class="link" href="#c6ce3db8febe57ecfe21736d3810ddee">x1</a>, <a class="link" href="#47b6a939b3e54bfb3398bd999b60e7e0">x2</a>, <a class="link" href="#9170adf63db5b3e2b05f04e0ba01d207">x3</a>, <a class="link" href="#6e6ac8d5c8f45fc3898a20d06745860d">x4</a>, <a class="link" href="#3b3b4bf4826c0bd21f566748f8af293c">uu</a>, <a class="link" href="#f1afbf1e0d3c4a635321a21d6176e92b">mi</a>, <a class="link" href="#df966d81c84aae5a34c72068e921a96a">mw</a>, <a class="link" href="#81fe82d9b1d8ed5f3e5e257816a8685a">ps</a>, <a class="link" href="#ba3ea752dd518ff993a1b1bc164a0f1e">ts</a>, <a class="link" href="#170ce5c2a88ed9533143dba0bd669bc0">uu</a>, <a class="link" href="#3afa0b4ef1b4863b3722dac88e3a5fc3">mi</a>, <a class="link" href="#8107f59896a67014e05057f159adabd8">mw</a>, <a class="link" href="#f77c518f18dec1e8cee50e958d771004">ps</a>, <a class="link" href="#11710378a2c47bc71ab4fda6fc926539">ts</a>, <a class="link" href="#c02c5bf6c9540638cf14f3268491a6cf">x1</a>, <a class="link" href="#484362ff35681bd5e4297dd177db9d30">x2</a>, <a class="link" href="#11e1c4251784fc11239acf6937589a7f">x3</a>, <a class="link" href="#2e4529e45237e2d525ebed8518f85a52">x4</a>, <a class="link" href="#86927c031e4da67793f194b00035894e">mi_out</a>, <a class="link" href="#166ff79b18caf332df94ab4c460ad5d8">mw_out</a>, <a class="link" href="#1c71cfe2d262a094905c5266cabb39a3">ps_out</a>, <a class="link" href="#69d9aa9df61b898cc79d736fd20c366b">ts_out</a>, <a class="link" href="#08f491fb5a2c94a9d7ffd87bd9a75a30">uu</a>, <a class="link" href="#791a48b8548b084ac8879d20a1f19270">mi</a>, <a class="link" href="#ff480c8189d2a29839fbe9ad133c4e5e">mw</a>, <a class="link" href="#6ca606d8676b67e9de72bb519028c918">ps</a>, <a class="link" href="#bc1876814b14dd1e22a4d358b4f70685">ts</a>
+            </td>
+        </tr><tr>
+            <td align="left">Transition</td>
+            <td align="left">5</td>
+            <td align="left">
+                <a class="link" href="#5a3fbb2b63cd131418e3ec79abfb58e9">{...</a>, <a class="link" href="#06236fcb6ab216242f52e9ee3263c08c">[Mw &lt;= 0]</a>, <a class="link" href="#7f834db0d8b889defea8c15df5683e6f">[Ts &gt;= 0]</a>, <a class="link" href="#8f2929a06bc07b8a33333889f8f81480">[ (Ps * Mw) / (Pw * (Mi + Mw)) &lt; Or]</a>, <a class="link" href="#49a5fdc3ffc58299f951aa1ce338b4cc">[ (Ps * Mw) / (Pw * (Mi + Mw)) &gt;= Or]</a>
+            </td>
+        </tr><tr>
+            <td align="left">State</td>
+            <td align="left">3</td>
+            <td align="left">
+                <a class="link" href="#d5fce0cc4c69248484536295e398496c">Frozen</a>, <a class="link" href="#f4c47970f574a29a3711d072951c30b1">Thaw</a>, <a class="link" href="#985e8b8721ace8d0efce6e9d9b7ed55a">Melt</a>
+            </td>
+        </tr><tr>
+            <td align="left">SLFunction</td>
+            <td align="left">3</td>
+            <td align="left">
+                <a class="link" href="#2d07a9ee4a6e5b68604447a8caa17109">steady_frozen</a>, <a class="link" href="#97cfd3ba360640d085ed890509de9bc0">steady_thaw</a>, <a class="link" href="#8b40c9ccac34d0544c46782761b006be">steady_melting</a>
+            </td>
+        </tr><tr>
+            <td align="left">Target</td>
+            <td align="left">1</td>
+            <td align="left">
+                <a class="link" href="#e9b4ae8dab9e38e605360887c09dc47f">sfun</a>
+            </td>
+        </tr><tr>
+            <td align="left">Machine</td>
+            <td align="left">1</td>
+            <td align="left">
+                <a class="link" href="#6b20329c20913a2a09bbf7c2e3864f5c" title="Machine - snowpack_water">snowpack_water</a>
+            </td>
+        </tr><tr>
+            <td align="left">Chart</td>
+            <td align="left">1</td>
+            <td align="left">
+                <a class="link" href="#dd58af9be6da05d8f3fe12016f785d5f" title="Chart - supervisor">supervisor</a>
+            </td>
+        </tr></tbody></table></div></div><a name="d0e4761"></a><div class="table"><p class="title"><b>Table&nbsp;33.&nbsp;Data Properties</b></p><div class="table-contents"><table summary="Data Properties" border="1" cellspacing="0" fastRender="1" width="100%"><col width="60*"><col width="60*"><col width="60*"><thead><tr>
+            <th align="left">Name</th>
+            <th align="left">Parent</th>
+            <th align="left">Data Type</th>
+        </tr></thead><tbody><tr>
+            <td align="left">
+                <a name="8f12589c75387981dafe7a01d5291dbb"></a>Lf</td>
+            <td align="left">
+                <a class="link" href="#dd58af9be6da05d8f3fe12016f785d5f" title="Chart - supervisor">supervisor</a>
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="0150b952722b8b8c435df58d8a670158"></a>Mi</td>
+            <td align="left">
+                <a class="link" href="#dd58af9be6da05d8f3fe12016f785d5f" title="Chart - supervisor">supervisor</a>
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="f1afbf1e0d3c4a635321a21d6176e92b"></a>mi</td>
+            <td align="left">
+                <a class="link" href="#2d07a9ee4a6e5b68604447a8caa17109">steady_frozen</a>
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="3afa0b4ef1b4863b3722dac88e3a5fc3"></a>mi</td>
+            <td align="left">
+                <a class="link" href="#97cfd3ba360640d085ed890509de9bc0">steady_thaw</a>
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="791a48b8548b084ac8879d20a1f19270"></a>mi</td>
+            <td align="left">
+                <a class="link" href="#8b40c9ccac34d0544c46782761b006be">steady_melting</a>
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="bceebdb23b0dbb62c4a0e486994ddea6"></a>Mi_in</td>
+            <td align="left">
+                <a class="link" href="#dd58af9be6da05d8f3fe12016f785d5f" title="Chart - supervisor">supervisor</a>
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="8e2a8ed45e6a83b839a534951745d651"></a>Mi_out</td>
+            <td align="left">
+                <a class="link" href="#dd58af9be6da05d8f3fe12016f785d5f" title="Chart - supervisor">supervisor</a>
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="86927c031e4da67793f194b00035894e"></a>mi_out</td>
+            <td align="left">
+                <a class="link" href="#8b40c9ccac34d0544c46782761b006be">steady_melting</a>
+            </td>
+            <td align="left">Inherit: Same as Simulink</td>
+        </tr><tr>
+            <td align="left">
+                <a name="a29ad557a6b07889ab4743b061546ef8"></a>Mw</td>
+            <td align="left">
+                <a class="link" href="#dd58af9be6da05d8f3fe12016f785d5f" title="Chart - supervisor">supervisor</a>
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="df966d81c84aae5a34c72068e921a96a"></a>mw</td>
+            <td align="left">
+                <a class="link" href="#2d07a9ee4a6e5b68604447a8caa17109">steady_frozen</a>
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="8107f59896a67014e05057f159adabd8"></a>mw</td>
+            <td align="left">
+                <a class="link" href="#97cfd3ba360640d085ed890509de9bc0">steady_thaw</a>
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="ff480c8189d2a29839fbe9ad133c4e5e"></a>mw</td>
+            <td align="left">
+                <a class="link" href="#8b40c9ccac34d0544c46782761b006be">steady_melting</a>
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="8dabf6f4596aa62f5dbd73cc27cda6e1"></a>Mw_in</td>
+            <td align="left">
+                <a class="link" href="#dd58af9be6da05d8f3fe12016f785d5f" title="Chart - supervisor">supervisor</a>
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="fa1527842d1b5e5bc007fa3bd03f1fd0"></a>Mw_out</td>
+            <td align="left">
+                <a class="link" href="#dd58af9be6da05d8f3fe12016f785d5f" title="Chart - supervisor">supervisor</a>
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="166ff79b18caf332df94ab4c460ad5d8"></a>mw_out</td>
+            <td align="left">
+                <a class="link" href="#8b40c9ccac34d0544c46782761b006be">steady_melting</a>
+            </td>
+            <td align="left">Inherit: Same as Simulink</td>
+        </tr><tr>
+            <td align="left">
+                <a name="7ffd21d8192641c48dbfa3135b648143"></a>Or</td>
+            <td align="left">
+                <a class="link" href="#dd58af9be6da05d8f3fe12016f785d5f" title="Chart - supervisor">supervisor</a>
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="b2cc691b0c6aac747d6d40df53d11e54"></a>Ps</td>
+            <td align="left">
+                <a class="link" href="#dd58af9be6da05d8f3fe12016f785d5f" title="Chart - supervisor">supervisor</a>
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="81fe82d9b1d8ed5f3e5e257816a8685a"></a>ps</td>
+            <td align="left">
+                <a class="link" href="#2d07a9ee4a6e5b68604447a8caa17109">steady_frozen</a>
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="f77c518f18dec1e8cee50e958d771004"></a>ps</td>
+            <td align="left">
+                <a class="link" href="#97cfd3ba360640d085ed890509de9bc0">steady_thaw</a>
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="6ca606d8676b67e9de72bb519028c918"></a>ps</td>
+            <td align="left">
+                <a class="link" href="#8b40c9ccac34d0544c46782761b006be">steady_melting</a>
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="7b7b49d31245c856ce12346f74e386fc"></a>Ps_in</td>
+            <td align="left">
+                <a class="link" href="#dd58af9be6da05d8f3fe12016f785d5f" title="Chart - supervisor">supervisor</a>
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="3480316355a26a7dd478848be00b417b"></a>Ps_out</td>
+            <td align="left">
+                <a class="link" href="#dd58af9be6da05d8f3fe12016f785d5f" title="Chart - supervisor">supervisor</a>
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="1c71cfe2d262a094905c5266cabb39a3"></a>ps_out</td>
+            <td align="left">
+                <a class="link" href="#8b40c9ccac34d0544c46782761b006be">steady_melting</a>
+            </td>
+            <td align="left">Inherit: Same as Simulink</td>
+        </tr><tr>
+            <td align="left">
+                <a name="39cd351a2bd7eabbf12951b2a789cb65"></a>Pw</td>
+            <td align="left">
+                <a class="link" href="#dd58af9be6da05d8f3fe12016f785d5f" title="Chart - supervisor">supervisor</a>
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="8feebec9e0b9f3459cfc3d32fbcbcc52"></a>q</td>
+            <td align="left">
+                <a class="link" href="#dd58af9be6da05d8f3fe12016f785d5f" title="Chart - supervisor">supervisor</a>
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="f475ff7571958782d4d040de6a565386"></a>Ts</td>
+            <td align="left">
+                <a class="link" href="#dd58af9be6da05d8f3fe12016f785d5f" title="Chart - supervisor">supervisor</a>
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="ba3ea752dd518ff993a1b1bc164a0f1e"></a>ts</td>
+            <td align="left">
+                <a class="link" href="#2d07a9ee4a6e5b68604447a8caa17109">steady_frozen</a>
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="11710378a2c47bc71ab4fda6fc926539"></a>ts</td>
+            <td align="left">
+                <a class="link" href="#97cfd3ba360640d085ed890509de9bc0">steady_thaw</a>
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="bc1876814b14dd1e22a4d358b4f70685"></a>ts</td>
+            <td align="left">
+                <a class="link" href="#8b40c9ccac34d0544c46782761b006be">steady_melting</a>
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="6456d439f96cbdc9184663f3f47af03e"></a>Ts_in</td>
+            <td align="left">
+                <a class="link" href="#dd58af9be6da05d8f3fe12016f785d5f" title="Chart - supervisor">supervisor</a>
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="31f6039b02768ec1f42f847c184ce818"></a>Ts_out</td>
+            <td align="left">
+                <a class="link" href="#dd58af9be6da05d8f3fe12016f785d5f" title="Chart - supervisor">supervisor</a>
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="69d9aa9df61b898cc79d736fd20c366b"></a>ts_out</td>
+            <td align="left">
+                <a class="link" href="#8b40c9ccac34d0544c46782761b006be">steady_melting</a>
+            </td>
+            <td align="left">Inherit: Same as Simulink</td>
+        </tr><tr>
+            <td align="left">
+                <a name="a7f90ab0c986e5de497ecb6412ad2442"></a>ut</td>
+            <td align="left">
+                <a class="link" href="#dd58af9be6da05d8f3fe12016f785d5f" title="Chart - supervisor">supervisor</a>
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="3b3b4bf4826c0bd21f566748f8af293c"></a>uu</td>
+            <td align="left">
+                <a class="link" href="#2d07a9ee4a6e5b68604447a8caa17109">steady_frozen</a>
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="170ce5c2a88ed9533143dba0bd669bc0"></a>uu</td>
+            <td align="left">
+                <a class="link" href="#97cfd3ba360640d085ed890509de9bc0">steady_thaw</a>
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="08f491fb5a2c94a9d7ffd87bd9a75a30"></a>uu</td>
+            <td align="left">
+                <a class="link" href="#8b40c9ccac34d0544c46782761b006be">steady_melting</a>
+            </td>
+            <td align="left">double</td>
+        </tr><tr>
+            <td align="left">
+                <a name="c6ce3db8febe57ecfe21736d3810ddee"></a>x1</td>
+            <td align="left">
+                <a class="link" href="#2d07a9ee4a6e5b68604447a8caa17109">steady_frozen</a>
+            </td>
+            <td align="left">Inherit: Same as Simulink</td>
+        </tr><tr>
+            <td align="left">
+                <a name="c02c5bf6c9540638cf14f3268491a6cf"></a>x1</td>
+            <td align="left">
+                <a class="link" href="#97cfd3ba360640d085ed890509de9bc0">steady_thaw</a>
+            </td>
+            <td align="left">Inherit: Same as Simulink</td>
+        </tr><tr>
+            <td align="left">
+                <a name="47b6a939b3e54bfb3398bd999b60e7e0"></a>x2</td>
+            <td align="left">
+                <a class="link" href="#2d07a9ee4a6e5b68604447a8caa17109">steady_frozen</a>
+            </td>
+            <td align="left">Inherit: Same as Simulink</td>
+        </tr><tr>
+            <td align="left">
+                <a name="484362ff35681bd5e4297dd177db9d30"></a>x2</td>
+            <td align="left">
+                <a class="link" href="#97cfd3ba360640d085ed890509de9bc0">steady_thaw</a>
+            </td>
+            <td align="left">Inherit: Same as Simulink</td>
+        </tr><tr>
+            <td align="left">
+                <a name="9170adf63db5b3e2b05f04e0ba01d207"></a>x3</td>
+            <td align="left">
+                <a class="link" href="#2d07a9ee4a6e5b68604447a8caa17109">steady_frozen</a>
+            </td>
+            <td align="left">Inherit: Same as Simulink</td>
+        </tr><tr>
+            <td align="left">
+                <a name="11e1c4251784fc11239acf6937589a7f"></a>x3</td>
+            <td align="left">
+                <a class="link" href="#97cfd3ba360640d085ed890509de9bc0">steady_thaw</a>
+            </td>
+            <td align="left">Inherit: Same as Simulink</td>
+        </tr><tr>
+            <td align="left">
+                <a name="6e6ac8d5c8f45fc3898a20d06745860d"></a>x4</td>
+            <td align="left">
+                <a class="link" href="#2d07a9ee4a6e5b68604447a8caa17109">steady_frozen</a>
+            </td>
+            <td align="left">Inherit: Same as Simulink</td>
+        </tr><tr>
+            <td align="left">
+                <a name="2e4529e45237e2d525ebed8518f85a52"></a>x4</td>
+            <td align="left">
+                <a class="link" href="#97cfd3ba360640d085ed890509de9bc0">steady_thaw</a>
+            </td>
+            <td align="left">Inherit: Same as Simulink</td>
+        </tr></tbody></table></div></div><a name="e9b4ae8dab9e38e605360887c09dc47f"></a><a name="d0e5485"></a><div class="table"><div class="table-contents"><table summary="" border="1" cellspacing="0" fastRender="1" width="100%"><col width="9000*"><col width="30000*"><thead><tr><th align="left">Target</th><th align="left"><a class="link" href="#6b20329c20913a2a09bbf7c2e3864f5c" title="Machine - snowpack_water">snowpack_water</a>/sfun</th></tr></thead><tbody><tr><td align="left">Description</td><td align="left">Default Simulink S-Function Target.</td></tr></tbody></table></div></div></div></div></body></html>
