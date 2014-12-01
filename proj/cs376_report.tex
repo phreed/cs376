@@ -1,0 +1,70 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{natbib}
+\usepackage{amsmath}
+
+\title{Review of A Hybrid System Model of Seasonal Snowpack Water Balance}
+\author{Fred Eisele }
+\date{2014 December 1}
+
+\usepackage[showframe=true]{geometry}
+\geometry{verbose, tmargin=0pt, bmargin=90pt, lmargin=90pt, rmargin=90pt}
+
+\begin{document}
+
+\maketitle
+
+\section{Project Description}
+
+Systems with long time steps may be modeled with hybrid automata
+\citep{kerkez2010swb}.
+This project replicates part of the work involved with modeling
+the seasonal snowpack water balance and the snow-water-equivalence (SWE).
+The SWE is important in estimations of the water available
+for consumption in the winter snowpack.
+This is of particular importance in the desert west of the USA.
+
+\section{Progress}
+
+I have a hybrid model based on the recommended
+Stateflow\textregistered Simulink\textregistered
+design patterns \citep{matlab2009ssdp}.
+I am using discrete time steps (rather than continuous) as the
+physical system has a large degree of variability.
+
+\section{Problems}
+
+Starting with a continuous model reveiled semantic
+issues with embedding a continuous integrator in a SimuLink function.
+Switching to a discrete integrator resolved these issues but
+there are still questions related to how to appropriately
+model the differential equations.
+
+The other significant issue is the proper calibration of the model.
+Typically the models produced with
+Stateflow\textregistered Simulink\textregistered are working
+with time frames in the one second region.
+This problem uses time frames in the hour or day region.
+
+A minor issue is that the paper does not describe
+the input in much detail.
+The data they use is that recorded in various surveys.
+This will be approximated in my model with a sine wave
+that immitates the diurnal insolation with the trough
+giving up energy.
+
+\begin{align}
+dI(t) &= A ( 1.5 - \cos{ t 2 \pi } )  \\
+I_{daily} &= A
+\end{align}
+
+Where $t$ is measured in days.
+$A$ is the average daily insolation.
+A reasonable, Springtime, value for $A$ is near $3 \text{kW-hr}/m^2$.
+
+
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
