@@ -9,6 +9,10 @@
 
 \usepackage[showframe=true]{geometry}
 \geometry{verbose, tmargin=0pt, bmargin=90pt, lmargin=90pt, rmargin=90pt}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{xfrac}
 
 \begin{document}
 
@@ -146,23 +150,90 @@ These provide a sufficient physical model to construct the hybrid model.
 
 The hybrid model is a bulk model for an arbitrary core
 sample of the snowpack.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.7]{discrete_modes.png}
+\caption{The snowpack modes}
+\label{fig:snowpack-modes}
+\end{figure}
+
+We start with the formal definition of the model.
+
+\begin{align}
+H &= (Q, X, Init, U, f, Dom, R, Y) \\
+X &= \{x \in \mathbb{R}^4 \big| x = \left[ M_{ice}, M_{water}, \rho_{snow}, T \right]^T\}
+\end{align}
+
+\subsection{Discrete Model}
+
+There are four discrete modes in this model.
 It has two top level modes, one representing the absence
 of snow, and the other representing the presence of a snowpack.
 The snowpack mode is further discriminated into three modes:
 frozen, thawing and melting.
+Frozen indicates the absence of water in the snow matrix,
+only ice and air are present.
+Thawing indicates that the ice and water are in a phase change condition;
+all the water present is adsorbed by the snow matrix.
+Melting indicates a supersaturated state where the
+volumetric water content of the snowpack is at a maximum.
 
-\begin{figure}
-\centering
-\includegraphics{discrete_modes.png}
-\caption{The snowpack modes}
-\label{fig:snowpack_modes}
-\end{figure}
+\begin{align}
+Q &= \{q_0, q_1, q_2, q_3\} \\
+  &= \{\text{empty}, \text{frozen}, \text{thawing}, \text{melting}\}
+\end{align}
 
-\subsection{Discrete Model}
+\begin{align}
+Dom_{empty} &= \{x \in X \big| M_{ice} <= 0\} \\
+Dom_{frozen} &= \{x \in X \big| T <= 0\} \\
+Dom_{thawing} &= \{x \in X \big| T >= 0
+    \wedge 0 < M_{water} <
+    \theta_{r} \rho_{water} \frac{M_{ice} + M_{water}}{\rho_{snow}}\} \\
+Dom_{melting} &= \{x \in X \big|  M_{water} >=
+    \theta_{r} \rho_{water} \frac{M_{ice} + M_{water}}{\rho_{snow}}\}
+\end{align}
+
+The initial states are arbitrarily chosen but must meet
+the following criteria regardless of the initial mode.
+
+\begin{align}
+M_{ice} &>= 0 \\
+M_{water} &>= 0 \\
+M_{water} &<= \theta_{r} \rho_{water} \frac{M_{ice} + M_{water}}{\rho_{snow}} \\
+\rho_{snow} &>= 0 \\
+\rho_{snow} &<= A \text{ ( the maximum saturation level) } \\
+T &<= 0
+\end{align}
+
+The domain also suggests the reset relations.
+\begin{align}
+R(empty,x) &= (frozen, x)  & \textrm{  if $M_{ice} >= 0$ } \\
+R(frozen,x) &= (thawing,x) & \textrm{  if $T >= 0$ } \\
+R(thawing,x) &= (frozen,x) & \textrm{  if $T <= 0$ } \\
+R(thawing,x) &= (melting,x) & \textrm{  if
+   $\theta_{r} <= \frac{M_{water} / \rho_{water} }
+        {(M_{ice} + M_{water}) / \rho_{snow}}$  } \\
+R(melting,x) &= (thawing,x) & \textrm{  if
+      $\theta_{r} > \frac{M_{water} / \rho_{water} }
+        {(M_{ice} + M_{water}) / \rho_{snow}}$  } \\
+R(q,x) &= (empty, x) & \textrm{otherwise}
+\end{align}
+
+Notice the implementation issue with the $R(frozen,x) \to (thawing,x)$ and
+$R(thawing,x) \to (frozen,x)$ the implementation will need to
+force at least one time step before leaving.
+
 
 \subsection{No Snowpack}
 
+When there is no snowpack some of the values in X are undefined
+and are arbitrarily set to zero.
+The mass of ice remaining is clearly $M_{ice} = 0$.
+
 \subsection{Frozen : Sub-Zero}
+
+
 
 \subsection{Thawing : Unsaturated}
 
