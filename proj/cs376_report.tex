@@ -5,10 +5,10 @@
 
 \title{Replicate : A Hybrid System Model of Seasonal Snowpack Water Balance}
 \author{Fred Eisele }
-\date{2014 December 1}
+\date{2014 December 12}
 
-\usepackage[showframe=true]{geometry}
-\geometry{verbose, tmargin=0pt, bmargin=90pt, lmargin=90pt, rmargin=90pt}
+%% \usepackage[showframe=false]{geometry}
+%% \geometry{verbose, tmargin=0pt, bmargin=90pt, lmargin=90pt, rmargin=90pt}
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -22,7 +22,7 @@
 \section{Motivation for Work}
 
 Systems with long time steps may be modeled with hybrid automata
-\citep{kerkez2010swb}.
+\cite{kerkez2010swb}.
 This project replicates part of the work involved with modeling
 the seasonal snowpack water balance and the snow-water-equivalence (SWE).
 The SWE is important in estimations of the water available
@@ -310,7 +310,7 @@ kJ/$m^2$/day, and height (SWE) is in meters.
 \centering
 \mbox{
 \subfigure{\includegraphics[width=2in]{melting_trend_input.png}} \quad
-\subfigure{\includegraphics[width=3in]{melting_trend_output.png}}
+\subfigure{\includegraphics[width=4in]{melting_trend_output.png}}
 }
 \caption{Snowpack consistently melting} \label{fig:consistent-melting}
 \end{figure}
@@ -329,7 +329,7 @@ higher nightly radiation.
 \centering
 \mbox{
 \subfigure{\includegraphics[width=2in]{refreeze_trend_input.png}} \quad
-\subfigure{\includegraphics[width=3in]{refreeze_trend_output.png}}
+\subfigure{\includegraphics[width=4in]{refreeze_trend_output.png}}
 }
 \caption{Snowpack thawing and refreezing at night} \label{fig:refreezing-melt}
 \end{figure}
@@ -364,7 +364,8 @@ This will be approximated in my model with a sine wave
 that immitates the diurnal insolation with the trough
 giving up energy.
 
-There were a few minor errors in the paper that were corrected.
+There were a few minor errors in the equations in
+paper that were corrected.
 
 
 \section{Physical Constants and Conditions}
@@ -394,6 +395,7 @@ L_f &= 334 \text{ kJ/kg} \\
 A &= 450 \text{ kg/$m^3$} \\
 B &= 20 \text{ days}
 \end{align}
+
 
  \section{Conclusion}
 
