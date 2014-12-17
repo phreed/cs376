@@ -24,3 +24,10 @@ hw2/hw2_hvac_SettingControlChart.eps
 hw2/hw2_hvac_SettingControlChart.psc
 
 *.odg#
+*.aux
+*.bbl
+*.blg
+*.log
+*~
+*.bib
+*.gz

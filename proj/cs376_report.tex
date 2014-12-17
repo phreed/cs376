@@ -3,7 +3,7 @@
 \usepackage{natbib}
 \usepackage{amsmath}
 
-\title{Replicate : A Hybrid System Model of Seasonal Snowpack Water Balance}
+\title{Replicate : A Hybrid System Model of Seasonal Snow-pack Water Balance}
 \author{Fred Eisele }
 \date{2014 December 12}
 
@@ -24,29 +24,30 @@
 Systems with long time steps may be modeled with hybrid automata
 \cite{kerkez2010swb}.
 This project replicates part of the work involved with modeling
-the seasonal snowpack water balance and the snow-water-equivalence (SWE).
+the seasonal snow-pack water balance and the snow-water-equivalence (SWE).
 The SWE is important in estimations of the water available
-for consumption in the winter snowpack.
+for consumption in the winter snow-pack.
 This is of particular importance in the desert west of the USA.
-As policies are developed concerning water rights it
+As policies are developed concerning water rights it 
 will be useful to have accurate models and simulations.
 
 \section{Physical Model}
 
 The problem space primarily concerns the Spring thaw.
-We can assume that there is no additional snowfall,
-no appreciable sublimation and that there is no
+We can assume that there is no additional snowfall, 
+no appreciable sublimation and that there is no 
 heat transfer by convection to the atmosphere.
-Further we treat this as a bulk with instantaneous
+Further we treat this as a bulk with instantaneous 
 heat conduction (assume no thermal resistance).
-The conversion of the snowpack to run-off is due solely
-to radiative effects, insolation, heating from the sun,
+The conversion of the snow-pack to run-off is due solely
+to radiative effects, insolation, heating from the sun, 
 and night time cooling.
 
 \subsection{Diurnal Insolation}
 
-In the paper the insolation was obtained emperically.
-For my purpose the solar intensity is modeled as a sine
+
+In the paper the insolation was obtained empirically.
+For my purpose the solar intensity is modeled as a sine 
 function during the day and clipped for night.
 Typical daily insolation values are about $3 \text{kW-hr/day}$.
 
@@ -89,12 +90,12 @@ This is not used in the Frozen mode as there is no water present.
 
 \subsection{Compaction}
 
-Snow is a mixture of ice and air.
+Snow is a mixture of ice and air.  
 The specific composition is varied and several models exist.
 The compaction behavior over time is complex but can
 be well described by formula.
-Starting with the half-saturation formula where $A$ ($kg/m^2$) is the
-maximum saturation level and $B$ ($days$) is the
+Starting with the half-saturation formula where $A$ ($kg/m^2$) is the 
+maximum saturation level and $B$ ($days$) is the 
 half-saturation time.
 Taking the derivative gives the compaction rate.
 
@@ -109,20 +110,20 @@ as a function of density.
 
 \begin{align}
 t &= \frac{\rho_{snow} B}{A - \rho_{snow}} \\
-\frac{d\rho_{snow}(t)}{dt}
-    &= \frac{A}{B (1 + \frac{\rho_{snow}(t)}{A - \rho_{snow}(t)}) }
+\frac{d\rho_{snow}(t)}{dt} 
+    &= \frac{A}{B (1 + \frac{\rho_{snow}(t)}{A - \rho_{snow}(t)})^2 }
     \label{eqn:compaction}
 \end{align}
 
 Compaction occurs in all modes except in the
-absence of a snowpack.
+absence of a snow-pack.
 
 
-\subsection{Adsorbtion}
+\subsection{Adsorption}
 
 Snow acts as a sponge, adsorbing water into its matrix.
 This fact distinguishes the thawing and melting modes.
-The thawing mode is characterized by the snow's ability
+The thaw mode is characterized by the snow's ability
 to adsorb more water, while the melting mode is supersaturated
 and additional conversion of ice into water results in run-off.
 This idea is expressed in the volumetric water content of the snow,
@@ -132,17 +133,17 @@ $\theta_{snow}$.
 \theta_{snow} &= \frac{V_{water}}{V_{total}} \\
    &= \frac{M_{water}/ \rho_{water}}{M_{snow}/\rho_{snow}}
 \end{align}
-
-The maximum $\theta_{snow}$ signals the transition between
+   
+The maximum $\theta_{snow}$ signals the transition between 
 modes, designated $\theta_{r}$.
-The mass of water in the saturated snowpack follows directly.
+The mass of water in the saturated snow-pack follows directly.
 And, differentiating by parts once gives the rate that the water in the
-snowpack is changing.
+snow-pack is changing.
 
 \begin{align}
-M_{water}  &= \theta_{r} \rho_{water}
+M_{water}  &= \theta_{r} \rho_{water} 
       \frac{M_{ice}}{\rho_{snow} - \theta_{r} \rho_{water}} \\
-\frac{d M_{water}}{dt} &=  \theta_{r} \rho_{water}
+\frac{d M_{water}}{dt} &=  \theta_{r} \rho_{water}  
    \left[ \frac{\frac{d M_{water}}{dt} (\rho_{snow} - \theta_{r} \rho_{water})
                   - M_{ice} \frac{d \rho_{snow}}{dt} }
           {(\rho_{snow} - \theta_{r} \rho_{water})^2} \right]
@@ -150,7 +151,7 @@ M_{water}  &= \theta_{r} \rho_{water}
 \end{align}
 
 Intuitively this relation makes sense.
-A higher density in the snowpack results is a lower adsorbtivity.
+A higher density in the snow-pack results is a lower adsorbtivity.
 These provide a sufficient physical model to construct the hybrid model.
 The output of most interest in the report is the snow-water-equivalent (SWE).
 This denotes the height of water that would result if the remaining
@@ -163,13 +164,13 @@ swe(t) = \frac{M_{ice}(t) + M_{water}(t)}{\rho_{water}} \label{eqn:swe}
 
 \section{Hybrid Model}
 
-The hybrid model is a bulk model for an arbitrary core
-sample of the snowpack.
+The hybrid model is a bulk model for an arbitrary core 
+sample of the snow-pack.
 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.7]{discrete_modes.png}
-\caption{The snowpack modes}
+\caption{The snow-pack modes}
 \label{fig:snowpack-modes}
 \end{figure}
 
@@ -180,19 +181,19 @@ H &= (Q, X, Init, U, f, Dom, R, Y) \\
 X &= \{x \in \mathbb{R}^4 \big| x = \left[ M_{ice}, M_{water}, \rho_{snow}, T \right]^T\}
 \end{align}
 
-\subsection{Discrete Model}
+\subsection{Discrete Dynamics}
 
 There are four discrete modes in this model.
 It has two top level modes, one representing the absence
-of snow, and the other representing the presence of a snowpack.
-The snowpack mode is further discriminated into three modes:
+of snow, and the other representing the presence of a snow-pack.
+The snow-pack mode is further discriminated into three modes:
 frozen, thawing and melting.
 Frozen indicates the absence of water in the snow matrix,
 only ice and air are present.
 Thawing indicates that the ice and water are in a phase change condition;
 all the water present is adsorbed by the snow matrix.
-Melting indicates a supersaturated state where the
-volumetric water content of the snowpack is at a maximum.
+Melting indicates a supersaturated state where the 
+volumetric water content of the snow-pack is at a maximum.
 
 \begin{align}
 Q &= \{q_0, q_1, q_2, q_3\} \\
@@ -202,14 +203,14 @@ Q &= \{q_0, q_1, q_2, q_3\} \\
 \begin{align}
 Dom_{empty} &= \{x \in X \big| M_{ice} <= 0\} \\
 Dom_{frozen} &= \{x \in X \big| T <= 0\} \\
-Dom_{thawing} &= \{x \in X \big| T >= 0
+Dom_{thawing} &= \{x \in X \big| T >= 0 
     \wedge 0 < M_{water} <
     \theta_{r} \rho_{water} \frac{M_{ice} + M_{water}}{\rho_{snow}}\} \\
 Dom_{melting} &= \{x \in X \big|  M_{water} >=
     \theta_{r} \rho_{water} \frac{M_{ice} + M_{water}}{\rho_{snow}}\}
 \end{align}
 
-The initial states are arbitrarily chosen but must meet
+The initial states are arbitrarily chosen but must meet 
 the following criteria regardless of the initial mode.
 
 \begin{align}
@@ -225,13 +226,13 @@ The domain also suggests the reset relations.
 \begin{align}
 R(empty,x) &= (frozen, x)  & \textrm{  if $0 < M_{ice}$ } \\
 R(frozen,x) &= (thawing,x) & \textrm{  if $0 \le T$ } \\
-R(thawing,x) &= (frozen,x) & \textrm{  if $T \le 0$ } \\
-R(thawing,x) &= (melting,x) & \textrm{  if
+R(thawing,x) &= (frozen,x) & \textrm{  if $T \le 0$ } \\ 
+R(thawing,x) &= (melting,x) & \textrm{  if 
    $\theta_{r} \le \frac{M_{water} / \rho_{water} }
         {(M_{ice} + M_{water}) / \rho_{snow}}$  } \\
-R(melting,x) &= (thawing,x) & \textrm{  if
+R(melting,x) &= (thawing,x) & \textrm{  if 
       $\frac{M_{water} / \rho_{water} }
-        {(M_{ice} + M_{water}) / \rho_{snow}} < \theta_{r}$  } \\
+        {(M_{ice} + M_{water}) / \rho_{snow}} < \theta_{r}$  } \\ 
 R(q,x) &= (empty, x) & \textrm{otherwise}
 \end{align}
 
@@ -239,55 +240,54 @@ Notice the implementation issue with the $R(frozen,x) \to (thawing,x)$ and
 $R(thawing,x) \to (frozen,x)$ the implementation will need to
 force at least one time step before leaving.
 
+\subsection{Continuous Dynamics}
 
-\subsection{Dynamic Model}
-
-When there is no snowpack some of the values in $x$ are undefined
+When there is no snow-pack some of the values in $x$ are undefined 
 and are arbitrarily set to zero.
 The mass of ice remaining is clearly $M_{ice} = 0$.
 
 In each case the power is given by Equation \ref{eqn:power}.
 
 \begin{equation}
-f_{empty}(t,x(t),u(t)) =
+f_{empty}(t,x(t),u(t)) = 
   \begin{bmatrix} 0 \\ 0 \\ 0 \\ 0 \end{bmatrix}
 \end{equation}
 
-In each of the remaining cases the snowpack density, $p_{snow}$
+In each of the remaining cases the snow-pack density, $p_{snow}$
 increases due to compaction, Equation: \ref{eqn:compaction}.
 
 When in the sub-zero, frozen, mode  there is no change in mass composition.
 The snow does compact and the temperature is free to change.
 
 \begin{equation}
-f_{frozen}(t,x(t),u(t)) =
-  \begin{bmatrix}
-     0 \\ 0 \\
-     Equation: \ref{eqn:compaction} \\
-     Equation: \ref{eqn:heat-capacitance}
+f_{frozen}(t,x(t),u(t)) = 
+  \begin{bmatrix} 
+     0 \\ 0 \\ 
+     Equation: \ref{eqn:compaction} \\ 
+     Equation: \ref{eqn:heat-capacitance} 
   \end{bmatrix}
 \end{equation}
 
 In the thawing mode the temperature is locked to the material
-phase transition temperature ($0 \degree C$).
+phase transition temperature ($0 \deg C$).
 
 \begin{equation}
-f_{thawing}(t,x(t),u(t)) =
-  \begin{bmatrix}
-     - Equation: \ref{eqn:heat-latency} \\
-     Equation: \ref{eqn:heat-latency} \\
-     Equation: \ref{eqn:compaction} \\
-     0
+f_{thawing}(t,x(t),u(t)) = 
+  \begin{bmatrix} 
+     - Equation: \ref{eqn:heat-latency} \\ 
+     Equation: \ref{eqn:heat-latency} \\ 
+     Equation: \ref{eqn:compaction} \\ 
+     0 
   \end{bmatrix}
 \end{equation}
 
 \begin{equation}
-f_{melting}(t,x(t),u(t)) =
-  \begin{bmatrix}
-     - Equation: \ref{eqn:heat-latency} \\
-     Equation: \ref{eqn:saturation} \\
-     Equation: \ref{eqn:compaction} \\
-     0
+f_{melting}(t,x(t),u(t)) = 
+  \begin{bmatrix} 
+     - Equation: \ref{eqn:heat-latency} \\ 
+     Equation: \ref{eqn:saturation} \\ 
+     Equation: \ref{eqn:compaction} \\ 
+     0 
   \end{bmatrix}
 \end{equation}
 
@@ -296,23 +296,23 @@ The output of the system, $Y$ is given by Equation \ref{eqn:swe}.
 
 \section{Work Performed}
 
-Using the hybrid model and based on the recommended
+Using the hybrid model and based on the recommended 
 Stateflow\textregistered Simulink\textregistered
 design pattern \citep{matlab2009ssdp} I constructed a
 hybrid model.
 
 Several variations on inputs were examined, two of which follow.
 In each of these cases the mass is in kg, the time in in days,
-the density is in kg/$m^3$, energy (insolation) is in
+the density is in kg/$m^3$, energy (insolation) is in 
 kJ/$m^2$/day, and height (SWE) is in meters.
 
 \begin{figure}
 \centering
 \mbox{
 \subfigure{\includegraphics[width=2in]{melting_trend_input.png}} \quad
-\subfigure{\includegraphics[width=4in]{melting_trend_output.png}}
+\subfigure{\includegraphics[width=4in]{melting_trend_output.png}} 
 }
-\caption{Snowpack consistently melting} \label{fig:consistent-melting}
+\caption{Snow-pack consistently melting} \label{fig:consistent-melting}
 \end{figure}
 
 In this example, Figure \ref{fig:consistent-melting}, the energy is diurnal.
@@ -324,35 +324,34 @@ to move the mode back into thawing or freezing.
 With this in mind, a simulation was performed with a much
 higher nightly radiation.
 
-
 \begin{figure}
 \centering
 \mbox{
 \subfigure{\includegraphics[width=2in]{refreeze_trend_input.png}} \quad
-\subfigure{\includegraphics[width=4in]{refreeze_trend_output.png}}
+\subfigure{\includegraphics[width=4in]{refreeze_trend_output.png}} 
 }
-\caption{Snowpack thawing and refreezing at night} \label{fig:refreezing-melt}
+\caption{Snow-pack thawing and refreezing at night} \label{fig:refreezing-melt}
 \end{figure}
 
 In Figure \ref{fig:refreezing-melt} the general behavior looks as expected
-with the water in the snowpack refreezing each night until
+with the water in the snow-pack refreezing each night until
 the system enters the melting mode.
 
 
 \section{Modeling Issues}
 
 There are several ways to model systems such as this,
-each with their adavantages and drawbacks.
+each with their advantages and drawbacks.
 The model using Simulink\textregistered models supervised
-by a Stateflow\textregistered model and driven by a
-Simulink\textregistered model was choosen as it
+by a Stateflow\textregistered model and driven by a 
+Simulink\textregistered model was chosen as it 
 closely imitates the formal hybrid model.
 It has the drawback of requiring the transfer of
 state information between integrators which makes use
 of the reset with its added complexity.
 
 The other significant issue is the proper calibration of the model.
-Typically the models produced with
+Typically the models produced with 
 Stateflow\textregistered Simulink\textregistered are working
 with time frames in the one second region.
 This problem uses time frames in the hour or day region.
@@ -361,7 +360,7 @@ A minor issue is that the paper does not describe
 the input in much detail.
 The data they use is that recorded in various surveys.
 This will be approximated in my model with a sine wave
-that immitates the diurnal insolation with the trough
+that imitates the diurnal insolation with the trough
 giving up energy.
 
 There were a few minor errors in the equations in
@@ -370,10 +369,10 @@ paper that were corrected.
 
 \section{Physical Constants and Conditions}
 
-\begin{align}
+\begin{align} 
 u(t) &= a \sin{2 \pi t} - c_{rad} \\
  &= - c_{rad} \\
-U(t) &= \frac{a \cos{2 \pi t}}{2 \pi} |_0^{1/2} - c_{rad} t |_0^1 \\
+U(t) &= \frac{a \cos{2 \pi t}}{2 \pi} |_0^{1/2} - c_{rad} t |_0^1 \\ 
   &= 3 \text{ kW-hr/$m^2$ } \\
   &= 10,800 \text{ kJ/$m^2$ } \\
 c_{rad} &= 800 \text{ kJ/$m^2$-day } \\
@@ -396,14 +395,13 @@ A &= 450 \text{ kg/$m^3$} \\
 B &= 20 \text{ days}
 \end{align}
 
-
  \section{Conclusion}
-
- This problem shows that natural systems may be effectively
- modelled using hybrid-automata.
+ 
+ This problem shows that natural systems may be effectively 
+ modeled using hybrid-automata.
  Some areas that could be extended would include models
  for simultaneous snow accumulation.
-
+ 
 
 \bibliographystyle{plain}
 \bibliography{references}
